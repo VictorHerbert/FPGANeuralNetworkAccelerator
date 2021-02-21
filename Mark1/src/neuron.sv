@@ -1,19 +1,19 @@
-module neuron #(parameter SIZE, parameter  DEPTH)(
+module neuron #(parameter SIZE, parameter  BIT_SIZE)(
 	input  clk, rst,
-    input  [DEPTH-1:0] x,
-	input  [SIZE-1:0][DEPTH-1:0] w,
-	output [DEPTH-1:0] y
+    input  [BIT_SIZE-1:0] x,
+	input  [SIZE-1:0][SIZE-1:0][BIT_SIZE-1:0] w,
+	output [BIT_SIZE-1:0] y
 );
 
-	wire [DEPTH-1:0] prod, sum;
+	wire [BIT_SIZE-1:0] prod, sum;
 	wire  sign_prod, sign_acc, sign_sum;
 
-	reg [DEPTH-1:0] acc;
-	reg [SIZE-1:0][DEPTH-1:0] w_shifter;
+	reg [BIT_SIZE-1:0] acc;
+	reg [SIZE-1:0][BIT_SIZE-1:0] w_shifter;
 
-	assign sign_acc			= acc[DEPTH-1];
-	assign sign_sum		 	= sum[DEPTH-1];
-	assign sign_prod 		= prod[DEPTH-1];
+	assign sign_acc			= acc[BIT_SIZE-1];
+	assign sign_sum		 	= sum[BIT_SIZE-1];
+	assign sign_prod 		= prod[BIT_SIZE-1];
 
 	assign prod = x*w_shifter[SIZE-1];
 	assign sum = prod + acc;
@@ -26,7 +26,7 @@ module neuron #(parameter SIZE, parameter  DEPTH)(
 		end
 		else begin
 			w_shifter <= {w_shifter[SIZE-2:0], w_shifter[SIZE-1]}; // SIZE must be greater than 1
-			acc <= ((sign_prod == sign_acc) & (sign_sum != sign_acc)) ? {~sign_sum, {DEPTH-1{sign_sum}}} : sum; // Overflow clamp
+			acc <= ((sign_prod == sign_acc) & (sign_sum != sign_acc)) ? {~sign_sum, {BIT_SIZE-1{sign_sum}}} : sum; // Overflow clamp
 		end
 	end
 	

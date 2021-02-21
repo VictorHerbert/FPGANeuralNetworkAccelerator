@@ -4,13 +4,13 @@ module testbench;
     logic  clk = 0, rst = 1, input_select = 1;
 
     parameter SIZE = 3;
-    parameter DEPTH = 16;
+    parameter BIT_SIZE = 16;
 
-    logic [DEPTH-1:0] x = 0;
-    logic [DEPTH-1:0] y;
-    logic [SIZE-1:0][SIZE-1:0][DEPTH-1:0] w;
+    logic [BIT_SIZE-1:0] x = 0;
+    logic [BIT_SIZE-1:0] y;
+    logic [SIZE-1:0][SIZE-1:0][BIT_SIZE-1:0] w;
 
-    layer #(SIZE,DEPTH) l0(
+    layer #(SIZE,BIT_SIZE) l0(
         clk, rst, input_select,
         x, w, y
     );
@@ -18,8 +18,8 @@ module testbench;
     integer x_input, w_input, ret;
 
     initial begin
-        x_input=$fopen("C:/Users/victo/Desktop/FPGA/Neural/src/inputs/x.in","r");
-        w_input=$fopen("C:/Users/victo/Desktop/FPGA/Neural/src/inputs/w.in","r");
+        x_input=$fopen("../src/inputs/x.in","r");
+        w_input=$fopen("..src/inputs/w.in","r");
 
 
         for(integer i = 0; i < SIZE; i++) begin

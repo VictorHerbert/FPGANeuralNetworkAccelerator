@@ -5,8 +5,8 @@ add wave -height 20 -divider Input
 add wave -height 20 l0/clk
 add wave -height 20 l0/rst
 add wave -height 20 l0/input_select
-add wave -height 20 -color yellow l0/w
-
+add wave -height 20 -color yellow -expand l0/w
+add wave -height 20 -color yellow l0/w_T
 
 add wave -height 20 -divider FSM
 
