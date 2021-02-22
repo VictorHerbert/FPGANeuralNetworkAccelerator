@@ -1,7 +1,7 @@
 module layer #(parameter SIZE = 3, parameter BIT_SIZE = 1)(
     input  clk, rst, input_select,
     input  [BIT_SIZE-1:0] x_input, // Serial input
-	input  [SIZE-1:0][SIZE-1:0][BIT_SIZE-1:0] w, 
+	input  [SIZE-1:0][BIT_SIZE-1:0] w, 
 	output [BIT_SIZE-1:0] y // Serial output
 );
     genvar i,j;
@@ -42,21 +42,13 @@ module layer #(parameter SIZE = 3, parameter BIT_SIZE = 1)(
             endcase
         end
     end
-
-    wire  [SIZE-1:0][SIZE-1:0][BIT_SIZE-1:0] w_T; //Transpose
-
-
     
     generate
     for(i = 0; i < SIZE; i++) begin : gen_shifter
-        for(j = 0; j < SIZE; j++) begin : gen_transpose
-            assign w_T[i][j] = w[j][i];
-        end
-
         neuron #(SIZE, BIT_SIZE) ni(
             clk, neuron_rst,
             x,
-            w_T[i],
+            w[i],
             neuron_out[i]
         );
 

@@ -2,45 +2,56 @@
 
 module testbench;
     logic  clk = 0, rst = 1, input_select = 1;
-
-    parameter SIZE = 3;
+    
     parameter BIT_SIZE = 16;
+    parameter LAYER_SIZE = 4;
+    parameter LAYER_DEPTH = 4;
 
-    logic [BIT_SIZE-1:0] x = 0;
-    logic [BIT_SIZE-1:0] y;
-    logic [SIZE-1:0][SIZE-1:0][BIT_SIZE-1:0] w;
+    logic [BIT_SIZE-1:0] x = 0, y, w_in;
+    logic [LAYER_SIZE-1:0][BIT_SIZE-1:0]  w_out;
 
-    layer #(SIZE,BIT_SIZE) l0(
-        clk, rst, input_select,
-        x, w, y
+    logic write = 0;
+    logic [$clog2(LAYER_DEPTH)-1:0] layer = 0;
+    logic [$clog2(LAYER_SIZE)-1:0] node = 0;
+
+    memory #(LAYER_SIZE,LAYER_DEPTH, BIT_SIZE) m0(
+        clk, write,
+        layer, node,
+
+        w_in, w_out
     );
 
     integer x_input, w_input, ret;
 
     initial begin
-        x_input=$fopen("../src/inputs/x.in","r");
-        w_input=$fopen("..src/inputs/w.in","r");
-
-
-        for(integer i = 0; i < SIZE; i++) begin
-            for(integer j = 0; j < SIZE; j++) begin
-                ret = $fscanf(w_input,"%d", w[i][j]);
+        for(integer i = 0; i < LAYER_DEPTH; i++) begin
+            for(integer j = 0; j < LAYER_SIZE; j++) begin
+                #4 node++;
             end
+            layer++;
+        end
+    end
+    initial begin
+        write = 1;
+        #(4*LAYER_DEPTH*LAYER_SIZE) write = 0;
+    end
+    initial begin
+        x_input=$fopen("../src/inputs/x.in","r");
+        w_input=$fopen("../src/inputs/w.in","r");
+
+        #2
+        for(integer i = 0; i < 50; i++) begin
+            ret = $fscanf(w_input,"%d", w_in);
+            #4;
         end
 
-            rst = 1;
-        #1  rst = 0;
-
     end
-
     initial begin
-        #(2*(SIZE+4)) input_select = 0;
+        rst = 1;
+        #1  rst = 0;        
     end
-
-
-    
     initial begin        
-        for(integer i = 0; i < 4*SIZE; i++) begin
+        for(integer i = 0; i < 100; i++) begin
         	#2 clk = 1;
             ret = $fscanf(x_input,"%d", x);
             #2 clk = 0;
@@ -51,3 +62,14 @@ module testbench;
     
 
 endmodule
+
+/*layer #(SIZE,BIT_SIZE) l0(
+        clk, rst, input_select,
+        x, w_out, y
+    );*/
+
+    /*memory_cell #(LAYER_DEPTH, BIT_SIZE) m0(
+        clk, write,
+        addr,
+        w_in, w_out
+    );*/
