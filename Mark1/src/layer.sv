@@ -1,22 +1,22 @@
-module layer #(parameter SIZE = 3, parameter DEPTH = 1)(
+module layer #(parameter SIZE = 3, parameter BIT_SIZE = 1)(
     input  clk, rst, input_select,
-    input  [DEPTH-1:0] x_input, // Serial input
-	input  [SIZE-1:0][SIZE-1:0][DEPTH-1:0] w, 
-	output [DEPTH-1:0] y // Serial output
+    input  [BIT_SIZE-1:0] x_input, // Serial input
+	input  [SIZE-1:0][BIT_SIZE-1:0] w, 
+	output [BIT_SIZE-1:0] y // Serial output
 );
-    genvar i;
-    enum {SHIFT, STORE, CLEAR} state = CLEAR;
+    genvar i,j;
+    enum {IDLE, SHIFT, STORE, CLEAR} state = IDLE;
 
 
     logic [$clog2(SIZE+1)+1:0] counter;
-    logic [DEPTH-1:0] x;
-    logic [SIZE-1:0][DEPTH-1:0] neuron_out, y_shifter = 0;
+    logic [BIT_SIZE-1:0] x;
+    logic [SIZE-1:0][BIT_SIZE-1:0] neuron_out, y_shifter = 0;
     logic neuron_rst;
     
     assign x = input_select ? x_input : y;
 
     
-    assign neuron_rst = (state == CLEAR);
+    assign neuron_rst = (state == CLEAR) | (state == IDLE);
     
     //Can be replaced by a counter and STORE == 0, CLEAR == 1, ...
     always_ff @ (posedge clk or posedge rst) begin
@@ -44,8 +44,8 @@ module layer #(parameter SIZE = 3, parameter DEPTH = 1)(
     end
     
     generate
-    for(i = 0; i < SIZE; i = i+1) begin : gen_shifter
-        neuron #(SIZE, DEPTH) ni(
+    for(i = 0; i < SIZE; i++) begin : gen_shifter
+        neuron #(SIZE, BIT_SIZE) ni(
             clk, neuron_rst,
             x,
             w[i],
@@ -66,7 +66,7 @@ module layer #(parameter SIZE = 3, parameter DEPTH = 1)(
     end
     endgenerate
 
-    act_function #(DEPTH) lut(
+    act_function #(BIT_SIZE) lut(
 		y_shifter[0], y
 	);
 
