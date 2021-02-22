@@ -17,4 +17,4 @@ vsim -t 1ps -L rtl_work -L work -voptargs="+acc"  testbench
 view structure
 view signals
 
-do waves_mem.do
+do waves.do

@@ -1,7 +1,7 @@
 `timescale 1ns / 1ns
 
 module testbench;
-    logic  clk = 0, rst = 1, input_select = 1;
+    logic  clk = 0, rst = 0, input_select = 1;
     
     parameter BIT_SIZE = 16;
     parameter LAYER_SIZE = 4;
@@ -21,6 +21,11 @@ module testbench;
         w_in, w_out
     );
 
+    layer #(LAYER_SIZE,BIT_SIZE) l0(
+        clk, rst, input_select,
+        x, w_out, y
+    );
+
     integer x_input, w_input, ret;
 
     initial begin
@@ -34,26 +39,26 @@ module testbench;
     initial begin
         write = 1;
         #(4*LAYER_DEPTH*LAYER_SIZE) write = 0;
+        
+        rst = 1;
+        #1 rst = 0;        
+        #(4*LAYER_SIZE+1) input_select = 0;
     end
     initial begin
         x_input=$fopen("../src/inputs/x.in","r");
         w_input=$fopen("../src/inputs/w.in","r");
 
         #2
-        for(integer i = 0; i < 50; i++) begin
+        for(integer i = 0; i < 100; i++) begin
             ret = $fscanf(w_input,"%d", w_in);
+            ret = $fscanf(x_input,"%d", x);
             #4;
         end
 
     end
-    initial begin
-        rst = 1;
-        #1  rst = 0;        
-    end
     initial begin        
         for(integer i = 0; i < 100; i++) begin
         	#2 clk = 1;
-            ret = $fscanf(x_input,"%d", x);
             #2 clk = 0;
         end
         $fclose(x_input);
@@ -61,15 +66,4 @@ module testbench;
     end
     
 
-endmodule
-
-/*layer #(SIZE,BIT_SIZE) l0(
-        clk, rst, input_select,
-        x, w_out, y
-    );*/
-
-    /*memory_cell #(LAYER_DEPTH, BIT_SIZE) m0(
-        clk, write,
-        addr,
-        w_in, w_out
-    );*/
+endmodule    

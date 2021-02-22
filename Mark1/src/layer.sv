@@ -5,7 +5,7 @@ module layer #(parameter SIZE = 3, parameter BIT_SIZE = 1)(
 	output [BIT_SIZE-1:0] y // Serial output
 );
     genvar i,j;
-    enum {SHIFT, STORE, CLEAR} state = CLEAR;
+    enum {IDLE, SHIFT, STORE, CLEAR} state = IDLE;
 
 
     logic [$clog2(SIZE+1)+1:0] counter;
@@ -16,7 +16,7 @@ module layer #(parameter SIZE = 3, parameter BIT_SIZE = 1)(
     assign x = input_select ? x_input : y;
 
     
-    assign neuron_rst = (state == CLEAR);
+    assign neuron_rst = (state == CLEAR) | (state == IDLE);
     
     //Can be replaced by a counter and STORE == 0, CLEAR == 1, ...
     always_ff @ (posedge clk or posedge rst) begin
