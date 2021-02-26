@@ -1,4 +1,4 @@
-module memory #(parameter LAYER_SIZE, parameter LAYER_DEPTH, parameter BIT_SIZE = 16)(
+module memory_weight #(parameter LAYER_SIZE, parameter LAYER_DEPTH, parameter BIT_SIZE = 16)(
     input clk, write_enable,
     
     input [$clog2(LAYER_DEPTH)-1:0] layer,  // layer
