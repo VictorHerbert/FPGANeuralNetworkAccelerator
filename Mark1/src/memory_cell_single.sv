@@ -12,7 +12,7 @@ module memory_cell #(parameter DEPTH = 2, parameter BIT_SIZE = 16)(
  
     always @ (posedge clk) begin
         if (write_enable)
-            data[addr] = data_in;
+            data[addr] <= data_in;
     end
 endmodule
 

@@ -26,9 +26,3 @@ module neuron #(parameter SIZE, parameter  BIT_SIZE)(
 	
 
 endmodule
-
-//assign sign_acc		= acc[BIT_SIZE-1];
-	//assign sign_sum		= sum[BIT_SIZE-1];
-	//assign sign_prod 		= prod[BIT_SIZE-1];
-	//assign prod = x*w;
-	//assign sum = prod + acc;
