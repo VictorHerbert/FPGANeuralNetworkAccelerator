@@ -5,7 +5,7 @@ module testbench;
     parameter LAYER_SIZE = 4;
     parameter LAYER_DEPTH = 4;
 
-    logic  clk = 0, rst = 0, input_select = 1, write_enable = 0;
+    logic  clk = 0, rst = 0, input_select = 1, weight_write_enable = 1, input_write_enable = 1;
     
     logic [BIT_SIZE-1:0] x = 0, y, y_mem;
     
@@ -13,7 +13,9 @@ module testbench;
     logic [$clog2(LAYER_SIZE)-1:0] node = 0;
 
     neural_network #(LAYER_SIZE, LAYER_DEPTH, BIT_SIZE) nn(
-        clk, rst, write_enable, input_select,
+        clk, rst, 
+        weight_write_enable, input_write_enable,
+        input_select,
         layer, node,
 
         x, y, y_mem
@@ -30,12 +32,21 @@ module testbench;
         end
     end
     initial begin
-        write_enable = 1;
-        #(4*LAYER_DEPTH*LAYER_SIZE) write_enable = 0;
+
+        weight_write_enable = 1;
+        #(4*LAYER_DEPTH*LAYER_SIZE)
+        weight_write_enable = 0;
         
+        
+           
+        #(4*LAYER_SIZE)
+        input_write_enable = 0;
+
         rst = 1;
-        #1 rst = 0;        
-        #(4*LAYER_SIZE+1) input_select = 0;
+        #1 rst = 0;     
+        #(4*LAYER_SIZE-3)
+        input_select = 0;
+        
     end
     initial begin
         x_input=$fopen("../src/inputs/x.in","r");

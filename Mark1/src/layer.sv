@@ -9,7 +9,7 @@ module layer #(parameter LAYER_SIZE = 3, parameter BIT_SIZE = 1)(
     genvar i,j;
     enum {IDLE, SHIFT, STORE, CLEAR} state = IDLE;    
 
-    logic [$clog2(LAYER_SIZE)-1:0] _node;
+    logic [$clog2(LAYER_SIZE)-1:0] _node = 0;
     logic [LAYER_SIZE-1:0][BIT_SIZE-1:0] neuron_out, y_shifter = 0;
     logic neuron_rst;
 
