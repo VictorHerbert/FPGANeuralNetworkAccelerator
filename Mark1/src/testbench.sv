@@ -5,7 +5,7 @@ module testbench;
     parameter LAYER_SIZE = 4;
     parameter LAYER_DEPTH = 4;
 
-    logic  clk = 0, rst = 0, input_select = 1, weight_write_enable = 1, input_write_enable = 1;
+    logic  clk = 1, rst = 0, input_select = 1, weight_write_enable = 1, input_write_enable = 1;
     
     logic [BIT_SIZE-1:0] x = 0, y, y_mem;
     
@@ -32,19 +32,25 @@ module testbench;
         end
     end
     initial begin
-
-        weight_write_enable = 1;
-        #(4*LAYER_DEPTH*LAYER_SIZE)
-        weight_write_enable = 0;
-        
-        
-           
-        #(4*LAYER_SIZE)
         input_write_enable = 0;
+        weight_write_enable = 1;
 
+        #(4*LAYER_DEPTH*LAYER_SIZE)
+
+        input_write_enable = 1;
+        weight_write_enable = 0;
+               
+        #(4*LAYER_SIZE)
+
+        input_write_enable = 0;
         rst = 1;
-        #1 rst = 0;     
-        #(4*LAYER_SIZE-3)
+
+        #1
+
+        rst = 0;     
+
+        #(4*LAYER_SIZE+3)
+
         input_select = 0;
         
     end
@@ -52,7 +58,6 @@ module testbench;
         x_input=$fopen("../src/inputs/x.in","r");
         w_input=$fopen("../src/inputs/w.in","r");
 
-        #2
         for(integer i = 0; i < 100; i++) begin            
             ret = $fscanf(x_input,"%d", x);
             #4;
@@ -61,8 +66,8 @@ module testbench;
     end
     initial begin        
         for(integer i = 0; i < 100; i++) begin
-        	#2 clk = 1;
-            #2 clk = 0;
+        	#2 clk = 0;
+            #2 clk = 1;
         end
         $fclose(x_input);
         $fclose(w_input);

@@ -14,7 +14,8 @@ module neuron #(parameter SIZE, parameter  BIT_SIZE)(
 	wire sign_sum  = sum[BIT_SIZE-1];
 
 	assign y = acc;
-	
+
+	// Use negedge 
 	always_ff @(negedge clk or posedge rst) begin
 		if(rst) begin
 			acc = 0;		

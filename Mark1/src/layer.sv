@@ -16,10 +16,10 @@ module layer #(parameter LAYER_SIZE = 3, parameter BIT_SIZE = 1)(
     assign node = _node;
     
 
-    
+
+    // Can be optimized
     assign neuron_rst = (state == CLEAR) | (state == IDLE);
     
-    //Can be replaced by a counter and STORE == 0, CLEAR == 1, ...
     always_ff @ (posedge clk or posedge rst) begin
         if(rst) begin
             state = CLEAR;
