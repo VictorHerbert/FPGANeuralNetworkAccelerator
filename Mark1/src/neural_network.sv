@@ -1,63 +1,61 @@
-module neural_network #(parameter LAYER_SIZE = 3, parameter LAYER_DEPTH, parameter BIT_SIZE = 1)(
+module neural_network #(
+    parameter LAYER_SIZE = 4,
+    parameter LAYER_DEPTH = 4,
+    parameter BIT_SIZE = 16, 
+    parameter X_INIT_FILE = "", 
+    parameter W_INIT_FILE = ""
+)(
     input  clk, rst,
     weight_write_enable, input_write_enable,
-    input_select,
+
     input [$clog2(LAYER_DEPTH)-1:0] addr_layer,
-    input [$clog2(LAYER_SIZE)-1:0] addr_node,
+    input [$clog2(LAYER_SIZE)-1:0] addr_node_j,
+    input [$clog2(LAYER_SIZE)-1:0] addr_node_k,
 
     input  [BIT_SIZE-1:0] data_in, // Serial input
-    output  [BIT_SIZE-1:0] data_out, // Serial output
-
-    output  [BIT_SIZE-1:0] y
+    output  [BIT_SIZE-1:0] data_out // Serial output
 );
 
-    logic [$clog2(LAYER_DEPTH)-1:0] layer = 0;
+    logic [$clog2(LAYER_DEPTH)-1:0] layer;
     logic [$clog2(LAYER_SIZE)-1:0] node;
 
+
     wire [LAYER_SIZE-1:0][BIT_SIZE-1:0] w;
-    wire  [BIT_SIZE-1:0] x, x_mem;
+    wire [BIT_SIZE-1:0] x, x_mem, y;
 
-    wire layer_roll = (node == 0);
+    wire input_select = (layer == 0);
+    wire  [BIT_SIZE-1:0] y_layer;
 
-    assign x = input_select ? x_mem : data_out;
+    assign x = input_select ? x_mem : y_layer;
 
-
-    always_ff @( posedge layer_roll or posedge rst) begin
-        if(rst)
-            layer = 0;
-        else begin
-            if(layer < LAYER_DEPTH-1)
-                layer <= layer + 1;
-        end
-    end
-
-
-    layer #(LAYER_SIZE,BIT_SIZE) l0(
+    layer #(LAYER_SIZE, LAYER_DEPTH, BIT_SIZE) l0(
         clk, rst,
-        node,
+        layer, node,
 
-        x, w, data_out
+        x, w, y_layer
     );
 
-    memory_weight #(LAYER_SIZE, LAYER_DEPTH, BIT_SIZE) weight_mem(
+    memory_weight #(LAYER_SIZE, LAYER_DEPTH, BIT_SIZE, W_INIT_FILE) weight_mem(
         clk, weight_write_enable,
-        addr_layer, addr_node,
+        
+        layer, node,// node_k,
+        addr_layer, addr_node_j, addr_node_k,
 
         data_in, w
     );
 
-    memory_cell_dual  #(LAYER_SIZE, BIT_SIZE) input_mem(
+    memory_cell_dual  #(LAYER_SIZE, BIT_SIZE, X_INIT_FILE) input_mem(
         clk, input_write_enable,
-        node, addr_node, 
+        node, addr_node_j, 
 
         data_in, x_mem
     );
 
     memory_cell_dual  #(LAYER_SIZE, BIT_SIZE) output_mem(
-        clk, layer == LAYER_DEPTH-1, // replace by layer == last
-        addr_node, node,
+        clk, (layer == LAYER_DEPTH-1), // replace by layer == last
+        addr_node_j, node,
 
-        data_out, y
+        y_layer, data_out
     );
 
     

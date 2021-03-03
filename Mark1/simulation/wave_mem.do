@@ -1,7 +1,7 @@
 
 add wave -height 20 -divider Memory
 
-add wave -height 20 -divider Output
+add wave -height 20 -divider Input
 add wave -height 20 -color "light blue" nn/input_mem/data
 
 add wave -height 20 -divider Output

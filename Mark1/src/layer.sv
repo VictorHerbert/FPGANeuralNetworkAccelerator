@@ -1,7 +1,9 @@
-module layer #(parameter LAYER_SIZE = 3, parameter BIT_SIZE = 1)(
+module layer #(parameter LAYER_SIZE, parameter LAYER_DEPTH, parameter BIT_SIZE)(
     input  clk, rst,
-    output [$clog2(LAYER_SIZE)-1:0] node,
 
+    output [$clog2(LAYER_DEPTH)-1:0] layer,
+    output [$clog2(LAYER_SIZE)-1:0] node,
+    
     input  [BIT_SIZE-1:0] x, // Serial input
 	input  [LAYER_SIZE-1:0][BIT_SIZE-1:0] w, 
 	output [BIT_SIZE-1:0] y // Serial output
@@ -9,35 +11,40 @@ module layer #(parameter LAYER_SIZE = 3, parameter BIT_SIZE = 1)(
     genvar i,j;
     enum {IDLE, SHIFT, STORE, CLEAR} state = IDLE;    
 
-    logic [$clog2(LAYER_SIZE)-1:0] _node = 0;
-    logic [LAYER_SIZE-1:0][BIT_SIZE-1:0] neuron_out, y_shifter = 0;
-    logic neuron_rst;
+    reg [$clog2(LAYER_DEPTH)-1:0] _layer = 0;
+    reg [$clog2(LAYER_SIZE)-1:0] _node;
 
+    assign layer = _layer;
     assign node = _node;
-    
 
+    logic [LAYER_SIZE-1:0][BIT_SIZE-1:0] neuron_out, y_shifter = 0;
 
-    // Can be optimized
-    assign neuron_rst = (state == CLEAR) | (state == IDLE);
+    wire neuron_rst = (state == CLEAR) | (state == IDLE);
     
     always_ff @ (posedge clk or posedge rst) begin
         if(rst) begin
             state = CLEAR;
-            _node = 0;
+            _layer = 0; _node = 0; 
         end
         else begin
             case(state)
                 STORE: begin
                     state <= CLEAR;
-                    _node <= 0;
+                    _node = 0;
                 end
                 CLEAR: begin
                     state <= SHIFT;
                 end
                 SHIFT: begin
-                    _node <= _node + 1;
-                    if(_node == LAYER_SIZE-2)
-                        state <= STORE;
+                    _node <= _node+1;
+                    if(_node == LAYER_SIZE-1) begin
+                        _layer <= layer+1;
+                        if(_layer == LAYER_DEPTH-1)
+                            state <= IDLE;                        
+                        else
+                            state <= STORE;
+                    end
+
                 end
             endcase
         end
