@@ -7,4 +7,4 @@ On windows
 ```
 
 ## Mark1 Results
-![Mark1](Resources\mark1_out.bmp)
+![Mark1](https://raw.githubusercontent.com/VictorHerbert/FPGA_NeuralNetworks/main/Resources/mark1_out.bmp?token=AFDCIEIUR55JAILYBEDO7U3AH5NHG)
