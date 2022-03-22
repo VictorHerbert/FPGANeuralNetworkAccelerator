@@ -42,7 +42,7 @@ class NeuralProcessor:
                 self.acc[i] += self.xy_mem[x_addr+l]*self.w_mem[i][w_addr+l]
         
     #x[a] = acc
-    def acc_to_xy_mem(self,y_addr, length):
+    def acc_mov_mem(self,y_addr, length):
         self.xy_mem[y_addr : y_addr+length] = self.act_func(self.acc[0:length])
 
     #dE_dX = dot(W.T, dE_dV)

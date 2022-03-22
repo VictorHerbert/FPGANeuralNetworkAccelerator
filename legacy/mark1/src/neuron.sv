@@ -15,15 +15,14 @@ module neuron #(parameter SIZE, parameter  BIT_SIZE)(
 
 	assign y = acc;
 
-	// Use negedge 
+	// Use negedge
 	always_ff @(negedge clk or posedge rst) begin
-		if(rst) begin
-			acc = 0;		
-		end
-		else begin			
+		if(rst)
+			acc = 0;
+		else
 			acc <= ((sign_prod == sign_acc) & (sign_sum != sign_acc)) ? {~sign_sum, {BIT_SIZE-1{sign_sum}}} : sum; // Overflow clamp
-		end
+
 	end
-	
+
 
 endmodule

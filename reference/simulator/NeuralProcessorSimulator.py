@@ -102,7 +102,7 @@ class NeuralProcessor:
             )
         self.clock(shift_reg_enable = 1)
 
-    def acc_to_xy(self, y_addr, length):
+    def acc_mov(self, y_addr, length):
         for i in range(length):
             self.clock(
                 shift_reg_enable = 0,

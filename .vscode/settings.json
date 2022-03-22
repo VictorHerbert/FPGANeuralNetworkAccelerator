@@ -1,0 +1,12 @@
+{
+    "triggerTaskOnSave.selectedTask": "SV-Lint",
+    "triggerTaskOnSave.tasks": {
+        "." : [
+            "*.sv"
+        ]
+    },
+    "files.associations": {
+        "*.tcc": "cpp",
+        "cmath": "cpp"
+    }
+}

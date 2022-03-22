@@ -28,15 +28,26 @@ def check_numpy_in_w(w, proc, addr):
                 return False
     return True
 
-#w.T*x
+#W*x
 def test1():
+    x_addr = 4
+    w_addr = 0
+    y_addr = 0
+
+    proc.mat_mul(x_addr=x_addr, w_addr=w_addr, length=4)
+    proc.acc_mov(y_addr=y_addr, length=4)
+
+    assert check_numpy_in_xy(np.dot(w,x), proc, y_addr)
+
+#w.T*x
+def test2():
     result_addr = 8
     proc.xy_to_mac_reg(x_addr)
     proc.matmul_t(w_addr=w_addr, y_addr=result_addr, length=w.shape[1], accumulate=0)
 
     assert check_numpy_in_xy(np.dot(w.T,x), proc, result_addr)
     
-#w1+a*w2
+#w = w1+a*w2
 def test3():
     x_addr = 4
     result_addr = 4
@@ -45,7 +56,6 @@ def test3():
     assert check_numpy_in_w(proc.xy_mem[x_addr]*w+w, proc, result_addr)
 
 test1()
-test3()
 
 pass
 
