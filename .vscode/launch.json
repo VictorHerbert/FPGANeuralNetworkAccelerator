@@ -17,7 +17,9 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-            "args": ["-stdout=console"],
+            "args": [
+                "-stdout=console"
+            ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],

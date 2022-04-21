@@ -9,6 +9,7 @@ module NeuralNetwork(
     wire mac_x_select;
     wire mac_w_select;
     wire mac_acc_loopback;
+    wire mac_acc_update;
 
     wire serializer_update;
 
@@ -34,6 +35,7 @@ module NeuralNetwork(
     // Datapath Signals
     wire[Q_SIZE-1:0] x;
     wire[NU_COUNT-1:0][Q_INT-1:-Q_FRAC] w;
+    wire[NU_COUNT-1:0][Q_INT-1:-Q_FRAC] acc;
     wire[NU_COUNT-1:0][Q_INT-1:-Q_FRAC] mac;
     wire[NU_COUNT-1:0][Q_INT-1:-Q_FRAC] prod;
 
@@ -89,9 +91,11 @@ module NeuralNetwork(
             .mac_w_select(mac_w_select),
             .mac_reg_enable(mac_reg_enable[i]),
             .mac_acc_loopback(mac_acc_loopback),
+            .mac_acc_update(mac_acc_update),
             .x(x),
             .w(w[i]),
             .prod(prod[i]),
+            .acc(acc[i]),
             .mac(mac[i])
         );
     end
@@ -111,12 +115,12 @@ module NeuralNetwork(
     serializer (
         .clk(clk),
         .serializer_update(serializer_update),
-        .data_in(mac),
+        .data_in(acc),
         .serial_out(serializer_out)
     );
 
     wire [ACT_LUT_DEPTH-1:0] act_addr;
-    wire [Q_SIZE-1:0] act_write_data;
+    wire [ACT_LUT_SIZE-1:0] act_write_data;
     wire act_write_enable;
 
     ActivationFunction activation_function (
@@ -159,6 +163,7 @@ module NeuralNetwork(
         .mac_w_select(mac_w_select),
         .mac_reg_enable(mac_reg_enable),
         .mac_acc_loopback(mac_acc_loopback),
+        .mac_acc_update(mac_acc_update),
 
         .serializer_update(serializer_update),
 

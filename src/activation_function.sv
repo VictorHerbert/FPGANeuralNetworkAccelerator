@@ -4,23 +4,29 @@ module ActivationFunction (
     input clk,
     input write_enable,
     input [ACT_LUT_DEPTH-1:0] write_addr,
-    input[Q_INT-1:-Q_FRAC] write_data,
+    input [ACT_LUT_SIZE-1:0] write_data,
 
-    input[Q_INT-1:-Q_FRAC] x,
+    input signed [Q_INT-1:-Q_FRAC] x,
     input act_bypass,
     input[ACT_MASK_SIZE-1:0] mask,
-    output[Q_INT-1:-Q_FRAC] fx
+    output signed [Q_INT-1:-Q_FRAC] fx
 );
     
-    wire [Q_INT-1:-Q_FRAC] lut_out;
-    wire [Q_INT-1:-Q_FRAC] interp;
+    wire signed [ACT_A_Q_INT-1:-ACT_A_Q_FRAC] a_coef;
+    wire signed [ACT_B_Q_INT-1:-ACT_B_Q_FRAC] b_coef;
+    wire signed [Q_INT+ACT_A_Q_INT-1:-(Q_FRAC+ACT_A_Q_FRAC)] full_product;
+    wire signed [Q_INT+ACT_A_Q_INT-1:-(Q_FRAC+ACT_A_Q_FRAC)] b_shifted;
+    wire signed [Q_INT-1:-Q_FRAC] interp;
+   
+    assign b_shifted = {{Q_INT+ACT_A_Q_INT-ACT_B_Q_INT-1{1'b0}}, b_coef, {(Q_FRAC+ACT_A_Q_FRAC)-ACT_B_Q_FRAC{1'b0}}};
+    // TODO check for overflow
+    assign full_product = a_coef*x+b_shifted;
+    assign interp = full_product[Q_INT-1:-Q_FRAC];
 
     assign fx = act_bypass ? x : interp;
-    // TODO check for size
-    assign interp = lut_out[ACT_LUT_DEPTH-1:ACT_LUT_DEPTH-ACT_A_COEF_SIZE]*x+lut_out[ACT_A_COEF_SIZE-1:0];
 
     Memory #(
-        .DEPTH(ACT_MASK_SIZE+ACT_LUT_DEPTH), .BIT_SIZE(Q_SIZE))
+        .DEPTH(ACT_MASK_SIZE+ACT_LUT_DEPTH), .BIT_SIZE(ACT_LUT_SIZE))
     lookup_table (
         .clk(clk),
         .write_enable(write_enable),
@@ -28,7 +34,7 @@ module ActivationFunction (
         .write_addr({mask, write_addr}),
 
         .data_in(write_data),
-        .data_out(lut_out)
+        .data_out({a_coef, b_coef})
     );
 
 endmodule

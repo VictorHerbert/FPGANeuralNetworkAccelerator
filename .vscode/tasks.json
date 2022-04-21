@@ -7,12 +7,17 @@
             "label": "SV-Build",
             "type": "shell",
             "command": "python",
-            "args": [ ".vscode/linter.py"],
+            "args": [
+                ".vscode/linter.py"
+            ],
             "presentation": {
                 "reveal": "never"
             },
             "problemMatcher": {
-                "fileLocation": ["relative", "${workspaceFolder}"],
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
                 "owner": "external2",
                 "pattern": [
                     {
@@ -30,9 +35,13 @@
             "label": "SV-Lint",
             "type": "shell",
             "command": "vlog",
-            "args": [ "-sv","-lint","${file}"],
+            "args": [
+                "-sv",
+                "-lint",
+                "${file}"
+            ],
             "presentation": {
-                "reveal": "never",
+                "reveal": "never"
             },
             "problemMatcher": {
                 "fileLocation": "absolute",
@@ -52,12 +61,35 @@
             "label": "Open Modelsim",
             "type": "shell",
             "command": "call",
-            "args" : ["./.vscode/run_modelsim.bat"],
+            "args": ["./.vscode/run_modelsim.bat"],
             "presentation": {
                 "reveal": "never",
                 "close": true
+            },
+        },
+        {
+            "label": "Compile NASM",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "./utils/compiler/compiler.py", "${file}", "./src/memories/inst.mem"
+            ],
+            "presentation": {
+                "reveal": "never",
+                "close": true
+            },           
+            "problemMatcher": {
+                "fileLocation": "absolute",
+                "owner": "external1",
+                "pattern": [
+                    {
+                        "regexp": "(.*)?\\((.*?)\\): (.*)",
+                        "file": 1,
+                        "line": 2,
+                        "message": 3
+                    }
+                ]
             }
         }
-        
     ]
 }

@@ -1,9 +1,11 @@
 import definitions::*;
+import isa::*;
 
 module Controller (
     input clk, reset,
 
-    input [INST_MEM_SIZE-1:0] inst_data,
+    //input [INST_MEM_SIZE-1:0] 
+    input InstPacket inst_data,
     output reg [INST_MEM_DEPTH-1:0] inst_addr,
     output [INST_MEM_SIZE-1:0] inst_write_addr,
     output  inst_write_enable,
@@ -12,6 +14,7 @@ module Controller (
     output reg mac_acc_loopback,
     output reg mac_x_select,
     output reg mac_w_select,
+    output reg mac_acc_update,
 
     output reg serializer_update,
 
@@ -32,232 +35,187 @@ module Controller (
     output reg [W_MEM_DEPTH-1:0] w_write_addr,
     output reg w_write_enable
 );
-    instruction_type instruction;
-    instruction_type prev_instruction;
-    instruction_type next_instruction;
+    InstructionType instruction;
+    InstructionType prev_instruction;
+    InstructionType next_instruction;
+
+    wire[$clog2(NU_COUNT)-1:0] mac_addr;
 
     reg looped_instruction;
     assign looped_instruction = (instruction == prev_instruction);
 
-    reg [NU_COUNT-1:0] prev_mac_reg_enable;
-    reg prev_mac_acc_loopback;
-    reg prev_mac_x_select;
-    reg prev_mac_w_select;
+    reg [LENGTH_DEPTH-1:0] mov_counter;
+    reg [LENGTH_DEPTH-1:0] mov_length, reg_mov_length;
+    reg mov_update;
 
-    reg prev_serializer_update;
+    assign instruction = inst_data.generic_inst_packet.mnemonic;
 
-    reg prev_act_input_select;
-    reg prev_act_bypass;
-    reg [ACT_MASK_SIZE-1:0] prev_act_mask;
-    reg [ACT_LUT_DEPTH-1:0] prev_act_addr;
-    reg prev_act_write_enable;
-
-    reg prev_xy_acc_loopback;
-    reg prev_xy_acc_op;
-
-    reg [XY_MEM_DEPTH-1:0] prev_xy_read_addr;
-    reg [XY_MEM_DEPTH-1:0] prev_xy_write_addr;
-    reg prev_xy_write_enable;
-
-    reg [W_MEM_DEPTH-1:0] prev_w_read_addr;
-    reg [W_MEM_DEPTH-1:0] prev_w_write_addr;
-    reg prev_w_write_enable;
-
-    reg [15:0] counter;
-    wire [15:0] length;
+    always_ff @(posedge clk)  begin
+        prev_instruction <= instruction;
+    end    
 
     always_ff @(posedge clk, posedge reset)  begin
         if(reset)
             inst_addr <= 0;
+        else
+            inst_addr <= inst_addr+1;
+    end
+
+    always_ff @(posedge clk, posedge reset)  begin
+        if(reset) begin
+            mov_counter <= 0;
+        end
         else begin
-            if(~looped_instruction)
-                counter <= 0;
-            else
-                counter <= counter+1;
-
-            inst_addr <= ((counter==length)||(instruction !== INST_REPEAT)) ? inst_addr+1 : inst_addr;
-
+            if(mov_update) begin
+                xy_write_addr <= inst_data.accmov_inst_packet.y_addr;
+                mov_counter <= inst_data.accmov_inst_packet.length;
+                act_bypass <= inst_data.accmov_inst_packet.bypass;
+                act_mask <= inst_data.accmov_inst_packet.act_mask;
+                act_input_select <= inst_data.accmov_inst_packet.input_select;
+                xy_acc_loopback <= inst_data.accmov_inst_packet.loopback;
+                xy_acc_op <= inst_data.accmov_inst_packet.operation;
+                
+            end
+            else begin
+                xy_write_addr <= xy_write_addr+1;
+                if (mov_counter != 0)
+                    mov_counter <= mov_counter-1;
+            end
+            
         end
     end
-        
+    assign xy_write_enable = (mov_counter != 0);
 
-    always_ff @(posedge clk)  begin
-        prev_instruction <= instruction;
-    end
-
-
-    wire[$clog2(NU_COUNT)-1:0] mac_addr = inst_data;
 
     always_comb begin
         case (instruction)
             INST_MATMUL:  begin
-                mac_acc_loopback <= looped_instruction;
+                mac_acc_loopback <= looped_instruction; // TODO from inst
+                mac_acc_update <= 1'b1; // TODO from inst
                 mac_reg_enable <= 0;
                 mac_x_select <= 1'b1;
                 mac_w_select <=  1'b1;
 
-                serializer_update <= 1'b1;
-                act_input_select <= 'x;
-                act_bypass <= 1'bx;
-                act_mask <= 1'bx;
+                serializer_update <= 1'b0;
+                xy_read_addr <= inst_data.matmul_inst_packet.x_addr;
+                
+                w_write_enable <= 1'b0;
+                w_read_addr <= inst_data.matmul_inst_packet.w_addr;
+                w_write_addr <= 'x;
 
-                xy_write_enable <= 1'b0;
-                xy_read_addr <= 'd10;
-                xy_write_addr <= 'x;
-                xy_acc_loopback <= 1'bx;
-                xy_acc_op <= 1'bx;
+                mov_update <= 1'b0;
+            end
+            INST_ACCMOV: begin
+                mac_acc_loopback <= 1'bx;
+                mac_acc_update <= 1'b0;
+                mac_reg_enable <= 0;
+                mac_x_select <= 1'bx;
+                mac_w_select <=  1'bx;
+
+                serializer_update <= 1'b1;
+                xy_read_addr <= 'x;
 
                 w_write_enable <= 1'b0;
                 w_read_addr <= 'x;
                 w_write_addr <= 'x;
+
+                mov_update <= 1'b1;
             end
-            INST_ACCMOV: begin
+            INST_LOADMAC: begin
                 mac_acc_loopback <= 1'bx;
+                mac_acc_update <= 1'b0;
+                mac_reg_enable = 0; mac_reg_enable[inst_data.loadmac_inst_packet.mac_addr] = 1;
+                mac_x_select <= 1'bx;
+                mac_w_select <=  1'bx;
+
+                serializer_update <= 1'b0;
+                xy_read_addr <= inst_data.loadmac_inst_packet.x_addr;
+
+                w_write_enable <= 1'b0;
+                w_read_addr <= 'x;
+                w_write_addr <= 'x;
+
+                mov_update <= 1'b0;
+            end
+            INST_MATMULT: begin
+                mac_acc_loopback <= looped_instruction;
+                mac_acc_update <= 1'b1;
+                mac_reg_enable <= 0;
+                mac_x_select <= 1'b0;
+                mac_w_select <=  1'b1;
+                
+                serializer_update <= 1'b0;
+                xy_read_addr <= 'x;
+
+                w_write_enable <= 1'b0;
+                w_read_addr <= inst_data.matmult_inst_packet.w_addr;
+                w_write_addr <= 'x;
+
+                mov_update <= 1'b0;
+            end
+            INST_VECTTOMAT: begin
+                mac_acc_loopback <= 1'b0;
+                mac_acc_update <= 1'b1;
+                mac_reg_enable <= 0;
+                mac_x_select <= 1'b0;
+                mac_w_select <=  1'b0;
+                
+                serializer_update <= 1'b0;
+                xy_read_addr <= inst_data.vecttomat_inst_packet.x_addr;
+
+                w_write_enable <= 1'b1;
+                w_read_addr <= 'x;
+                w_write_addr <= inst_data.vecttomat_inst_packet.w_addr;
+
+                mov_update <= 1'b0;
+            end
+            INST_WCONSTPROD: begin // Only differs to the previous by mac selects
+                mac_acc_loopback <= 1'b0;
+                mac_acc_update <= 1'b1;
+                mac_reg_enable <= 0;
+                mac_x_select <= 1'b1;
+                mac_w_select <=  1'b1;
+
+                serializer_update <= 1'b0;
+                xy_read_addr <= inst_data.wconstprod_inst_packet.x_addr;
+
+                w_write_enable <= 1'b0;
+                w_read_addr <= inst_data.wconstprod_inst_packet.w_addr;
+                w_write_addr <= 'x;
+
+                mov_update <= 1'b0;
+            end
+            INST_WACC: begin // Only differs to the previous by mac selects
+                mac_acc_loopback <= 1'b1;
+                mac_acc_update <= 1'b0;
+                mac_reg_enable <= 0;
+                mac_x_select <= 1'b1;
+                mac_w_select <=  1'b1;
+                
+                serializer_update <= 1'b0;
+                xy_read_addr <= 0; // Address of 1
+
+                w_write_enable <= 1'b0;
+                w_read_addr <= inst_data.wacc_inst_packet.w_r_addr;
+                w_write_addr <= inst_data.wacc_inst_packet.w_w_addr;
+
+                mov_update <= 1'b0;
+            end
+            default: begin
+                mac_acc_loopback <= 'x;
+                mac_acc_update <= 1'b0;
                 mac_reg_enable <= 0;
                 mac_x_select <= 1'bx;
                 mac_w_select <=  1'bx;
 
                 serializer_update <= 1'b0;
-                act_input_select <= 1'b1;
-                act_bypass <= 1'bx; //TODO from inst
-                act_mask <= 1'bx; //TODO from inst
-
-                xy_write_enable <= 1'b1;
                 xy_read_addr <= 'x;
-                xy_write_addr <= 'x;
-                xy_acc_loopback <= 1'b0; //TODO from inst
-                xy_acc_op <= 1'bx; //TODO from inst
 
                 w_write_enable <= 1'b0;
                 w_read_addr <= 'x;
                 w_write_addr <= 'x;
-
-            end
-            INST_LOADMAC: begin
-                mac_acc_loopback <= 1'bx;
-                mac_reg_enable = 0; mac_reg_enable[mac_addr] = 1;
-                mac_x_select <= 1'bx;
-                mac_w_select <=  1'bx;
-
-                serializer_update <= 'x;
-                act_input_select <= 'x;
-                act_bypass <= 1'bx;
-                act_mask <= 1'bx;
                 
-                xy_write_enable <= 1'b0;
-                xy_read_addr <= 'x;
-                xy_write_addr <= 'x;
-                xy_acc_loopback <= 1'bx;
-                xy_acc_op <= 1'bx;
-
-                w_write_enable <= 1'b0;
-                w_read_addr <= 'x;
-                w_write_addr <= 'x;
-            end
-            INST_MATMULT: begin
-                mac_acc_loopback <= 1'bx;
-                mac_reg_enable <= 0;
-                mac_x_select <= 1'b0;
-                mac_w_select <=  1'b1;
-
-                serializer_update <= 1'bx;
-                act_input_select <= 1'b0;
-                act_bypass <= 1'bx;
-                act_mask <= 1'bx;
-
-                xy_write_enable <= 1'b1;
-                xy_read_addr <= 'x;
-                xy_write_addr <= 'x;
-                xy_acc_loopback <= 1'b0; //TODO from inst
-                xy_acc_op <= 1'bx; // TODO check
-
-                w_write_enable <= 1'b0;
-                w_read_addr <= 'x;
-                w_write_addr <= 'x;
-            end
-            INST_VECTTOMAT: begin
-                mac_acc_loopback <= 1'b0;
-                mac_reg_enable <= 0;
-                mac_x_select <= 1'b0;
-                mac_w_select <=  1'b0;
-
-                serializer_update <= 1'bx;
-                act_input_select <= 1'bx;
-                act_bypass <= 1'bx;
-                act_mask <= 1'bx;
-
-                xy_write_enable <= 1'b0;
-                xy_read_addr <= 'x; //TODO from inst
-                xy_write_addr <= 'x;
-                xy_acc_loopback <= 1'bx;
-                xy_acc_op <= 1'bx;
-
-                w_write_enable <= 1'b1;
-                w_read_addr <= 'x;
-                w_write_addr <= 'x; //TODO from inst
-            end
-            INST_WCONSTPROD: begin // Only differs to the previous by mac selects
-                mac_acc_loopback <= 1'b0;
-                mac_reg_enable <= 0;
-                mac_x_select <= 1'b1;
-                mac_w_select <=  1'b1;
-
-                serializer_update <= 1'bx;
-                act_input_select <= 1'bx;
-                act_bypass <= 1'bx;
-                act_mask <= 1'bx;
-
-                xy_write_enable <= 1'b0;
-                xy_read_addr <= 'x; //TODO from inst
-                xy_write_addr <= 'x;
-                xy_acc_loopback <= 1'bx;
-                xy_acc_op <= 1'bx;
-
-                w_write_enable <= 1'b1;
-                w_read_addr <= 'x;
-                w_write_addr <= 'x; 
-            end
-            INST_WACC: begin // Only differs to the previous by mac selects
-                mac_acc_loopback <= 1'b1;
-                mac_reg_enable <= 0;
-                mac_x_select <= 1'b1;
-                mac_w_select <=  1'b1;
-
-                serializer_update <= 1'bx;
-                act_input_select <= 1'bx;
-                act_bypass <= 1'bx;
-                act_mask <= 1'bx;
-
-                xy_write_enable <= 1'b0;
-                xy_read_addr <= 0; // Address of 1
-                xy_write_addr <= 'x;
-                xy_acc_loopback <= 1'bx;
-                xy_acc_op <= 1'bx;
-
-                w_write_enable <= 1'b1;
-                w_read_addr <= 'x;
-                w_write_addr <= 'x; //TODO from inst
-            end
-            default: begin
-                mac_acc_loopback <= 'x;
-                mac_reg_enable <= 0;
-                mac_x_select <= 1'bx;
-                mac_w_select <=  1'bx;
-
-                serializer_update <= 'x;
-                act_input_select <= 'x;
-                act_bypass <= 1'bx;
-                act_mask <= 1'bx;
-                
-                xy_write_enable <= 1'b0;
-                xy_read_addr <= 'x;
-                xy_write_addr <= 'x;
-                xy_acc_loopback <= 1'bx;
-                xy_acc_op <= 1'bx;
-
-                w_write_enable <= 1'b0;
-                w_read_addr <= 'x;
-                w_write_addr <= 'x;
+                mov_update <= 1'b0;
                 
             end
         endcase
@@ -272,46 +230,3 @@ module Controller (
 
 
 endmodule
-
-
-/*
-INST_REPEAT: begin               
-mac_acc_loopback <= prev_mac_acc_loopback;
-mac_reg_enable <= prev_mac_reg_enable;
-mac_x_select <= prev_mac_x_select;
-mac_w_select <=  prev_mac_w_select;
-
-serializer_update <= prev_serializer_update;
-act_input_select <= prev_act_input_select;
-
-xy_write_enable <= prev_xy_write_enable;
-xy_read_addr <= prev_xy_read_addr + 1;
-xy_write_addr <= prev_xy_write_addr + 1;
-xy_acc_loopback <= prev_xy_acc_loopback;
-xy_acc_op <= prev_xy_acc_op;
-
-w_write_enable <= prev_w_write_enable;
-w_read_addr <= prev_w_read_addr;
-w_write_addr <= prev_w_write_addr;
-
-end
-
-
-prev_mac_acc_loopback <= mac_acc_loopback;
-prev_mac_reg_enable <= mac_reg_enable;
-prev_mac_x_select <= mac_x_select;
-prev_mac_w_select <=  mac_w_select;
-
-prev_serializer_update <= serializer_update;
-prev_act_input_select <= act_input_select;
-
-prev_xy_write_enable <= xy_write_enable;
-prev_xy_read_addr <= xy_read_addr;
-prev_xy_write_addr <= xy_write_addr;
-prev_xy_acc_loopback <= xy_acc_loopback; //TODO from inst
-prev_xy_acc_op <=xy_acc_op; // TODO check
-
-prev_w_write_enable <= w_write_enable;
-prev_w_read_addr <= w_read_addr;
-prev_w_write_addr <= w_write_addr;
-*/
