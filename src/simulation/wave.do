@@ -1,3 +1,5 @@
+transcript off
+
 set NU_COUNT [examine -unsigned definitions.NU_COUNT]
 set Q_FRAC [examine -unsigned definitions.Q_FRAC]
 set ACT_A_Q_FRAC [examine -unsigned definitions.ACT_A_Q_FRAC]
@@ -14,6 +16,8 @@ radix define fx_prod -fixed -fraction 16 -precision 2 -base decimal -signed
 
 set SHOW_CONTROL 0
 set SHOW_CONTROL_MOVE 0
+set SHOW_CONTROL_REPEAT 0
+set SHOW_INST_FULL 0
 
 add wave clk
 add wave reset
@@ -46,11 +50,30 @@ if { $SHOW_CONTROL_MOVE == 1 } {
     add wave nn/controller/mov_length
     add wave nn/controller/reg_mov_length
 }
+
+if { $SHOW_CONTROL_REPEAT == 1 } {
+    add wave -divider "Repeat Move logic"
+    add wave nn/controller/repeat_update
+    add wave nn/controller/prev_repeat_update
+    add wave nn/controller/repeat_counter
+    add wave nn/controller/reg_repeat_counter
+}
+
 add wave -divider "Instructions"
 add wave -color "Yellow" nn/controller/inst_addr
 add wave -color "Yellow" nn/controller/instruction
-add wave -color "Yellow" nn/controller/inst_data
 add wave nn/controller/looped_instruction
+if { $SHOW_INST_FULL == 1 } {
+    add wave -color "Yellow" nn/controller/matmul_inst_packet
+    add wave -color "Yellow" nn/controller/loadmac_inst_packet
+    add wave -color "Yellow" nn/controller/accmov_inst_packet
+    add wave -color "Yellow" nn/controller/matmult_inst_packet
+    add wave -color "Yellow" nn/controller/vecttomat_inst_packet
+    add wave -color "Yellow" nn/controller/wconstprod_inst_packet
+    add wave -color "Yellow" nn/controller/wacc_inst_packet
+    add wave -color "Yellow" nn/controller/jump_inst_packet
+    add wave -color "Yellow" nn/controller/repeat_inst_packet
+}
 
 add wave -divider "Mac Units"
 add wave -radix fx nn/x

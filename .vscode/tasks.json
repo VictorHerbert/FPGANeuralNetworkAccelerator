@@ -75,8 +75,8 @@
                 "./utils/compiler/compiler.py", "${file}", "./src/memories/inst.mem"
             ],
             "presentation": {
-                "reveal": "never",
-                "close": true
+                "reveal": "never"
+                
             },           
             "problemMatcher": {
                 "fileLocation": "absolute",

@@ -41,8 +41,8 @@ module Controller (
 
     wire[$clog2(NU_COUNT)-1:0] mac_addr;
 
-    reg [LENGTH_DEPTH-1:0] length0, length1;
-    reg [LENGTH_DEPTH-1:0] counter;
+    reg [MOV_LENGTH-1:0] length0, length1;
+    reg [MOV_LENGTH-1:0] counter;
 
     reg instruction_advance;
     reg counter_reset;

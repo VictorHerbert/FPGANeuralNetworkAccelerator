@@ -11,7 +11,8 @@ package isa;
         INST_WACC = 4'd7,
         INST_MAT_UPDATE = 4'd8,
         INST_HALT = 4'd9,
-        INST_REPEAT = 4'd10
+        INST_REPEAT = 4'd10,
+        INST_JUMP = 4'd11
     } InstructionType;
 
     typedef struct packed {
@@ -23,8 +24,7 @@ package isa;
         InstructionType mnemonic;
         logic [11:0] x_addr;
         logic [11:0] w_addr;
-        logic [0:0] serializer_update;
-        logic [2:0] unused;
+        logic [3:0] unused;
     } MatmulInstPacket;
 
     typedef struct packed {
@@ -74,15 +74,15 @@ package isa;
         logic [3:0] unused;
     } WaccInstPacket;
 
-    typedef union packed {
-        GenericInstPacket generic_inst_packet;
-        MatmulInstPacket matmul_inst_packet;
-        LoadmacInstPacket loadmac_inst_packet;
-        AccmovInstPacket accmov_inst_packet;
-        MatmultInstPacket matmult_inst_packet;
-        VecttomatInstPacket vecttomat_inst_packet;
-        WconstprodInstPacket wconstprod_inst_packet;
-        WaccInstPacket wacc_inst_packet;
-    } InstPacket;
+    typedef struct packed {
+        InstructionType mnemonic;
+        logic [27:0] inst_addr;
+    } JmpInstPacket;
+
+    typedef struct packed {
+        InstructionType mnemonic;
+        logic [27:0] length;
+    } RepeatInstPacket;
+
 
 endpackage

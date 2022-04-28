@@ -38,7 +38,7 @@ module testbench;
     end
     endtask
 
-    task acc_mov(reg[15:0] y_addr, reg[LENGTH_DEPTH-1:0] length, bypass, mask, loopback, operation);
+    task acc_mov(reg[15:0] y_addr, reg[MOV_LENGTH-1:0] length, bypass, mask, loopback, operation);
     begin
         force nn.controller.instruction = INST_ACCMOV;
         force nn.controller.mov_length = length;

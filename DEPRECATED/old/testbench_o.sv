@@ -23,7 +23,7 @@ module testbench;
         nn.mac_gen[0].mac_unit.mac_reg
     };
 
-    task matmul(reg[XY_MEM_DEPTH-1:0] x_addr, reg[XY_MEM_DEPTH-1:0]  y_addr, reg[W_MEM_DEPTH-1:0] w_addr, reg[LENGTH_DEPTH-1:0] length0, reg[LENGTH_DEPTH-1:0] length1);
+    task matmul(reg[XY_MEM_DEPTH-1:0] x_addr, reg[XY_MEM_DEPTH-1:0]  y_addr, reg[W_MEM_DEPTH-1:0] w_addr, reg[MOV_LENGTH-1:0] length0, reg[MOV_LENGTH-1:0] length1);
     begin
         force nn.controller.instruction = INST_FORWARD;
         force nn.controller.length0 = length0;

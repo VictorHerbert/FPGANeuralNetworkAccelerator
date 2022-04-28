@@ -9,9 +9,9 @@ def format_nop(*args):
     return 0
 
 def format_matmul(*args):
-    check_limits([12,12,1], *args)
+    check_limits([12,12], *args)
 
-    return (1 << 28)|(args[0] << 16)|(args[1] << 4)|(args[2] << 3)
+    return (1 << 28)|(args[0] << 16)|(args[1] << 4)
 
 def format_accmov(*args):
     check_limits([12,12,1,1,1,1,1], *args)
@@ -43,6 +43,16 @@ def format_wacc(*args):
 
     return (7 << 28)|(args[0] << 16)|(args[1] << 4)
 
+def format_repeat(*args):
+    check_limits([28], *args)
+
+    return (10 << 28)|(args[0] << 0)
+
+def format_jmp(*args):
+    check_limits([28], *args)
+
+    return (11 << 28)|(args[0] << 0)
+
 instructions = {
     'NOP' : format_nop,
     'MATMUL' : format_matmul,
@@ -51,5 +61,7 @@ instructions = {
     'MATMULT' : format_matmult,
     'VECTTOMAT' : format_vecttomat,
     'WCONSTPROD' : format_wconstprod,
-    'WACC' : format_wacc
+    'WACC' : format_wacc,
+    'REPEAT' : format_repeat,
+    'JMP' : format_jmp
 }

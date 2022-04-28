@@ -4,7 +4,9 @@ package definitions;
     localparam Q_INT = 4, Q_FRAC = 12;
     localparam Q_SIZE = Q_INT + Q_FRAC;
 
-    localparam LENGTH_DEPTH = 5;
+    localparam MOV_LENGTH = 5;
+    localparam REPEAT_LENGTH = 28;
+
     localparam XY_MEM_DEPTH = 5;
     localparam W_MEM_DEPTH = 5;
     

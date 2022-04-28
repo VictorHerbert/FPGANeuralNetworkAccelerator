@@ -11,8 +11,8 @@ cModel Technology
 Z0 dC:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation
 Xactivation_function_sv_unit
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 DXx4 work 11 definitions 0 22 DjOo@aT^`_6eP[NS0d>B93
-Z3 !s110 1650536224
+Z2 DXx4 work 11 definitions 0 22 WL_dOjFbHAijGBl7G_X7I0
+Z3 !s110 1650735267
 V@5l?Qhn4kX0Vnd4k7Q>NJ2
 r1
 !s85 0
@@ -29,7 +29,7 @@ Z6 F../activation_function.sv
 Z7 L0 1 0
 Z8 OV;L;2020.1;71
 31
-Z9 !s108 1650536224.000000
+Z9 !s108 1650735267.000000
 Z10 !s107 ../activation_function.sv|
 Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../activation_function.sv|
 !i113 1
@@ -94,7 +94,7 @@ R14
 n@adder
 vAdressRegister
 R1
-R3
+Z17 !s110 1650735268
 !i10b 1
 !s100 KaYfcB0HcRX9Q@0cPf]o62
 R16
@@ -106,7 +106,7 @@ w1646636499
 8../address_register.sv
 F../address_register.sv
 !i122 5
-Z17 L0 1 17
+Z18 L0 1 17
 R8
 r1
 !s85 0
@@ -122,28 +122,28 @@ n@adress@register
 vController
 R1
 R2
-Z18 DXx4 work 3 isa 0 22 [^LT=ji7R:D0k8Km^N9zG3
-DXx4 work 18 controller_sv_unit 0 22 n=T2PE9UF0SCad[A?CXhH1
-R3
+Z19 DXx4 work 3 isa 0 22 ?zIk>d[m1^dW9^6O6iPPO3
+DXx4 work 18 controller_sv_unit 0 22 E[a4o>H??3Xb:QHDVPImH2
+R17
 R15
 r1
 !s85 0
 !i10b 1
-!s100 9fn=47<0cdM<7m[@4ZYR]3
-I`mE[;UJ]zGOF=6L5C8QcT3
+!s100 eA[_cK4DTDl^RjWe[Dzb;2
+I<k3Z^fV?l9AdSm9OL4W2D0
 !s105 controller_sv_unit
 S1
 R0
-Z19 w1650520345
-Z20 8../controller.sv
-Z21 F../controller.sv
+Z20 w1650735263
+Z21 8../controller.sv
+Z22 F../controller.sv
 !i122 6
-L0 4 229
+L0 4 364
 R8
 31
-R9
-Z22 !s107 ../controller.sv|
-Z23 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../controller.sv|
+Z23 !s108 1650735268.000000
+Z24 !s107 ../controller.sv|
+Z25 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../controller.sv|
 !i113 1
 R12
 R13
@@ -152,27 +152,27 @@ n@controller
 Xcontroller_sv_unit
 R1
 R2
-R18
-R3
-Vn=T2PE9UF0SCad[A?CXhH1
+R19
+R17
+VE[a4o>H??3Xb:QHDVPImH2
 r1
 !s85 0
 !i10b 1
-!s100 ?>FcE?[Aa]`H4^8MNHZ<>1
-In=T2PE9UF0SCad[A?CXhH1
+!s100 l=kaQBG9`K?a17cDCIWFR1
+IE[a4o>H??3Xb:QHDVPImH2
 !i103 1
 S1
 R0
-R19
 R20
 R21
+R22
 !i122 6
 R7
 R8
 31
-R9
-R22
 R23
+R24
+R25
 !i113 1
 R12
 R13
@@ -181,13 +181,13 @@ Xdefinitions
 R1
 R3
 !i10b 1
-!s100 J?B`gc]=6@^^G`[:URDfh3
+!s100 MO8BZ[3oGUgd^`nRG39Zi3
 R16
-IDjOo@aT^`_6eP[NS0d>B93
-VDjOo@aT^`_6eP[NS0d>B93
+IWL_dOjFbHAijGBl7G_X7I0
+VWL_dOjFbHAijGBl7G_X7I0
 S1
 R0
-w1650363620
+w1650733454
 8../definitions.sv
 F../definitions.sv
 !i122 0
@@ -207,13 +207,13 @@ Xisa
 R1
 R3
 !i10b 1
-!s100 9GhSn0DDJYVlTZKN]Wk^O2
+!s100 ZGk75l@66f8n:lY?zJ4Ne0
 R16
-I[^LT=ji7R:D0k8Km^N9zG3
-V[^LT=ji7R:D0k8Km^N9zG3
+I?zIk>d[m1^dW9^6O6iPPO3
+V?zIk>d[m1^dW9^6O6iPPO3
 S1
 R0
-w1650322385
+w1650733683
 8../isa.sv
 F../isa.sv
 !i122 1
@@ -232,7 +232,7 @@ R14
 Xmac_unit_sv_unit
 R1
 R2
-R3
+R17
 V4W?2[TSYVec0zPQhcNL3D2
 r1
 !s85 0
@@ -242,16 +242,16 @@ I4W?2[TSYVec0zPQhcNL3D2
 !i103 1
 S1
 R0
-Z24 w1650360426
-Z25 8../mac_unit.sv
-Z26 F../mac_unit.sv
+Z26 w1650360426
+Z27 8../mac_unit.sv
+Z28 F../mac_unit.sv
 !i122 7
 R7
 R8
 31
-R9
-Z27 !s107 ../mac_unit.sv|
-Z28 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../mac_unit.sv|
+R23
+Z29 !s107 ../mac_unit.sv|
+Z30 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../mac_unit.sv|
 !i113 1
 R12
 R13
@@ -260,7 +260,7 @@ vMacUnit
 R1
 R2
 DXx4 work 16 mac_unit_sv_unit 0 22 4W?2[TSYVec0zPQhcNL3D2
-R3
+R17
 R15
 r1
 !s85 0
@@ -270,16 +270,16 @@ Im^NgJURh7?P3nHjd6Ql2B1
 !s105 mac_unit_sv_unit
 S1
 R0
-R24
-R25
 R26
+R27
+R28
 !i122 7
 L0 3 80
 R8
 31
-R9
-R27
-R28
+R23
+R29
+R30
 !i113 1
 R12
 R13
@@ -315,7 +315,7 @@ n@memory
 Xneural_network_sv_unit
 R1
 R2
-Z29 !s110 1650536225
+R17
 V[D:HC8NCY]o:fBKCK57a11
 r1
 !s85 0
@@ -325,14 +325,14 @@ I[D:HC8NCY]o:fBKCK57a11
 !i103 1
 S1
 R0
-Z30 w1650351970
-Z31 8../neural_network.sv
-Z32 F../neural_network.sv
+Z31 w1650351970
+Z32 8../neural_network.sv
+Z33 F../neural_network.sv
 !i122 9
 R7
 R8
 31
-Z33 !s108 1650536225.000000
+R23
 Z34 !s107 ../neural_network.sv|
 Z35 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../neural_network.sv|
 !i113 1
@@ -343,7 +343,7 @@ vNeuralNetwork
 R1
 R2
 DXx4 work 22 neural_network_sv_unit 0 22 [D:HC8NCY]o:fBKCK57a11
-R29
+R17
 R15
 r1
 !s85 0
@@ -353,14 +353,14 @@ I2AWHTfJPS4::AT8Ueg2aD0
 !s105 neural_network_sv_unit
 S1
 R0
-R30
 R31
 R32
+R33
 !i122 9
 L0 3 185
 R8
 31
-R33
+R23
 R34
 R35
 !i113 1
@@ -370,7 +370,7 @@ R14
 n@neural@network
 vSerializer
 R1
-R29
+R17
 !i10b 1
 !s100 NWJ><A;2:D6;zglMZ8@N:1
 R16
@@ -382,12 +382,12 @@ w1646796699
 8../serializer.sv
 F../serializer.sv
 !i122 8
-R17
+R18
 R8
 r1
 !s85 0
 31
-R9
+R23
 !s107 ../serializer.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../serializer.sv|
 !i113 1
@@ -399,7 +399,7 @@ vtestbench
 R1
 R2
 DXx4 work 17 testbench_sv_unit 0 22 fmkQJ;LeG5Xd[IKTh<0@U3
-R29
+R17
 R15
 r1
 !s85 0
@@ -416,7 +416,7 @@ Z38 F../testbenches/testbench.sv
 L0 6 57
 R8
 31
-R33
+R23
 !s107 ../testbenches/testbench.sv|
 Z39 !s90 -reportprogress|300|-sv|-work|work|+incdir+../testbenches|../testbenches/testbench.sv|
 !i113 1
@@ -426,7 +426,7 @@ R14
 Xtestbench_sv_unit
 R1
 R2
-R29
+R17
 VfmkQJ;LeG5Xd[IKTh<0@U3
 r1
 !s85 0
@@ -443,7 +443,7 @@ R38
 L0 4 0
 R8
 31
-R33
+R23
 Z41 !s107 ../testbenches/testbench.sv|
 R39
 !i113 1
