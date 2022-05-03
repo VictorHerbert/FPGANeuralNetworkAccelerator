@@ -9,10 +9,65 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation
-Xactivation_function_sv_unit
+vact_func_testbench
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
 Z2 DXx4 work 11 definitions 0 22 WL_dOjFbHAijGBl7G_X7I0
-Z3 !s110 1650735267
+DXx4 work 26 act_func_testbench_sv_unit 0 22 ^]8>NU4h_X0QE?YZ1BIL?3
+Z3 !s110 1651552396
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 kAilIz8N@YODTU:R0P@Nc1
+IF[U47=Ahk3;aWmocWnc3n3
+!s105 act_func_testbench_sv_unit
+S1
+R0
+Z5 w1651277728
+Z6 8../testbenches/act_func_testbench.sv
+Z7 F../testbenches/act_func_testbench.sv
+!i122 11
+L0 3 41
+Z8 OV;L;2020.1;71
+31
+Z9 !s108 1651552395.000000
+!s107 ../testbenches/act_func_testbench.sv|
+Z10 !s90 -reportprogress|300|-sv|-work|work|+incdir+../testbenches|../testbenches/act_func_testbench.sv|
+!i113 1
+Z11 o-sv -work work
+Z12 !s92 -sv -work work +incdir+../testbenches
+Z13 tCvgOpt 0
+Xact_func_testbench_sv_unit
+R1
+R2
+R3
+V^]8>NU4h_X0QE?YZ1BIL?3
+r1
+!s85 0
+!i10b 1
+!s100 oHBF:dUHbAnbH3L:lHjU61
+I^]8>NU4h_X0QE?YZ1BIL?3
+!i103 1
+S1
+R0
+R5
+R6
+R7
+!i122 11
+Z14 L0 1 0
+R8
+31
+R9
+Z15 !s107 ../testbenches/act_func_testbench.sv|
+R10
+!i113 1
+R11
+R12
+R13
+Xactivation_function_sv_unit
+R1
+R2
+Z16 !s110 1651552395
 V@5l?Qhn4kX0Vnd4k7Q>NJ2
 r1
 !s85 0
@@ -22,26 +77,26 @@ I@5l?Qhn4kX0Vnd4k7Q>NJ2
 !i103 1
 S1
 R0
-Z4 w1650363290
-Z5 8../activation_function.sv
-Z6 F../activation_function.sv
+Z17 w1651256228
+Z18 8../activation_function.sv
+Z19 F../activation_function.sv
 !i122 3
-Z7 L0 1 0
-Z8 OV;L;2020.1;71
+R14
+R8
 31
-Z9 !s108 1650735267.000000
-Z10 !s107 ../activation_function.sv|
-Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../activation_function.sv|
+R9
+Z20 !s107 ../activation_function.sv|
+Z21 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../activation_function.sv|
 !i113 1
-Z12 o-sv -work work
-Z13 !s92 -sv -work work +incdir+../
-Z14 tCvgOpt 0
+R11
+Z22 !s92 -sv -work work +incdir+../
+R13
 vActivationFunction
 R1
 R2
 DXx4 work 27 activation_function_sv_unit 0 22 @5l?Qhn4kX0Vnd4k7Q>NJ2
-R3
-Z15 VDg1SIo80bB@j0V0VzS_@n1
+R16
+R4
 r1
 !s85 0
 !i10b 1
@@ -50,36 +105,36 @@ I^W8;G:QM_7]Fl]?Q:[P0h0
 !s105 activation_function_sv_unit
 S1
 R0
-R4
-R5
-R6
+R17
+R18
+R19
 !i122 3
 L0 3 38
 R8
 31
 R9
-R10
-R11
+R20
+R21
 !i113 1
-R12
+R11
+R22
 R13
-R14
 n@activation@function
 vAdder
 R1
-R3
+R16
 !i10b 1
 !s100 ;5[48kQBnH2l2;`^P[b:N3
-Z16 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z23 !s11b Dg1SIo80bB@j0V0VzS_@n1
 I^Ej==ZWaUm0ENPR7ODIoO3
-R15
+R4
 S1
 R0
 w1649993707
 8../adder.sv
 F../adder.sv
 !i122 4
-L0 1 20
+Z24 L0 1 20
 R8
 r1
 !s85 0
@@ -88,25 +143,25 @@ R9
 !s107 ../adder.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../adder.sv|
 !i113 1
-R12
+R11
+R22
 R13
-R14
 n@adder
 vAdressRegister
 R1
-Z17 !s110 1650735268
+R16
 !i10b 1
 !s100 KaYfcB0HcRX9Q@0cPf]o62
-R16
+R23
 I[ToeW408KgIFY;:U;z@?]3
-R15
+R4
 S1
 R0
 w1646636499
 8../address_register.sv
 F../address_register.sv
 !i122 5
-Z18 L0 1 17
+L0 1 17
 R8
 r1
 !s85 0
@@ -115,45 +170,45 @@ R9
 !s107 ../address_register.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../address_register.sv|
 !i113 1
-R12
+R11
+R22
 R13
-R14
 n@adress@register
 vController
 R1
 R2
-Z19 DXx4 work 3 isa 0 22 ?zIk>d[m1^dW9^6O6iPPO3
+Z25 DXx4 work 3 isa 0 22 ?zIk>d[m1^dW9^6O6iPPO3
 DXx4 work 18 controller_sv_unit 0 22 E[a4o>H??3Xb:QHDVPImH2
-R17
-R15
+R16
+R4
 r1
 !s85 0
 !i10b 1
-!s100 eA[_cK4DTDl^RjWe[Dzb;2
-I<k3Z^fV?l9AdSm9OL4W2D0
+!s100 zhazzie]fOE<<Jbb6^X8U1
+IV_lPQ93`Eh:IGWH[^LJCW1
 !s105 controller_sv_unit
 S1
 R0
-Z20 w1650735263
-Z21 8../controller.sv
-Z22 F../controller.sv
+Z26 w1651510670
+Z27 8../controller.sv
+Z28 F../controller.sv
 !i122 6
 L0 4 364
 R8
 31
-Z23 !s108 1650735268.000000
-Z24 !s107 ../controller.sv|
-Z25 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../controller.sv|
+R9
+Z29 !s107 ../controller.sv|
+Z30 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../controller.sv|
 !i113 1
-R12
+R11
+R22
 R13
-R14
 n@controller
 Xcontroller_sv_unit
 R1
 R2
-R19
-R17
+R25
+R16
 VE[a4o>H??3Xb:QHDVPImH2
 r1
 !s85 0
@@ -163,26 +218,26 @@ IE[a4o>H??3Xb:QHDVPImH2
 !i103 1
 S1
 R0
-R20
-R21
-R22
+R26
+R27
+R28
 !i122 6
-R7
+R14
 R8
 31
-R23
-R24
-R25
+R9
+R29
+R30
 !i113 1
-R12
+R11
+R22
 R13
-R14
 Xdefinitions
 R1
-R3
+Z31 !s110 1651552394
 !i10b 1
 !s100 MO8BZ[3oGUgd^`nRG39Zi3
-R16
+R23
 IWL_dOjFbHAijGBl7G_X7I0
 VWL_dOjFbHAijGBl7G_X7I0
 S1
@@ -191,24 +246,24 @@ w1650733454
 8../definitions.sv
 F../definitions.sv
 !i122 0
-R7
+R14
 R8
 r1
 !s85 0
 31
-R9
+Z32 !s108 1651552394.000000
 !s107 ../definitions.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../definitions.sv|
 !i113 1
-R12
+R11
+R22
 R13
-R14
 Xisa
 R1
-R3
+R31
 !i10b 1
 !s100 ZGk75l@66f8n:lY?zJ4Ne0
-R16
+R23
 I?zIk>d[m1^dW9^6O6iPPO3
 V?zIk>d[m1^dW9^6O6iPPO3
 S1
@@ -217,22 +272,22 @@ w1650733683
 8../isa.sv
 F../isa.sv
 !i122 1
-R7
+R14
 R8
 r1
 !s85 0
 31
-R9
+R32
 !s107 ../isa.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../isa.sv|
 !i113 1
-R12
+R11
+R22
 R13
-R14
 Xmac_unit_sv_unit
 R1
 R2
-R17
+R16
 V4W?2[TSYVec0zPQhcNL3D2
 r1
 !s85 0
@@ -242,26 +297,26 @@ I4W?2[TSYVec0zPQhcNL3D2
 !i103 1
 S1
 R0
-Z26 w1650360426
-Z27 8../mac_unit.sv
-Z28 F../mac_unit.sv
+Z33 w1650360426
+Z34 8../mac_unit.sv
+Z35 F../mac_unit.sv
 !i122 7
-R7
+R14
 R8
 31
-R23
-Z29 !s107 ../mac_unit.sv|
-Z30 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../mac_unit.sv|
+R9
+Z36 !s107 ../mac_unit.sv|
+Z37 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../mac_unit.sv|
 !i113 1
-R12
+R11
+R22
 R13
-R14
 vMacUnit
 R1
 R2
 DXx4 work 16 mac_unit_sv_unit 0 22 4W?2[TSYVec0zPQhcNL3D2
-R17
-R15
+R16
+R4
 r1
 !s85 0
 !i10b 1
@@ -270,29 +325,29 @@ Im^NgJURh7?P3nHjd6Ql2B1
 !s105 mac_unit_sv_unit
 S1
 R0
-R26
-R27
-R28
+R33
+R34
+R35
 !i122 7
 L0 3 80
 R8
 31
-R23
-R29
-R30
+R9
+R36
+R37
 !i113 1
-R12
+R11
+R22
 R13
-R14
 n@mac@unit
 vMemory
 R1
-R3
+R16
 !i10b 1
 !s100 HTVmoFG1MI>]TJHH8k9>B2
-R16
+R23
 IE056e4knHEU`jENa:?lF<0
-R15
+R4
 S1
 R0
 w1646873823
@@ -304,103 +359,103 @@ R8
 r1
 !s85 0
 31
-R9
+R32
 !s107 ../memory.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../memory.sv|
 !i113 1
-R12
+R11
+R22
 R13
-R14
 n@memory
 Xneural_network_sv_unit
 R1
 R2
-R17
-V[D:HC8NCY]o:fBKCK57a11
+R16
+VTHOL6K[<<`XdSDVoQDmiQ1
 r1
 !s85 0
 !i10b 1
-!s100 CN0kJYo@6aP8jAE>;V<c01
-I[D:HC8NCY]o:fBKCK57a11
+!s100 `FG[2gzYmnm=;a_B=UIY80
+ITHOL6K[<<`XdSDVoQDmiQ1
 !i103 1
 S1
 R0
-Z31 w1650351970
-Z32 8../neural_network.sv
-Z33 F../neural_network.sv
+Z38 w1651457928
+Z39 8../neural_network.sv
+Z40 F../neural_network.sv
 !i122 9
-R7
+R14
 R8
 31
-R23
-Z34 !s107 ../neural_network.sv|
-Z35 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../neural_network.sv|
+R9
+Z41 !s107 ../neural_network.sv|
+Z42 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../neural_network.sv|
 !i113 1
-R12
+R11
+R22
 R13
-R14
 vNeuralNetwork
 R1
 R2
-DXx4 work 22 neural_network_sv_unit 0 22 [D:HC8NCY]o:fBKCK57a11
-R17
-R15
+DXx4 work 22 neural_network_sv_unit 0 22 THOL6K[<<`XdSDVoQDmiQ1
+R16
+R4
 r1
 !s85 0
 !i10b 1
-!s100 b4?QHS3^N]dYXgQXXDN4Y2
-I2AWHTfJPS4::AT8Ueg2aD0
+!s100 c9z^Zo3500YdW^2cBd0h:0
+I8E;ICD@IkMIjm6AR_ZDWT0
 !s105 neural_network_sv_unit
 S1
 R0
-R31
-R32
-R33
+R38
+R39
+R40
 !i122 9
-L0 3 185
+L0 3 188
 R8
 31
-R23
-R34
-R35
+R9
+R41
+R42
 !i113 1
-R12
+R11
+R22
 R13
-R14
 n@neural@network
 vSerializer
 R1
-R17
-!i10b 1
-!s100 NWJ><A;2:D6;zglMZ8@N:1
 R16
-IdDOAFQ:iJKLkj1iFGEk5U3
-R15
+!i10b 1
+!s100 XS?oZ4:AcgQPM[XaTNnH12
+R23
+IDJoYcW@4AcC87TOUhI:dL2
+R4
 S1
 R0
-w1646796699
+w1651458011
 8../serializer.sv
 F../serializer.sv
 !i122 8
-R18
+R24
 R8
 r1
 !s85 0
 31
-R23
+R9
 !s107 ../serializer.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../serializer.sv|
 !i113 1
-R12
+R11
+R22
 R13
-R14
 n@serializer
 vtestbench
 R1
 R2
 DXx4 work 17 testbench_sv_unit 0 22 fmkQJ;LeG5Xd[IKTh<0@U3
-R17
-R15
+R16
+R4
 r1
 !s85 0
 !i10b 1
@@ -409,24 +464,24 @@ I:6Y:Abl8J:k3ZDH6TN:XL3
 !s105 testbench_sv_unit
 S1
 R0
-Z36 w1650521279
-Z37 8../testbenches/testbench.sv
-Z38 F../testbenches/testbench.sv
+Z43 w1650521279
+Z44 8../testbenches/testbench.sv
+Z45 F../testbenches/testbench.sv
 !i122 10
 L0 6 57
 R8
 31
-R23
-!s107 ../testbenches/testbench.sv|
-Z39 !s90 -reportprogress|300|-sv|-work|work|+incdir+../testbenches|../testbenches/testbench.sv|
+R9
+Z46 !s107 ../testbenches/testbench.sv|
+Z47 !s90 -reportprogress|300|-sv|-work|work|+incdir+../testbenches|../testbenches/testbench.sv|
 !i113 1
+R11
 R12
-Z40 !s92 -sv -work work +incdir+../testbenches
-R14
+R13
 Xtestbench_sv_unit
 R1
 R2
-R17
+R16
 VfmkQJ;LeG5Xd[IKTh<0@U3
 r1
 !s85 0
@@ -436,17 +491,17 @@ IfmkQJ;LeG5Xd[IKTh<0@U3
 !i103 1
 S1
 R0
-R36
-R37
-R38
+R43
+R44
+R45
 !i122 10
 L0 4 0
 R8
 31
-R23
-Z41 !s107 ../testbenches/testbench.sv|
-R39
+R9
+R46
+R47
 !i113 1
+R11
 R12
-R40
-R14
+R13

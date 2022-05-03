@@ -12,6 +12,7 @@ module NeuralNetwork(
     wire mac_acc_update;
 
     wire serializer_update;
+    wire serializer_shift;
 
     wire act_input_select;
     wire act_bypass;
@@ -115,6 +116,7 @@ module NeuralNetwork(
     serializer (
         .clk(clk),
         .serializer_update(serializer_update),
+        .serializer_shift(serializer_shift),
         .data_in(acc),
         .serial_out(serializer_out)
     );
@@ -166,6 +168,7 @@ module NeuralNetwork(
         .mac_acc_update(mac_acc_update),
 
         .serializer_update(serializer_update),
+        .serializer_shift(serializer_shift),
 
         .act_input_select(act_input_select),
         .act_mask(act_mask),

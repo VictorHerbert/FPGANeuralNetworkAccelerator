@@ -72,7 +72,7 @@
             "type": "shell",
             "command": "python",
             "args": [
-                "./utils/compiler/compiler.py", "${file}", "./src/memories/inst.mem"
+                "./utils/framework/compiler.py", "${file}", "./src/memories/inst.mem"
             ],
             "presentation": {
                 "reveal": "never"

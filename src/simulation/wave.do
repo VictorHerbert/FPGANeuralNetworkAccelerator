@@ -6,13 +6,13 @@ set ACT_A_Q_FRAC [examine -unsigned definitions.ACT_A_Q_FRAC]
 set ACT_B_Q_FRAC [examine -unsigned definitions.ACT_B_Q_FRAC]
 
 radix unsigned
-radix define fx -fixed -fraction $Q_FRAC -precision 2 -base decimal -signed
+radix define fx -fixed -fraction $Q_FRAC -precision 3 -base decimal -signed
 
-radix define fx_prod_full -fixed -fraction 24 -precision 2 -base decimal -signed
-radix define act_a_fx -fixed -fraction $ACT_A_Q_FRAC -precision 2 -base decimal -signed
-radix define act_b_fx -fixed -fraction $ACT_B_Q_FRAC -precision 2 -base decimal -signed
+radix define fx_prod_full -fixed -fraction 24 -precision 3 -base decimal -signed
+radix define act_a_fx -fixed -fraction $ACT_A_Q_FRAC -precision 3 -base decimal -signed
+radix define act_b_fx -fixed -fraction $ACT_B_Q_FRAC -precision 3 -base decimal -signed
 
-radix define fx_prod -fixed -fraction 16 -precision 2 -base decimal -signed
+radix define fx_prod -fixed -fraction 16 -precision 3 -base decimal -signed
 
 set SHOW_CONTROL 0
 set SHOW_CONTROL_MOVE 0

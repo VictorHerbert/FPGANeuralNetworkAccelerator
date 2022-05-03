@@ -1,52 +1,52 @@
 from math import ceil
+from timeit import repeat
 import numpy as np
 
 class Layer:
 
-    def __init__(self, input_size, output_size, func, d_func, nu_count = None) -> None:
-        self.input_size = input_size
-        self.output_size = output_size
-        self.func = func
-        self.d_func = d_func
-        self.nu_count = nu_count
+    def __init__(self, x_size, y_size, func_name = None, d_func_name = None, w_np = None) -> None:
+        self.x_size = x_size
+        self.y_size = y_size
+        self.func_name = func_name
+        self.d_func_name = d_func_name
+        self.w_np = w_np
 
     def allocate(self, xy_offset, w_offset, prev_layer = None) -> None:
         if prev_layer is None:
-            self.X = (xy_offset, xy_offset + self.input_size)
-            xy_offset += self.input_size
+            self.X = xy_offset
+            xy_offset += self.x_size
         else:
             self.X = prev_layer.Y
 
-        self.Y = (xy_offset, xy_offset + self.output_size)
+        self.Y = xy_offset
 
         self.W = []
-        for _ in range(0,ceil(self.output_size/self.nu_count)):
-            self.W.append((w_offset, w_offset + self.input_size))
-            w_offset += self.input_size
+        for _ in range(0,ceil(self.y_size/self.nu_count)):
+            self.W.append(w_offset)
+            w_offset += self.x_size
 
-        return xy_offset + self.output_size, w_offset
+        xy_offset += self.y_size
+
+        return xy_offset, w_offset
 
 
 
     def forward_propagate(self):
-        y_offset = self.Y[0]
-        length = [self.nu_count]*(self.output_size//self.nu_count) + [self.output_size%self.nu_count]
-        
-        range(0,ceil(self.output_size/4))
-        for subrange, l in zip(self.W, length):
-            for x_offset, w_offset in zip(range(*self.X), range(*subrange)):
-                print(f'MATMUL {x_offset},{w_offset}')
+        y_offset = self.Y
+        length = [self.nu_count]*(self.y_size//self.nu_count) + [self.y_size%self.nu_count]
 
-            for _ in range(self.nu_count-self.input_size):
-                print('NOP')
-            print(f'ACCMOV {y_offset},{l},{self.func},0,1,0,0')
+        instructions = []
+        
+        for w_offset, l in zip(self.W, length):
+            instructions.append(f'MATMUL {self.X},{w_offset}')
+            instructions.append(f'REPEAT {self.x_size-1}')
+            instructions.append(f'ACCMOV {y_offset},{l},{self.func_mask if self.func_mask is not None else 0},{1 if self.func_mask is None else 0},1,0,0')
+            for _ in range(l):
+                instructions.append('NOP')
+
             y_offset += self.nu_count
 
-        return
-        self.X = X
-        self.V = np.dot(self.W, self.X)
-        self.Y = self.func(self.V)
-        return self.Y
+        return instructions
 
     def backward_propagation(self, dE_dY, learning_rate):
         raise NotImplementedError()

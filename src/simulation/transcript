@@ -4,34 +4,34 @@ do run.do
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:26:03 on Apr 23,2022
+# Start time: 23:49:42 on May 02,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
 # -- Compiling package definitions
 # 
 # Top level modules:
 # 	--none--
-# End time: 12:26:03 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 23:49:42 on May 02,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:26:03 on Apr 23,2022
+# Start time: 23:49:42 on May 02,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
 # -- Compiling package isa
 # 
 # Top level modules:
 # 	--none--
-# End time: 12:26:03 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 23:49:42 on May 02,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:26:03 on Apr 23,2022
+# Start time: 23:49:42 on May 02,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
 # -- Compiling module Memory
 # 
 # Top level modules:
 # 	Memory
-# End time: 12:26:03 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 23:49:42 on May 02,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:26:03 on Apr 23,2022
+# Start time: 23:49:42 on May 02,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
 # -- Compiling package activation_function_sv_unit
 # -- Importing package definitions
@@ -39,351 +39,40 @@ do run.do
 # 
 # Top level modules:
 # 	ActivationFunction
-# End time: 12:26:03 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 23:49:42 on May 02,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:26:03 on Apr 23,2022
+# Start time: 23:49:42 on May 02,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
 # -- Compiling module Adder
 # 
 # Top level modules:
 # 	Adder
-# End time: 12:26:03 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 23:49:42 on May 02,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:26:03 on Apr 23,2022
+# Start time: 23:49:42 on May 02,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
 # -- Compiling module AdressRegister
 # 
 # Top level modules:
 # 	AdressRegister
-# End time: 12:26:03 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 23:49:43 on May 02,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:26:03 on Apr 23,2022
+# Start time: 23:49:43 on May 02,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Error: ../controller.sv(93): (vlog-2730) Undefined variable: 'repeat_update'.
-# ** Error: (vlog-13069) ../controller.sv(95): near "else": syntax error, unexpected else.
-# End time: 12:26:04 on Apr 23,2022, Elapsed time: 0:00:01
-# Errors: 2, Warnings: 1
-# ** Error: C:/ProgramFiles/QuartusPrime/20.1.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./run.do line 17
-# C:/ProgramFiles/QuartusPrime/20.1.1/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog -sv -work work +incdir+../ {../controller.sv}"
-do run.do
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:27:06 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
-# -- Compiling package definitions
-# 
-# Top level modules:
-# 	--none--
-# End time: 12:27:07 on Apr 23,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:27:07 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
-# -- Compiling package isa
-# 
-# Top level modules:
-# 	--none--
-# End time: 12:27:07 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:27:07 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
-# -- Compiling module Memory
-# 
-# Top level modules:
-# 	Memory
-# End time: 12:27:07 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:27:07 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
-# -- Compiling package activation_function_sv_unit
-# -- Importing package definitions
-# -- Compiling module ActivationFunction
-# 
-# Top level modules:
-# 	ActivationFunction
-# End time: 12:27:07 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:27:07 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
-# -- Compiling module Adder
-# 
-# Top level modules:
-# 	Adder
-# End time: 12:27:07 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:27:07 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
-# -- Compiling module AdressRegister
-# 
-# Top level modules:
-# 	AdressRegister
-# End time: 12:27:07 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:27:07 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Error: (vlog-13069) ../controller.sv(95): near "else": syntax error, unexpected else.
-# End time: 12:27:07 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 1
-# ** Error: C:/ProgramFiles/QuartusPrime/20.1.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./run.do line 17
-# C:/ProgramFiles/QuartusPrime/20.1.1/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog -sv -work work +incdir+../ {../controller.sv}"
-do run.do
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:43:36 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
-# -- Compiling package definitions
-# 
-# Top level modules:
-# 	--none--
-# End time: 12:43:36 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:43:36 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
-# -- Compiling package isa
-# 
-# Top level modules:
-# 	--none--
-# End time: 12:43:36 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:43:36 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
-# -- Compiling module Memory
-# 
-# Top level modules:
-# 	Memory
-# End time: 12:43:36 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:43:36 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
-# -- Compiling package activation_function_sv_unit
-# -- Importing package definitions
-# -- Compiling module ActivationFunction
-# 
-# Top level modules:
-# 	ActivationFunction
-# End time: 12:43:36 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:43:36 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
-# -- Compiling module Adder
-# 
-# Top level modules:
-# 	Adder
-# End time: 12:43:36 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:43:36 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
-# -- Compiling module AdressRegister
-# 
-# Top level modules:
-# 	AdressRegister
-# End time: 12:43:37 on Apr 23,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:43:37 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # -- Compiling package controller_sv_unit
 # -- Importing package definitions
 # -- Importing package isa
 # -- Compiling module Controller
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Error (suppressible): (vlog-13276) ../controller.sv(94): Could not find field/method name (repeat_inst_packet) in 'inst_data' of 'inst_data.repeat_inst_packet.length'.
-# ** Error (suppressible): ../controller.sv(144): (vlog-7033) Variable 'repeat_counter' driven in a combinational block, may not be driven by any other process. See ../controller.sv(94).
-# ** Error (suppressible): ../controller.sv(164): (vlog-7033) Variable 'repeat_counter' driven in a combinational block, may not be driven by any other process. See ../controller.sv(94).
-# ** Error (suppressible): ../controller.sv(184): (vlog-7033) Variable 'repeat_counter' driven in a combinational block, may not be driven by any other process. See ../controller.sv(94).
-# ** Error (suppressible): ../controller.sv(204): (vlog-7033) Variable 'repeat_counter' driven in a combinational block, may not be driven by any other process. See ../controller.sv(94).
-# ** Error (suppressible): ../controller.sv(224): (vlog-7033) Variable 'repeat_counter' driven in a combinational block, may not be driven by any other process. See ../controller.sv(94).
-# ** Error (suppressible): ../controller.sv(244): (vlog-7033) Variable 'repeat_counter' driven in a combinational block, may not be driven by any other process. See ../controller.sv(94).
-# ** Error (suppressible): ../controller.sv(264): (vlog-7033) Variable 'repeat_counter' driven in a combinational block, may not be driven by any other process. See ../controller.sv(94).
-# ** Error (suppressible): ../controller.sv(284): (vlog-7033) Variable 'repeat_counter' driven in a combinational block, may not be driven by any other process. See ../controller.sv(94).
-# ** Error (suppressible): ../controller.sv(304): (vlog-7033) Variable 'repeat_counter' driven in a combinational block, may not be driven by any other process. See ../controller.sv(94).
-# ** Error (suppressible): ../controller.sv(324): (vlog-7033) Variable 'repeat_counter' driven in a combinational block, may not be driven by any other process. See ../controller.sv(94).
-# End time: 12:43:37 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 11, Warnings: 2
-# ** Error: C:/ProgramFiles/QuartusPrime/20.1.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./run.do line 17
-# C:/ProgramFiles/QuartusPrime/20.1.1/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog -sv -work work +incdir+../ {../controller.sv}"
-do run.do
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:53:17 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
-# -- Compiling package definitions
-# 
-# Top level modules:
-# 	--none--
-# End time: 12:53:17 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:53:17 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
-# -- Compiling package isa
-# 
-# Top level modules:
-# 	--none--
-# End time: 12:53:17 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:53:17 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
-# -- Compiling module Memory
-# 
-# Top level modules:
-# 	Memory
-# End time: 12:53:18 on Apr 23,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:53:18 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
-# -- Compiling package activation_function_sv_unit
-# -- Importing package definitions
-# -- Compiling module ActivationFunction
-# 
-# Top level modules:
-# 	ActivationFunction
-# End time: 12:53:18 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:53:18 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
-# -- Compiling module Adder
-# 
-# Top level modules:
-# 	Adder
-# End time: 12:53:18 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:53:18 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
-# -- Compiling module AdressRegister
-# 
-# Top level modules:
-# 	AdressRegister
-# End time: 12:53:18 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:53:18 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# -- Compiling package controller_sv_unit
-# -- Importing package definitions
-# -- Importing package isa
-# -- Compiling module Controller
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Error (suppressible): (vlog-13276) ../controller.sv(94): Could not find field/method name (repeat_inst_packet) in 'inst_data' of 'inst_data.repeat_inst_packet.length'.
-# End time: 12:53:18 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 2
-# ** Error: C:/ProgramFiles/QuartusPrime/20.1.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./run.do line 17
-# C:/ProgramFiles/QuartusPrime/20.1.1/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog -sv -work work +incdir+../ {../controller.sv}"
-do run.do
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:09:43 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
-# -- Compiling package definitions
-# 
-# Top level modules:
-# 	--none--
-# End time: 13:09:43 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:09:43 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
-# -- Compiling package isa
-# 
-# Top level modules:
-# 	--none--
-# End time: 13:09:44 on Apr 23,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:09:44 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
-# -- Compiling module Memory
-# 
-# Top level modules:
-# 	Memory
-# End time: 13:09:44 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:09:44 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
-# -- Compiling package activation_function_sv_unit
-# -- Importing package definitions
-# -- Compiling module ActivationFunction
-# 
-# Top level modules:
-# 	ActivationFunction
-# End time: 13:09:44 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:09:44 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
-# -- Compiling module Adder
-# 
-# Top level modules:
-# 	Adder
-# End time: 13:09:44 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:09:44 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
-# -- Compiling module AdressRegister
-# 
-# Top level modules:
-# 	AdressRegister
-# End time: 13:09:44 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:09:44 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# -- Compiling package controller_sv_unit
-# -- Importing package definitions
-# -- Importing package isa
-# -- Compiling module Controller
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # 
 # Top level modules:
 # 	Controller
-# End time: 13:09:44 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
+# End time: 23:49:43 on May 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:09:44 on Apr 23,2022
+# Start time: 23:49:43 on May 02,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
 # -- Compiling package mac_unit_sv_unit
 # -- Importing package definitions
@@ -391,19 +80,19 @@ do run.do
 # 
 # Top level modules:
 # 	MacUnit
-# End time: 13:09:44 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 23:49:43 on May 02,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:09:44 on Apr 23,2022
+# Start time: 23:49:43 on May 02,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
 # -- Compiling module Serializer
 # 
 # Top level modules:
 # 	Serializer
-# End time: 13:09:44 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 23:49:43 on May 02,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:09:44 on Apr 23,2022
+# Start time: 23:49:43 on May 02,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
 # -- Compiling package neural_network_sv_unit
 # -- Importing package definitions
@@ -411,10 +100,10 @@ do run.do
 # 
 # Top level modules:
 # 	NeuralNetwork
-# End time: 13:09:44 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 23:49:44 on May 02,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:09:44 on Apr 23,2022
+# Start time: 23:49:44 on May 02,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
 # -- Compiling package testbench_sv_unit
 # -- Importing package definitions
@@ -422,10 +111,21 @@ do run.do
 # 
 # Top level modules:
 # 	testbench
-# End time: 13:09:45 on Apr 23,2022, Elapsed time: 0:00:01
+# End time: 23:49:44 on May 02,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:49:44 on May 02,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/act_func_testbench.sv 
+# -- Compiling package act_func_testbench_sv_unit
+# -- Importing package definitions
+# -- Compiling module act_func_testbench
+# 
+# Top level modules:
+# 	act_func_testbench
+# End time: 23:49:44 on May 02,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 13:09:45 on Apr 23,2022
+# Start time: 23:49:44 on May 02,2022
 # Loading sv_std.std
 # Loading work.definitions
 # Loading work.testbench_sv_unit
@@ -443,10 +143,10 @@ do run.do
 # Loading work.mac_unit_sv_unit
 # Loading work.MacUnit
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 146
+# ** Warning: (vsim-3722) ../neural_network.sv(146): [TFMPC] - Missing connection for port 'data_in'.
 # ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 156
 # 4
 # 12
 # 12
@@ -459,7 +159,13 @@ do run.do
 # fx_prod
 # 1
 # 0
-# 1
+# 0
+# 0
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: victo  Hostname: GILGAMESH  ProcessID: 10412
+#           Attempting to use alternate WLF file "./wlfti0dxzi".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfti0dxzi
 # 0 ns
 # 200 ns
 do run.do
@@ -467,34 +173,34 @@ do run.do
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:18:20 on Apr 23,2022
+# Start time: 00:05:49 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
 # -- Compiling package definitions
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:18:20 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:05:49 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:18:20 on Apr 23,2022
+# Start time: 00:05:49 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
 # -- Compiling package isa
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:18:20 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:05:49 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:18:20 on Apr 23,2022
+# Start time: 00:05:49 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
 # -- Compiling module Memory
 # 
 # Top level modules:
 # 	Memory
-# End time: 13:18:21 on Apr 23,2022, Elapsed time: 0:00:01
+# End time: 00:05:49 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:18:21 on Apr 23,2022
+# Start time: 00:05:49 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
 # -- Compiling package activation_function_sv_unit
 # -- Importing package definitions
@@ -502,42 +208,40 @@ do run.do
 # 
 # Top level modules:
 # 	ActivationFunction
-# End time: 13:18:21 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:05:49 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:18:21 on Apr 23,2022
+# Start time: 00:05:49 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
 # -- Compiling module Adder
 # 
 # Top level modules:
 # 	Adder
-# End time: 13:18:21 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:05:49 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:18:21 on Apr 23,2022
+# Start time: 00:05:49 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
 # -- Compiling module AdressRegister
 # 
 # Top level modules:
 # 	AdressRegister
-# End time: 13:18:21 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:05:50 on May 03,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:18:21 on Apr 23,2022
+# Start time: 00:05:50 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # -- Compiling package controller_sv_unit
 # -- Importing package definitions
 # -- Importing package isa
 # -- Compiling module Controller
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # 
 # Top level modules:
 # 	Controller
-# End time: 13:18:21 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
+# End time: 00:05:50 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:18:21 on Apr 23,2022
+# Start time: 00:05:50 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
 # -- Compiling package mac_unit_sv_unit
 # -- Importing package definitions
@@ -545,19 +249,19 @@ do run.do
 # 
 # Top level modules:
 # 	MacUnit
-# End time: 13:18:21 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:05:50 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:18:21 on Apr 23,2022
+# Start time: 00:05:50 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
 # -- Compiling module Serializer
 # 
 # Top level modules:
 # 	Serializer
-# End time: 13:18:21 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:05:50 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:18:21 on Apr 23,2022
+# Start time: 00:05:50 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
 # -- Compiling package neural_network_sv_unit
 # -- Importing package definitions
@@ -565,10 +269,10 @@ do run.do
 # 
 # Top level modules:
 # 	NeuralNetwork
-# End time: 13:18:21 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:05:50 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:18:21 on Apr 23,2022
+# Start time: 00:05:50 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
 # -- Compiling package testbench_sv_unit
 # -- Importing package definitions
@@ -576,12 +280,23 @@ do run.do
 # 
 # Top level modules:
 # 	testbench
-# End time: 13:18:21 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:05:50 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 13:18:22 on Apr 23,2022, Elapsed time: 0:08:37
-# Errors: 0, Warnings: 3
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 00:05:50 on May 03,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/act_func_testbench.sv 
+# -- Compiling package act_func_testbench_sv_unit
+# -- Importing package definitions
+# -- Compiling module act_func_testbench
+# 
+# Top level modules:
+# 	act_func_testbench
+# End time: 00:05:50 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 00:05:51 on May 03,2022, Elapsed time: 0:16:07
+# Errors: 0, Warnings: 5
 # vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 13:18:22 on Apr 23,2022
+# Start time: 00:05:51 on May 03,2022
 # Loading sv_std.std
 # Loading work.definitions
 # Loading work.testbench_sv_unit
@@ -599,10 +314,10 @@ do run.do
 # Loading work.mac_unit_sv_unit
 # Loading work.MacUnit
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 146
+# ** Warning: (vsim-3722) ../neural_network.sv(146): [TFMPC] - Missing connection for port 'data_in'.
 # ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 156
 # 4
 # 12
 # 12
@@ -615,7 +330,13 @@ do run.do
 # fx_prod
 # 1
 # 0
-# 1
+# 0
+# 0
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: victo  Hostname: GILGAMESH  ProcessID: 10412
+#           Attempting to use alternate WLF file "./wlft2vbfat".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft2vbfat
 # 0 ns
 # 200 ns
 do run.do
@@ -623,34 +344,34 @@ do run.do
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:01 on Apr 23,2022
+# Start time: 00:07:02 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
 # -- Compiling package definitions
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:23:01 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:07:03 on May 03,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:01 on Apr 23,2022
+# Start time: 00:07:03 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
 # -- Compiling package isa
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:23:01 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:07:03 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:01 on Apr 23,2022
+# Start time: 00:07:03 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
 # -- Compiling module Memory
 # 
 # Top level modules:
 # 	Memory
-# End time: 13:23:01 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:07:03 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:01 on Apr 23,2022
+# Start time: 00:07:03 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
 # -- Compiling package activation_function_sv_unit
 # -- Importing package definitions
@@ -658,115 +379,40 @@ do run.do
 # 
 # Top level modules:
 # 	ActivationFunction
-# End time: 13:23:01 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:07:03 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:01 on Apr 23,2022
+# Start time: 00:07:03 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
 # -- Compiling module Adder
 # 
 # Top level modules:
 # 	Adder
-# End time: 13:23:01 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:07:03 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:01 on Apr 23,2022
+# Start time: 00:07:03 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
 # -- Compiling module AdressRegister
 # 
 # Top level modules:
 # 	AdressRegister
-# End time: 13:23:01 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:07:03 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:01 on Apr 23,2022
+# Start time: 00:07:03 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Error: (vlog-13069) ../controller.sv(103): near "<=": syntax error, unexpected <=.
-# ** Error: ../controller.sv(103): (vlog-13205) Syntax error found in the scope following 'repeat_counter'. Is there a missing '::'?
-# End time: 13:23:01 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 1
-# ** Error: C:/ProgramFiles/QuartusPrime/20.1.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./run.do line 17
-# C:/ProgramFiles/QuartusPrime/20.1.1/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog -sv -work work +incdir+../ {../controller.sv}"
-do run.do
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:15 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
-# -- Compiling package definitions
-# 
-# Top level modules:
-# 	--none--
-# End time: 13:23:15 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:15 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
-# -- Compiling package isa
-# 
-# Top level modules:
-# 	--none--
-# End time: 13:23:15 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:15 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
-# -- Compiling module Memory
-# 
-# Top level modules:
-# 	Memory
-# End time: 13:23:15 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:15 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
-# -- Compiling package activation_function_sv_unit
-# -- Importing package definitions
-# -- Compiling module ActivationFunction
-# 
-# Top level modules:
-# 	ActivationFunction
-# End time: 13:23:15 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:15 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
-# -- Compiling module Adder
-# 
-# Top level modules:
-# 	Adder
-# End time: 13:23:16 on Apr 23,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:16 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
-# -- Compiling module AdressRegister
-# 
-# Top level modules:
-# 	AdressRegister
-# End time: 13:23:16 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:16 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # -- Compiling package controller_sv_unit
 # -- Importing package definitions
 # -- Importing package isa
 # -- Compiling module Controller
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # 
 # Top level modules:
 # 	Controller
-# End time: 13:23:16 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
+# End time: 00:07:03 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:16 on Apr 23,2022
+# Start time: 00:07:03 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
 # -- Compiling package mac_unit_sv_unit
 # -- Importing package definitions
@@ -774,19 +420,19 @@ do run.do
 # 
 # Top level modules:
 # 	MacUnit
-# End time: 13:23:16 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:07:03 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:16 on Apr 23,2022
+# Start time: 00:07:03 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
 # -- Compiling module Serializer
 # 
 # Top level modules:
 # 	Serializer
-# End time: 13:23:16 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:07:03 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:16 on Apr 23,2022
+# Start time: 00:07:03 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
 # -- Compiling package neural_network_sv_unit
 # -- Importing package definitions
@@ -794,10 +440,10 @@ do run.do
 # 
 # Top level modules:
 # 	NeuralNetwork
-# End time: 13:23:16 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:07:04 on May 03,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:23:16 on Apr 23,2022
+# Start time: 00:07:04 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
 # -- Compiling package testbench_sv_unit
 # -- Importing package definitions
@@ -805,12 +451,23 @@ do run.do
 # 
 # Top level modules:
 # 	testbench
-# End time: 13:23:16 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:07:04 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 13:23:17 on Apr 23,2022, Elapsed time: 0:04:55
-# Errors: 1, Warnings: 3
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 00:07:04 on May 03,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/act_func_testbench.sv 
+# -- Compiling package act_func_testbench_sv_unit
+# -- Importing package definitions
+# -- Compiling module act_func_testbench
+# 
+# Top level modules:
+# 	act_func_testbench
+# End time: 00:07:04 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 00:07:04 on May 03,2022, Elapsed time: 0:01:13
+# Errors: 0, Warnings: 5
 # vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 13:23:17 on Apr 23,2022
+# Start time: 00:07:04 on May 03,2022
 # Loading sv_std.std
 # Loading work.definitions
 # Loading work.testbench_sv_unit
@@ -828,10 +485,10 @@ do run.do
 # Loading work.mac_unit_sv_unit
 # Loading work.MacUnit
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 146
+# ** Warning: (vsim-3722) ../neural_network.sv(146): [TFMPC] - Missing connection for port 'data_in'.
 # ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 156
 # 4
 # 12
 # 12
@@ -844,7 +501,13 @@ do run.do
 # fx_prod
 # 1
 # 0
-# 1
+# 0
+# 0
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: victo  Hostname: GILGAMESH  ProcessID: 10412
+#           Attempting to use alternate WLF file "./wlfteakicx".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfteakicx
 # 0 ns
 # 200 ns
 do run.do
@@ -852,34 +515,34 @@ do run.do
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:24:09 on Apr 23,2022
+# Start time: 00:08:42 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
 # -- Compiling package definitions
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:24:09 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:08:42 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:24:09 on Apr 23,2022
+# Start time: 00:08:42 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
 # -- Compiling package isa
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:24:09 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:08:42 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:24:09 on Apr 23,2022
+# Start time: 00:08:42 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
 # -- Compiling module Memory
 # 
 # Top level modules:
 # 	Memory
-# End time: 13:24:09 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:08:42 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:24:09 on Apr 23,2022
+# Start time: 00:08:42 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
 # -- Compiling package activation_function_sv_unit
 # -- Importing package definitions
@@ -887,42 +550,40 @@ do run.do
 # 
 # Top level modules:
 # 	ActivationFunction
-# End time: 13:24:09 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:08:42 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:24:09 on Apr 23,2022
+# Start time: 00:08:42 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
 # -- Compiling module Adder
 # 
 # Top level modules:
 # 	Adder
-# End time: 13:24:09 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:08:42 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:24:09 on Apr 23,2022
+# Start time: 00:08:42 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
 # -- Compiling module AdressRegister
 # 
 # Top level modules:
 # 	AdressRegister
-# End time: 13:24:09 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:08:43 on May 03,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:24:09 on Apr 23,2022
+# Start time: 00:08:43 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # -- Compiling package controller_sv_unit
 # -- Importing package definitions
 # -- Importing package isa
 # -- Compiling module Controller
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # 
 # Top level modules:
 # 	Controller
-# End time: 13:24:10 on Apr 23,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 2
+# End time: 00:08:43 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:24:10 on Apr 23,2022
+# Start time: 00:08:43 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
 # -- Compiling package mac_unit_sv_unit
 # -- Importing package definitions
@@ -930,19 +591,19 @@ do run.do
 # 
 # Top level modules:
 # 	MacUnit
-# End time: 13:24:10 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:08:43 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:24:10 on Apr 23,2022
+# Start time: 00:08:43 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
 # -- Compiling module Serializer
 # 
 # Top level modules:
 # 	Serializer
-# End time: 13:24:10 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:08:43 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:24:10 on Apr 23,2022
+# Start time: 00:08:43 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
 # -- Compiling package neural_network_sv_unit
 # -- Importing package definitions
@@ -950,10 +611,10 @@ do run.do
 # 
 # Top level modules:
 # 	NeuralNetwork
-# End time: 13:24:10 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:08:43 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:24:10 on Apr 23,2022
+# Start time: 00:08:43 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
 # -- Compiling package testbench_sv_unit
 # -- Importing package definitions
@@ -961,12 +622,23 @@ do run.do
 # 
 # Top level modules:
 # 	testbench
-# End time: 13:24:10 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:08:43 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 13:24:10 on Apr 23,2022, Elapsed time: 0:00:53
-# Errors: 0, Warnings: 3
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 00:08:43 on May 03,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/act_func_testbench.sv 
+# -- Compiling package act_func_testbench_sv_unit
+# -- Importing package definitions
+# -- Compiling module act_func_testbench
+# 
+# Top level modules:
+# 	act_func_testbench
+# End time: 00:08:43 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 00:08:44 on May 03,2022, Elapsed time: 0:01:40
+# Errors: 0, Warnings: 5
 # vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 13:24:10 on Apr 23,2022
+# Start time: 00:08:44 on May 03,2022
 # Loading sv_std.std
 # Loading work.definitions
 # Loading work.testbench_sv_unit
@@ -984,10 +656,10 @@ do run.do
 # Loading work.mac_unit_sv_unit
 # Loading work.MacUnit
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 146
+# ** Warning: (vsim-3722) ../neural_network.sv(146): [TFMPC] - Missing connection for port 'data_in'.
 # ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 156
 # 4
 # 12
 # 12
@@ -998,9 +670,15 @@ do run.do
 # act_a_fx
 # act_b_fx
 # fx_prod
-# 1
 # 0
-# 1
+# 0
+# 0
+# 0
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: victo  Hostname: GILGAMESH  ProcessID: 10412
+#           Attempting to use alternate WLF file "./wlftf0x2e2".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftf0x2e2
 # 0 ns
 # 200 ns
 do run.do
@@ -1008,34 +686,34 @@ do run.do
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:34:10 on Apr 23,2022
+# Start time: 00:10:13 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
 # -- Compiling package definitions
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:34:10 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:10:13 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:34:10 on Apr 23,2022
+# Start time: 00:10:13 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
 # -- Compiling package isa
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:34:10 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:10:13 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:34:10 on Apr 23,2022
+# Start time: 00:10:13 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
 # -- Compiling module Memory
 # 
 # Top level modules:
 # 	Memory
-# End time: 13:34:10 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:10:13 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:34:10 on Apr 23,2022
+# Start time: 00:10:13 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
 # -- Compiling package activation_function_sv_unit
 # -- Importing package definitions
@@ -1043,42 +721,40 @@ do run.do
 # 
 # Top level modules:
 # 	ActivationFunction
-# End time: 13:34:10 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:10:13 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:34:10 on Apr 23,2022
+# Start time: 00:10:13 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
 # -- Compiling module Adder
 # 
 # Top level modules:
 # 	Adder
-# End time: 13:34:10 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:10:13 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:34:10 on Apr 23,2022
+# Start time: 00:10:13 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
 # -- Compiling module AdressRegister
 # 
 # Top level modules:
 # 	AdressRegister
-# End time: 13:34:11 on Apr 23,2022, Elapsed time: 0:00:01
+# End time: 00:10:13 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:34:11 on Apr 23,2022
+# Start time: 00:10:13 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # -- Compiling package controller_sv_unit
 # -- Importing package definitions
 # -- Importing package isa
 # -- Compiling module Controller
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # 
 # Top level modules:
 # 	Controller
-# End time: 13:34:11 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
+# End time: 00:10:13 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:34:11 on Apr 23,2022
+# Start time: 00:10:13 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
 # -- Compiling package mac_unit_sv_unit
 # -- Importing package definitions
@@ -1086,19 +762,19 @@ do run.do
 # 
 # Top level modules:
 # 	MacUnit
-# End time: 13:34:11 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:10:14 on May 03,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:34:11 on Apr 23,2022
+# Start time: 00:10:14 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
 # -- Compiling module Serializer
 # 
 # Top level modules:
 # 	Serializer
-# End time: 13:34:11 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:10:14 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:34:11 on Apr 23,2022
+# Start time: 00:10:14 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
 # -- Compiling package neural_network_sv_unit
 # -- Importing package definitions
@@ -1106,10 +782,10 @@ do run.do
 # 
 # Top level modules:
 # 	NeuralNetwork
-# End time: 13:34:11 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:10:14 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:34:11 on Apr 23,2022
+# Start time: 00:10:14 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
 # -- Compiling package testbench_sv_unit
 # -- Importing package definitions
@@ -1117,12 +793,23 @@ do run.do
 # 
 # Top level modules:
 # 	testbench
-# End time: 13:34:11 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:10:14 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 13:34:12 on Apr 23,2022, Elapsed time: 0:10:02
-# Errors: 0, Warnings: 3
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 00:10:14 on May 03,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/act_func_testbench.sv 
+# -- Compiling package act_func_testbench_sv_unit
+# -- Importing package definitions
+# -- Compiling module act_func_testbench
+# 
+# Top level modules:
+# 	act_func_testbench
+# End time: 00:10:14 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 00:10:15 on May 03,2022, Elapsed time: 0:01:31
+# Errors: 0, Warnings: 5
 # vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 13:34:12 on Apr 23,2022
+# Start time: 00:10:15 on May 03,2022
 # Loading sv_std.std
 # Loading work.definitions
 # Loading work.testbench_sv_unit
@@ -1140,10 +827,10 @@ do run.do
 # Loading work.mac_unit_sv_unit
 # Loading work.MacUnit
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 146
+# ** Warning: (vsim-3722) ../neural_network.sv(146): [TFMPC] - Missing connection for port 'data_in'.
 # ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 156
 # 4
 # 12
 # 12
@@ -1154,9 +841,15 @@ do run.do
 # act_a_fx
 # act_b_fx
 # fx_prod
-# 1
 # 0
-# 1
+# 0
+# 0
+# 0
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: victo  Hostname: GILGAMESH  ProcessID: 10412
+#           Attempting to use alternate WLF file "./wlft5xzski".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft5xzski
 # 0 ns
 # 200 ns
 do run.do
@@ -1164,34 +857,34 @@ do run.do
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:26 on Apr 23,2022
+# Start time: 00:13:58 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
 # -- Compiling package definitions
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:36:26 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:13:58 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:26 on Apr 23,2022
+# Start time: 00:13:58 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
 # -- Compiling package isa
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:36:26 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:13:58 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:26 on Apr 23,2022
+# Start time: 00:13:58 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
 # -- Compiling module Memory
 # 
 # Top level modules:
 # 	Memory
-# End time: 13:36:26 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:13:58 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:26 on Apr 23,2022
+# Start time: 00:13:58 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
 # -- Compiling package activation_function_sv_unit
 # -- Importing package definitions
@@ -1199,42 +892,40 @@ do run.do
 # 
 # Top level modules:
 # 	ActivationFunction
-# End time: 13:36:27 on Apr 23,2022, Elapsed time: 0:00:01
+# End time: 00:13:58 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:27 on Apr 23,2022
+# Start time: 00:13:58 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
 # -- Compiling module Adder
 # 
 # Top level modules:
 # 	Adder
-# End time: 13:36:27 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:13:59 on May 03,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:27 on Apr 23,2022
+# Start time: 00:13:59 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
 # -- Compiling module AdressRegister
 # 
 # Top level modules:
 # 	AdressRegister
-# End time: 13:36:27 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:13:59 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:27 on Apr 23,2022
+# Start time: 00:13:59 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # -- Compiling package controller_sv_unit
 # -- Importing package definitions
 # -- Importing package isa
 # -- Compiling module Controller
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # 
 # Top level modules:
 # 	Controller
-# End time: 13:36:27 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
+# End time: 00:13:59 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:27 on Apr 23,2022
+# Start time: 00:13:59 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
 # -- Compiling package mac_unit_sv_unit
 # -- Importing package definitions
@@ -1242,19 +933,19 @@ do run.do
 # 
 # Top level modules:
 # 	MacUnit
-# End time: 13:36:27 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:13:59 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:27 on Apr 23,2022
+# Start time: 00:13:59 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
 # -- Compiling module Serializer
 # 
 # Top level modules:
 # 	Serializer
-# End time: 13:36:27 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:13:59 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:27 on Apr 23,2022
+# Start time: 00:13:59 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
 # -- Compiling package neural_network_sv_unit
 # -- Importing package definitions
@@ -1262,10 +953,10 @@ do run.do
 # 
 # Top level modules:
 # 	NeuralNetwork
-# End time: 13:36:27 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:13:59 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:36:27 on Apr 23,2022
+# Start time: 00:13:59 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
 # -- Compiling package testbench_sv_unit
 # -- Importing package definitions
@@ -1273,12 +964,23 @@ do run.do
 # 
 # Top level modules:
 # 	testbench
-# End time: 13:36:27 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 00:13:59 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 13:36:27 on Apr 23,2022, Elapsed time: 0:02:15
-# Errors: 0, Warnings: 3
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 00:13:59 on May 03,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/act_func_testbench.sv 
+# -- Compiling package act_func_testbench_sv_unit
+# -- Importing package definitions
+# -- Compiling module act_func_testbench
+# 
+# Top level modules:
+# 	act_func_testbench
+# End time: 00:14:00 on May 03,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 00:14:00 on May 03,2022, Elapsed time: 0:03:45
+# Errors: 0, Warnings: 5
 # vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 13:36:28 on Apr 23,2022
+# Start time: 00:14:00 on May 03,2022
 # Loading sv_std.std
 # Loading work.definitions
 # Loading work.testbench_sv_unit
@@ -1296,10 +998,10 @@ do run.do
 # Loading work.mac_unit_sv_unit
 # Loading work.MacUnit
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 146
+# ** Warning: (vsim-3722) ../neural_network.sv(146): [TFMPC] - Missing connection for port 'data_in'.
 # ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 156
 # 4
 # 12
 # 12
@@ -1310,56 +1012,50 @@ do run.do
 # act_a_fx
 # act_b_fx
 # fx_prod
-# 1
 # 0
-# 1
+# 0
+# 0
+# 0
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: victo  Hostname: GILGAMESH  ProcessID: 10412
+#           Attempting to use alternate WLF file "./wlftkziw43".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftkziw43
 # 0 ns
 # 200 ns
-# WARNING: No extended dataflow license exists
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
 do run.do
-# Error 31: Unable to unlink file "C:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation/rtl_work/_lib.qdb".
-# Error 31: Unable to unlink file "C:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation/rtl_work/_lib1_0.qdb".
-# Error 31: Unable to unlink file "C:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation/rtl_work/_lib1_0.qpg".
-# Error 31: Unable to unlink file "C:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation/rtl_work/_lib1_0.qtl".
-# Error 133: Unable to remove directory "C:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation/rtl_work".
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:48:05 on Apr 23,2022
+# Start time: 01:19:02 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
 # -- Compiling package definitions
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:48:05 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:02 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:48:05 on Apr 23,2022
+# Start time: 01:19:02 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
 # -- Compiling package isa
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:48:05 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:02 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:48:05 on Apr 23,2022
+# Start time: 01:19:02 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
 # -- Compiling module Memory
 # 
 # Top level modules:
 # 	Memory
-# End time: 13:48:05 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:03 on May 03,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:48:05 on Apr 23,2022
+# Start time: 01:19:03 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
 # -- Compiling package activation_function_sv_unit
 # -- Importing package definitions
@@ -1367,42 +1063,40 @@ do run.do
 # 
 # Top level modules:
 # 	ActivationFunction
-# End time: 13:48:05 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:03 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:48:05 on Apr 23,2022
+# Start time: 01:19:03 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
 # -- Compiling module Adder
 # 
 # Top level modules:
 # 	Adder
-# End time: 13:48:05 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:03 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:48:05 on Apr 23,2022
+# Start time: 01:19:03 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
 # -- Compiling module AdressRegister
 # 
 # Top level modules:
 # 	AdressRegister
-# End time: 13:48:05 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:03 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:48:05 on Apr 23,2022
+# Start time: 01:19:03 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # -- Compiling package controller_sv_unit
 # -- Importing package definitions
 # -- Importing package isa
 # -- Compiling module Controller
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # 
 # Top level modules:
 # 	Controller
-# End time: 13:48:05 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
+# End time: 01:19:03 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:48:05 on Apr 23,2022
+# Start time: 01:19:03 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
 # -- Compiling package mac_unit_sv_unit
 # -- Importing package definitions
@@ -1410,19 +1104,19 @@ do run.do
 # 
 # Top level modules:
 # 	MacUnit
-# End time: 13:48:05 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:03 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:48:05 on Apr 23,2022
+# Start time: 01:19:03 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
 # -- Compiling module Serializer
 # 
 # Top level modules:
 # 	Serializer
-# End time: 13:48:06 on Apr 23,2022, Elapsed time: 0:00:01
+# End time: 01:19:03 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:48:06 on Apr 23,2022
+# Start time: 01:19:04 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
 # -- Compiling package neural_network_sv_unit
 # -- Importing package definitions
@@ -1430,10 +1124,10 @@ do run.do
 # 
 # Top level modules:
 # 	NeuralNetwork
-# End time: 13:48:06 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:04 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:48:06 on Apr 23,2022
+# Start time: 01:19:04 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
 # -- Compiling package testbench_sv_unit
 # -- Importing package definitions
@@ -1441,12 +1135,23 @@ do run.do
 # 
 # Top level modules:
 # 	testbench
-# End time: 13:48:06 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:04 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 13:48:07 on Apr 23,2022, Elapsed time: 0:11:39
-# Errors: 0, Warnings: 3
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:19:04 on May 03,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/act_func_testbench.sv 
+# -- Compiling package act_func_testbench_sv_unit
+# -- Importing package definitions
+# -- Compiling module act_func_testbench
+# 
+# Top level modules:
+# 	act_func_testbench
+# End time: 01:19:04 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 01:19:05 on May 03,2022, Elapsed time: 1:05:05
+# Errors: 0, Warnings: 5
 # vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 13:48:07 on Apr 23,2022
+# Start time: 01:19:05 on May 03,2022
 # Loading sv_std.std
 # Loading work.definitions
 # Loading work.testbench_sv_unit
@@ -1464,10 +1169,10 @@ do run.do
 # Loading work.mac_unit_sv_unit
 # Loading work.MacUnit
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 146
+# ** Warning: (vsim-3722) ../neural_network.sv(146): [TFMPC] - Missing connection for port 'data_in'.
 # ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 156
 # 4
 # 12
 # 12
@@ -1478,9 +1183,15 @@ do run.do
 # act_a_fx
 # act_b_fx
 # fx_prod
-# 1
 # 0
-# 1
+# 0
+# 0
+# 0
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: victo  Hostname: GILGAMESH  ProcessID: 10412
+#           Attempting to use alternate WLF file "./wlfttvgit3".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfttvgit3
 # 0 ns
 # 200 ns
 do run.do
@@ -1488,34 +1199,34 @@ do run.do
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:11 on Apr 23,2022
+# Start time: 01:19:14 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
 # -- Compiling package definitions
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:50:11 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:14 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:11 on Apr 23,2022
+# Start time: 01:19:14 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
 # -- Compiling package isa
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:50:11 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:14 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:11 on Apr 23,2022
+# Start time: 01:19:14 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
 # -- Compiling module Memory
 # 
 # Top level modules:
 # 	Memory
-# End time: 13:50:11 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:15 on May 03,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:11 on Apr 23,2022
+# Start time: 01:19:15 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
 # -- Compiling package activation_function_sv_unit
 # -- Importing package definitions
@@ -1523,42 +1234,40 @@ do run.do
 # 
 # Top level modules:
 # 	ActivationFunction
-# End time: 13:50:11 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:15 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:11 on Apr 23,2022
+# Start time: 01:19:15 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
 # -- Compiling module Adder
 # 
 # Top level modules:
 # 	Adder
-# End time: 13:50:11 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:15 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:11 on Apr 23,2022
+# Start time: 01:19:15 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
 # -- Compiling module AdressRegister
 # 
 # Top level modules:
 # 	AdressRegister
-# End time: 13:50:11 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:15 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:11 on Apr 23,2022
+# Start time: 01:19:15 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # -- Compiling package controller_sv_unit
 # -- Importing package definitions
 # -- Importing package isa
 # -- Compiling module Controller
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # 
 # Top level modules:
 # 	Controller
-# End time: 13:50:11 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
+# End time: 01:19:15 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:11 on Apr 23,2022
+# Start time: 01:19:15 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
 # -- Compiling package mac_unit_sv_unit
 # -- Importing package definitions
@@ -1566,19 +1275,19 @@ do run.do
 # 
 # Top level modules:
 # 	MacUnit
-# End time: 13:50:11 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:15 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:11 on Apr 23,2022
+# Start time: 01:19:15 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
 # -- Compiling module Serializer
 # 
 # Top level modules:
 # 	Serializer
-# End time: 13:50:11 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:15 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:12 on Apr 23,2022
+# Start time: 01:19:15 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
 # -- Compiling package neural_network_sv_unit
 # -- Importing package definitions
@@ -1586,10 +1295,10 @@ do run.do
 # 
 # Top level modules:
 # 	NeuralNetwork
-# End time: 13:50:12 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:15 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:12 on Apr 23,2022
+# Start time: 01:19:15 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
 # -- Compiling package testbench_sv_unit
 # -- Importing package definitions
@@ -1597,12 +1306,23 @@ do run.do
 # 
 # Top level modules:
 # 	testbench
-# End time: 13:50:12 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:19:15 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 13:50:13 on Apr 23,2022, Elapsed time: 0:02:06
-# Errors: 0, Warnings: 3
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:19:16 on May 03,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/act_func_testbench.sv 
+# -- Compiling package act_func_testbench_sv_unit
+# -- Importing package definitions
+# -- Compiling module act_func_testbench
+# 
+# Top level modules:
+# 	act_func_testbench
+# End time: 01:19:16 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 01:19:16 on May 03,2022, Elapsed time: 0:00:11
+# Errors: 0, Warnings: 5
 # vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 13:50:13 on Apr 23,2022
+# Start time: 01:19:16 on May 03,2022
 # Loading sv_std.std
 # Loading work.definitions
 # Loading work.testbench_sv_unit
@@ -1620,10 +1340,10 @@ do run.do
 # Loading work.mac_unit_sv_unit
 # Loading work.MacUnit
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 146
+# ** Warning: (vsim-3722) ../neural_network.sv(146): [TFMPC] - Missing connection for port 'data_in'.
 # ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 156
 # 4
 # 12
 # 12
@@ -1634,9 +1354,15 @@ do run.do
 # act_a_fx
 # act_b_fx
 # fx_prod
-# 1
 # 0
-# 1
+# 0
+# 0
+# 0
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: victo  Hostname: GILGAMESH  ProcessID: 10412
+#           Attempting to use alternate WLF file "./wlft2a6h34".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft2a6h34
 # 0 ns
 # 200 ns
 do run.do
@@ -1644,34 +1370,34 @@ do run.do
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:58 on Apr 23,2022
+# Start time: 01:31:10 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
 # -- Compiling package definitions
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:50:58 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:31:10 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:58 on Apr 23,2022
+# Start time: 01:31:10 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
 # -- Compiling package isa
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:50:58 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:31:10 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:58 on Apr 23,2022
+# Start time: 01:31:10 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
 # -- Compiling module Memory
 # 
 # Top level modules:
 # 	Memory
-# End time: 13:50:58 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:31:10 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:58 on Apr 23,2022
+# Start time: 01:31:10 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
 # -- Compiling package activation_function_sv_unit
 # -- Importing package definitions
@@ -1679,42 +1405,40 @@ do run.do
 # 
 # Top level modules:
 # 	ActivationFunction
-# End time: 13:50:58 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:31:10 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:59 on Apr 23,2022
+# Start time: 01:31:10 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
 # -- Compiling module Adder
 # 
 # Top level modules:
 # 	Adder
-# End time: 13:50:59 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:31:10 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:59 on Apr 23,2022
+# Start time: 01:31:10 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
 # -- Compiling module AdressRegister
 # 
 # Top level modules:
 # 	AdressRegister
-# End time: 13:50:59 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:31:10 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:59 on Apr 23,2022
+# Start time: 01:31:10 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # -- Compiling package controller_sv_unit
 # -- Importing package definitions
 # -- Importing package isa
 # -- Compiling module Controller
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # 
 # Top level modules:
 # 	Controller
-# End time: 13:50:59 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
+# End time: 01:31:10 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:59 on Apr 23,2022
+# Start time: 01:31:10 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
 # -- Compiling package mac_unit_sv_unit
 # -- Importing package definitions
@@ -1722,19 +1446,19 @@ do run.do
 # 
 # Top level modules:
 # 	MacUnit
-# End time: 13:50:59 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:31:11 on May 03,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:59 on Apr 23,2022
+# Start time: 01:31:11 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
 # -- Compiling module Serializer
 # 
 # Top level modules:
 # 	Serializer
-# End time: 13:50:59 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:31:11 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:59 on Apr 23,2022
+# Start time: 01:31:11 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
 # -- Compiling package neural_network_sv_unit
 # -- Importing package definitions
@@ -1742,10 +1466,10 @@ do run.do
 # 
 # Top level modules:
 # 	NeuralNetwork
-# End time: 13:50:59 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:31:11 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:50:59 on Apr 23,2022
+# Start time: 01:31:11 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
 # -- Compiling package testbench_sv_unit
 # -- Importing package definitions
@@ -1753,12 +1477,23 @@ do run.do
 # 
 # Top level modules:
 # 	testbench
-# End time: 13:50:59 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:31:11 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 13:51:00 on Apr 23,2022, Elapsed time: 0:00:47
-# Errors: 0, Warnings: 3
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:31:11 on May 03,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/act_func_testbench.sv 
+# -- Compiling package act_func_testbench_sv_unit
+# -- Importing package definitions
+# -- Compiling module act_func_testbench
+# 
+# Top level modules:
+# 	act_func_testbench
+# End time: 01:31:11 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 01:31:11 on May 03,2022, Elapsed time: 0:11:55
+# Errors: 0, Warnings: 5
 # vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 13:51:00 on Apr 23,2022
+# Start time: 01:31:12 on May 03,2022
 # Loading sv_std.std
 # Loading work.definitions
 # Loading work.testbench_sv_unit
@@ -1776,10 +1511,10 @@ do run.do
 # Loading work.mac_unit_sv_unit
 # Loading work.MacUnit
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 146
+# ** Warning: (vsim-3722) ../neural_network.sv(146): [TFMPC] - Missing connection for port 'data_in'.
 # ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 156
 # 4
 # 12
 # 12
@@ -1790,9 +1525,15 @@ do run.do
 # act_a_fx
 # act_b_fx
 # fx_prod
-# 1
 # 0
-# 1
+# 0
+# 0
+# 0
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: victo  Hostname: GILGAMESH  ProcessID: 10412
+#           Attempting to use alternate WLF file "./wlftmzj3ca".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftmzj3ca
 # 0 ns
 # 200 ns
 do run.do
@@ -1800,34 +1541,34 @@ do run.do
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:51:07 on Apr 23,2022
+# Start time: 01:32:09 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
 # -- Compiling package definitions
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:51:07 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:09 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:51:07 on Apr 23,2022
+# Start time: 01:32:09 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
 # -- Compiling package isa
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:51:07 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:09 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:51:07 on Apr 23,2022
+# Start time: 01:32:09 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
 # -- Compiling module Memory
 # 
 # Top level modules:
 # 	Memory
-# End time: 13:51:07 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:09 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:51:07 on Apr 23,2022
+# Start time: 01:32:09 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
 # -- Compiling package activation_function_sv_unit
 # -- Importing package definitions
@@ -1835,42 +1576,40 @@ do run.do
 # 
 # Top level modules:
 # 	ActivationFunction
-# End time: 13:51:07 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:09 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:51:07 on Apr 23,2022
+# Start time: 01:32:09 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
 # -- Compiling module Adder
 # 
 # Top level modules:
 # 	Adder
-# End time: 13:51:07 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:09 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:51:07 on Apr 23,2022
+# Start time: 01:32:09 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
 # -- Compiling module AdressRegister
 # 
 # Top level modules:
 # 	AdressRegister
-# End time: 13:51:07 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:09 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:51:07 on Apr 23,2022
+# Start time: 01:32:09 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # -- Compiling package controller_sv_unit
 # -- Importing package definitions
 # -- Importing package isa
 # -- Compiling module Controller
-# ** Warning: ../controller.sv(8): (vlog-13314) Defaulting port 'inst_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # 
 # Top level modules:
 # 	Controller
-# End time: 13:51:07 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
+# End time: 01:32:09 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:51:07 on Apr 23,2022
+# Start time: 01:32:09 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
 # -- Compiling package mac_unit_sv_unit
 # -- Importing package definitions
@@ -1878,19 +1617,19 @@ do run.do
 # 
 # Top level modules:
 # 	MacUnit
-# End time: 13:51:07 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:09 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:51:08 on Apr 23,2022
+# Start time: 01:32:10 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
 # -- Compiling module Serializer
 # 
 # Top level modules:
 # 	Serializer
-# End time: 13:51:08 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:10 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:51:08 on Apr 23,2022
+# Start time: 01:32:10 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
 # -- Compiling package neural_network_sv_unit
 # -- Importing package definitions
@@ -1898,10 +1637,10 @@ do run.do
 # 
 # Top level modules:
 # 	NeuralNetwork
-# End time: 13:51:08 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:10 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 13:51:08 on Apr 23,2022
+# Start time: 01:32:10 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
 # -- Compiling package testbench_sv_unit
 # -- Importing package definitions
@@ -1909,12 +1648,23 @@ do run.do
 # 
 # Top level modules:
 # 	testbench
-# End time: 13:51:08 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:10 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 13:51:08 on Apr 23,2022, Elapsed time: 0:00:08
-# Errors: 0, Warnings: 3
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:32:10 on May 03,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/act_func_testbench.sv 
+# -- Compiling package act_func_testbench_sv_unit
+# -- Importing package definitions
+# -- Compiling module act_func_testbench
+# 
+# Top level modules:
+# 	act_func_testbench
+# End time: 01:32:10 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 01:32:11 on May 03,2022, Elapsed time: 0:00:59
+# Errors: 0, Warnings: 5
 # vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 13:51:08 on Apr 23,2022
+# Start time: 01:32:11 on May 03,2022
 # Loading sv_std.std
 # Loading work.definitions
 # Loading work.testbench_sv_unit
@@ -1932,10 +1682,10 @@ do run.do
 # Loading work.mac_unit_sv_unit
 # Loading work.MacUnit
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 146
+# ** Warning: (vsim-3722) ../neural_network.sv(146): [TFMPC] - Missing connection for port 'data_in'.
 # ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 156
 # 4
 # 12
 # 12
@@ -1946,56 +1696,50 @@ do run.do
 # act_a_fx
 # act_b_fx
 # fx_prod
-# 1
 # 0
-# 1
+# 0
+# 0
+# 0
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: victo  Hostname: GILGAMESH  ProcessID: 10412
+#           Attempting to use alternate WLF file "./wlftzhjhna".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftzhjhna
 # 0 ns
 # 200 ns
-# WARNING: No extended dataflow license exists
-# WARNING: No extended dataflow license exists
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
 do run.do
-# Error 31: Unable to unlink file "C:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation/rtl_work/_lib.qdb".
-# Error 31: Unable to unlink file "C:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation/rtl_work/_lib1_0.qdb".
-# Error 31: Unable to unlink file "C:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation/rtl_work/_lib1_0.qpg".
-# Error 31: Unable to unlink file "C:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation/rtl_work/_lib1_0.qtl".
-# Error 133: Unable to remove directory "C:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation/rtl_work".
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:06:33 on Apr 23,2022
+# Start time: 01:32:37 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
 # -- Compiling package definitions
 # 
 # Top level modules:
 # 	--none--
-# End time: 14:06:34 on Apr 23,2022, Elapsed time: 0:00:01
+# End time: 01:32:37 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:06:34 on Apr 23,2022
+# Start time: 01:32:37 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
 # -- Compiling package isa
 # 
 # Top level modules:
 # 	--none--
-# End time: 14:06:34 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:37 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:06:34 on Apr 23,2022
+# Start time: 01:32:37 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
 # -- Compiling module Memory
 # 
 # Top level modules:
 # 	Memory
-# End time: 14:06:34 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:38 on May 03,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:06:34 on Apr 23,2022
+# Start time: 01:32:38 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
 # -- Compiling package activation_function_sv_unit
 # -- Importing package definitions
@@ -2003,28 +1747,28 @@ do run.do
 # 
 # Top level modules:
 # 	ActivationFunction
-# End time: 14:06:34 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:38 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:06:34 on Apr 23,2022
+# Start time: 01:32:38 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
 # -- Compiling module Adder
 # 
 # Top level modules:
 # 	Adder
-# End time: 14:06:34 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:38 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:06:34 on Apr 23,2022
+# Start time: 01:32:38 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
 # -- Compiling module AdressRegister
 # 
 # Top level modules:
 # 	AdressRegister
-# End time: 14:06:34 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:38 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:06:34 on Apr 23,2022
+# Start time: 01:32:38 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
 # -- Compiling package controller_sv_unit
 # -- Importing package definitions
@@ -2033,10 +1777,10 @@ do run.do
 # 
 # Top level modules:
 # 	Controller
-# End time: 14:06:34 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:38 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:06:34 on Apr 23,2022
+# Start time: 01:32:38 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
 # -- Compiling package mac_unit_sv_unit
 # -- Importing package definitions
@@ -2044,19 +1788,19 @@ do run.do
 # 
 # Top level modules:
 # 	MacUnit
-# End time: 14:06:34 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:38 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:06:34 on Apr 23,2022
+# Start time: 01:32:38 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
 # -- Compiling module Serializer
 # 
 # Top level modules:
 # 	Serializer
-# End time: 14:06:34 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:38 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:06:34 on Apr 23,2022
+# Start time: 01:32:38 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
 # -- Compiling package neural_network_sv_unit
 # -- Importing package definitions
@@ -2064,10 +1808,10 @@ do run.do
 # 
 # Top level modules:
 # 	NeuralNetwork
-# End time: 14:06:34 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:38 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:06:35 on Apr 23,2022
+# Start time: 01:32:38 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
 # -- Compiling package testbench_sv_unit
 # -- Importing package definitions
@@ -2075,12 +1819,23 @@ do run.do
 # 
 # Top level modules:
 # 	testbench
-# End time: 14:06:35 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:32:39 on May 03,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# End time: 14:06:36 on Apr 23,2022, Elapsed time: 0:15:28
-# Errors: 0, Warnings: 3
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 01:32:39 on May 03,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/act_func_testbench.sv 
+# -- Compiling package act_func_testbench_sv_unit
+# -- Importing package definitions
+# -- Compiling module act_func_testbench
+# 
+# Top level modules:
+# 	act_func_testbench
+# End time: 01:32:39 on May 03,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 01:32:40 on May 03,2022, Elapsed time: 0:00:29
+# Errors: 0, Warnings: 5
 # vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 14:06:36 on Apr 23,2022
+# Start time: 01:32:40 on May 03,2022
 # Loading sv_std.std
 # Loading work.definitions
 # Loading work.testbench_sv_unit
@@ -2098,10 +1853,10 @@ do run.do
 # Loading work.mac_unit_sv_unit
 # Loading work.MacUnit
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 146
+# ** Warning: (vsim-3722) ../neural_network.sv(146): [TFMPC] - Missing connection for port 'data_in'.
 # ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
+#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 156
 # 4
 # 12
 # 12
@@ -2112,9 +1867,15 @@ do run.do
 # act_a_fx
 # act_b_fx
 # fx_prod
-# 1
 # 0
-# 1
+# 0
+# 0
+# 0
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: victo  Hostname: GILGAMESH  ProcessID: 10412
+#           Attempting to use alternate WLF file "./wlftf7ys58".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftf7ys58
 # 0 ns
 # 200 ns
 do run.do
@@ -2122,34 +1883,34 @@ do run.do
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:03 on Apr 23,2022
+# Start time: 01:33:14 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
 # -- Compiling package definitions
 # 
 # Top level modules:
 # 	--none--
-# End time: 14:09:03 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:33:14 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:03 on Apr 23,2022
+# Start time: 01:33:14 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
 # -- Compiling package isa
 # 
 # Top level modules:
 # 	--none--
-# End time: 14:09:03 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:33:14 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:03 on Apr 23,2022
+# Start time: 01:33:14 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
 # -- Compiling module Memory
 # 
 # Top level modules:
 # 	Memory
-# End time: 14:09:03 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:33:15 on May 03,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:03 on Apr 23,2022
+# Start time: 01:33:15 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
 # -- Compiling package activation_function_sv_unit
 # -- Importing package definitions
@@ -2157,28 +1918,28 @@ do run.do
 # 
 # Top level modules:
 # 	ActivationFunction
-# End time: 14:09:03 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:33:15 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:03 on Apr 23,2022
+# Start time: 01:33:15 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
 # -- Compiling module Adder
 # 
 # Top level modules:
 # 	Adder
-# End time: 14:09:03 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:33:15 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:03 on Apr 23,2022
+# Start time: 01:33:15 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
 # -- Compiling module AdressRegister
 # 
 # Top level modules:
 # 	AdressRegister
-# End time: 14:09:03 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:33:15 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:03 on Apr 23,2022
+# Start time: 01:33:15 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
 # -- Compiling package controller_sv_unit
 # -- Importing package definitions
@@ -2187,10 +1948,10 @@ do run.do
 # 
 # Top level modules:
 # 	Controller
-# End time: 14:09:04 on Apr 23,2022, Elapsed time: 0:00:01
+# End time: 01:33:15 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:04 on Apr 23,2022
+# Start time: 01:33:15 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
 # -- Compiling package mac_unit_sv_unit
 # -- Importing package definitions
@@ -2198,19 +1959,19 @@ do run.do
 # 
 # Top level modules:
 # 	MacUnit
-# End time: 14:09:04 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:33:15 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:04 on Apr 23,2022
+# Start time: 01:33:15 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
 # -- Compiling module Serializer
 # 
 # Top level modules:
 # 	Serializer
-# End time: 14:09:04 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:33:15 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:04 on Apr 23,2022
+# Start time: 01:33:15 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
 # -- Compiling package neural_network_sv_unit
 # -- Importing package definitions
@@ -2218,10 +1979,10 @@ do run.do
 # 
 # Top level modules:
 # 	NeuralNetwork
-# End time: 14:09:04 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:33:15 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:04 on Apr 23,2022
+# Start time: 01:33:15 on May 03,2022
 # vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
 # -- Compiling package testbench_sv_unit
 # -- Importing package definitions
@@ -2229,1434 +1990,16 @@ do run.do
 # 
 # Top level modules:
 # 	testbench
-# End time: 14:09:04 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 14:09:05 on Apr 23,2022, Elapsed time: 0:02:29
-# Errors: 0, Warnings: 3
-# vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 14:09:05 on Apr 23,2022
-# Loading sv_std.std
-# Loading work.definitions
-# Loading work.testbench_sv_unit
-# Loading work.testbench
-# Loading work.neural_network_sv_unit
-# Loading work.NeuralNetwork
-# Loading work.Memory
-# Loading work.Adder
-# Loading work.Serializer
-# Loading work.activation_function_sv_unit
-# Loading work.ActivationFunction
-# Loading work.isa
-# Loading work.controller_sv_unit
-# Loading work.Controller
-# Loading work.mac_unit_sv_unit
-# Loading work.MacUnit
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
-# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
-# 4
-# 12
-# 12
-# 12
-# unsigned
-# fx
-# fx_prod_full
-# act_a_fx
-# act_b_fx
-# fx_prod
-# 1
-# 0
-# 1
-# 0 ns
-# 200 ns
-do run.do
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:46 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
-# -- Compiling package definitions
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:09:46 on Apr 23,2022, Elapsed time: 0:00:00
+# End time: 01:33:15 on May 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:46 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
-# -- Compiling package isa
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:09:46 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:46 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
-# -- Compiling module Memory
-# 
-# Top level modules:
-# 	Memory
-# End time: 14:09:46 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:46 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
-# -- Compiling package activation_function_sv_unit
+# Start time: 01:33:15 on May 03,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/act_func_testbench.sv 
+# -- Compiling package act_func_testbench_sv_unit
 # -- Importing package definitions
-# -- Compiling module ActivationFunction
+# -- Compiling module act_func_testbench
 # 
 # Top level modules:
-# 	ActivationFunction
-# End time: 14:09:46 on Apr 23,2022, Elapsed time: 0:00:00
+# 	act_func_testbench
+# End time: 01:33:16 on May 03,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:46 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
-# -- Compiling module Adder
-# 
-# Top level modules:
-# 	Adder
-# End time: 14:09:46 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:46 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
-# -- Compiling module AdressRegister
-# 
-# Top level modules:
-# 	AdressRegister
-# End time: 14:09:46 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:46 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# -- Compiling package controller_sv_unit
-# -- Importing package definitions
-# -- Importing package isa
-# -- Compiling module Controller
-# 
-# Top level modules:
-# 	Controller
-# End time: 14:09:46 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:47 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
-# -- Compiling package mac_unit_sv_unit
-# -- Importing package definitions
-# -- Compiling module MacUnit
-# 
-# Top level modules:
-# 	MacUnit
-# End time: 14:09:47 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:47 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
-# -- Compiling module Serializer
-# 
-# Top level modules:
-# 	Serializer
-# End time: 14:09:47 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:47 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
-# -- Compiling package neural_network_sv_unit
-# -- Importing package definitions
-# -- Compiling module NeuralNetwork
-# 
-# Top level modules:
-# 	NeuralNetwork
-# End time: 14:09:47 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:09:47 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
-# -- Compiling package testbench_sv_unit
-# -- Importing package definitions
-# -- Compiling module testbench
-# 
-# Top level modules:
-# 	testbench
-# End time: 14:09:47 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 14:09:47 on Apr 23,2022, Elapsed time: 0:00:42
-# Errors: 0, Warnings: 3
-# vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 14:09:47 on Apr 23,2022
-# Loading sv_std.std
-# Loading work.definitions
-# Loading work.testbench_sv_unit
-# Loading work.testbench
-# Loading work.neural_network_sv_unit
-# Loading work.NeuralNetwork
-# Loading work.Memory
-# Loading work.Adder
-# Loading work.Serializer
-# Loading work.activation_function_sv_unit
-# Loading work.ActivationFunction
-# Loading work.isa
-# Loading work.controller_sv_unit
-# Loading work.Controller
-# Loading work.mac_unit_sv_unit
-# Loading work.MacUnit
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
-# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
-# 4
-# 12
-# 12
-# 12
-# unsigned
-# fx
-# fx_prod_full
-# act_a_fx
-# act_b_fx
-# fx_prod
-# 1
-# 0
-# 1
-# 0 ns
-# 200 ns
-do run.do
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:12:57 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
-# -- Compiling package definitions
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:12:57 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:12:57 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
-# -- Compiling package isa
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:12:57 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:12:57 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
-# -- Compiling module Memory
-# 
-# Top level modules:
-# 	Memory
-# End time: 14:12:57 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:12:57 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
-# -- Compiling package activation_function_sv_unit
-# -- Importing package definitions
-# -- Compiling module ActivationFunction
-# 
-# Top level modules:
-# 	ActivationFunction
-# End time: 14:12:57 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:12:57 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
-# -- Compiling module Adder
-# 
-# Top level modules:
-# 	Adder
-# End time: 14:12:57 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:12:57 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
-# -- Compiling module AdressRegister
-# 
-# Top level modules:
-# 	AdressRegister
-# End time: 14:12:57 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:12:57 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# -- Compiling package controller_sv_unit
-# -- Importing package definitions
-# -- Importing package isa
-# -- Compiling module Controller
-# 
-# Top level modules:
-# 	Controller
-# End time: 14:12:57 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:12:57 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
-# -- Compiling package mac_unit_sv_unit
-# -- Importing package definitions
-# -- Compiling module MacUnit
-# 
-# Top level modules:
-# 	MacUnit
-# End time: 14:12:57 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:12:58 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
-# -- Compiling module Serializer
-# 
-# Top level modules:
-# 	Serializer
-# End time: 14:12:58 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:12:58 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
-# -- Compiling package neural_network_sv_unit
-# -- Importing package definitions
-# -- Compiling module NeuralNetwork
-# 
-# Top level modules:
-# 	NeuralNetwork
-# End time: 14:12:58 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:12:58 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
-# -- Compiling package testbench_sv_unit
-# -- Importing package definitions
-# -- Compiling module testbench
-# 
-# Top level modules:
-# 	testbench
-# End time: 14:12:58 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 14:12:58 on Apr 23,2022, Elapsed time: 0:03:11
-# Errors: 0, Warnings: 3
-# vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 14:12:58 on Apr 23,2022
-# Loading sv_std.std
-# Loading work.definitions
-# Loading work.testbench_sv_unit
-# Loading work.testbench
-# Loading work.neural_network_sv_unit
-# Loading work.NeuralNetwork
-# Loading work.Memory
-# Loading work.Adder
-# Loading work.Serializer
-# Loading work.activation_function_sv_unit
-# Loading work.ActivationFunction
-# Loading work.isa
-# Loading work.controller_sv_unit
-# Loading work.Controller
-# Loading work.mac_unit_sv_unit
-# Loading work.MacUnit
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
-# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
-# 4
-# 12
-# 12
-# 12
-# unsigned
-# fx
-# fx_prod_full
-# act_a_fx
-# act_b_fx
-# fx_prod
-# 1
-# 0
-# 1
-# 0 ns
-# 200 ns
-do run.do
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:15:48 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
-# -- Compiling package definitions
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:15:48 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:15:48 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
-# -- Compiling package isa
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:15:48 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:15:48 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
-# -- Compiling module Memory
-# 
-# Top level modules:
-# 	Memory
-# End time: 14:15:48 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:15:48 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
-# -- Compiling package activation_function_sv_unit
-# -- Importing package definitions
-# -- Compiling module ActivationFunction
-# 
-# Top level modules:
-# 	ActivationFunction
-# End time: 14:15:48 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:15:48 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
-# -- Compiling module Adder
-# 
-# Top level modules:
-# 	Adder
-# End time: 14:15:48 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:15:48 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
-# -- Compiling module AdressRegister
-# 
-# Top level modules:
-# 	AdressRegister
-# End time: 14:15:48 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:15:49 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# ** Error: ../controller.sv(85): (vlog-2730) Undefined variable: 'INST_LOAD_MAC'.
-# End time: 14:15:49 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# ** Error: C:/ProgramFiles/QuartusPrime/20.1.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./run.do line 17
-# C:/ProgramFiles/QuartusPrime/20.1.1/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog -sv -work work +incdir+../ {../controller.sv}"
-do run.do
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:16:14 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
-# -- Compiling package definitions
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:16:14 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:16:14 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
-# -- Compiling package isa
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:16:15 on Apr 23,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:16:15 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
-# -- Compiling module Memory
-# 
-# Top level modules:
-# 	Memory
-# End time: 14:16:15 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:16:15 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
-# -- Compiling package activation_function_sv_unit
-# -- Importing package definitions
-# -- Compiling module ActivationFunction
-# 
-# Top level modules:
-# 	ActivationFunction
-# End time: 14:16:15 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:16:15 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
-# -- Compiling module Adder
-# 
-# Top level modules:
-# 	Adder
-# End time: 14:16:15 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:16:15 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
-# -- Compiling module AdressRegister
-# 
-# Top level modules:
-# 	AdressRegister
-# End time: 14:16:15 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:16:15 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# -- Compiling package controller_sv_unit
-# -- Importing package definitions
-# -- Importing package isa
-# -- Compiling module Controller
-# 
-# Top level modules:
-# 	Controller
-# End time: 14:16:15 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:16:15 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
-# -- Compiling package mac_unit_sv_unit
-# -- Importing package definitions
-# -- Compiling module MacUnit
-# 
-# Top level modules:
-# 	MacUnit
-# End time: 14:16:15 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:16:15 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
-# -- Compiling module Serializer
-# 
-# Top level modules:
-# 	Serializer
-# End time: 14:16:15 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:16:15 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
-# -- Compiling package neural_network_sv_unit
-# -- Importing package definitions
-# -- Compiling module NeuralNetwork
-# 
-# Top level modules:
-# 	NeuralNetwork
-# End time: 14:16:16 on Apr 23,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:16:16 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
-# -- Compiling package testbench_sv_unit
-# -- Importing package definitions
-# -- Compiling module testbench
-# 
-# Top level modules:
-# 	testbench
-# End time: 14:16:16 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 14:16:17 on Apr 23,2022, Elapsed time: 0:03:19
-# Errors: 1, Warnings: 3
-# vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 14:16:17 on Apr 23,2022
-# Loading sv_std.std
-# Loading work.definitions
-# Loading work.testbench_sv_unit
-# Loading work.testbench
-# Loading work.neural_network_sv_unit
-# Loading work.NeuralNetwork
-# Loading work.Memory
-# Loading work.Adder
-# Loading work.Serializer
-# Loading work.activation_function_sv_unit
-# Loading work.ActivationFunction
-# Loading work.isa
-# Loading work.controller_sv_unit
-# Loading work.Controller
-# Loading work.mac_unit_sv_unit
-# Loading work.MacUnit
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
-# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
-# 4
-# 12
-# 12
-# 12
-# unsigned
-# fx
-# fx_prod_full
-# act_a_fx
-# act_b_fx
-# fx_prod
-# 1
-# 0
-# 1
-# 0 ns
-# 200 ns
-do run.do
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:22 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
-# -- Compiling package definitions
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:17:22 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:22 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
-# -- Compiling package isa
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:17:22 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:22 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
-# -- Compiling module Memory
-# 
-# Top level modules:
-# 	Memory
-# End time: 14:17:22 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:22 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
-# -- Compiling package activation_function_sv_unit
-# -- Importing package definitions
-# -- Compiling module ActivationFunction
-# 
-# Top level modules:
-# 	ActivationFunction
-# End time: 14:17:23 on Apr 23,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:23 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
-# -- Compiling module Adder
-# 
-# Top level modules:
-# 	Adder
-# End time: 14:17:23 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:23 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
-# -- Compiling module AdressRegister
-# 
-# Top level modules:
-# 	AdressRegister
-# End time: 14:17:23 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:23 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# ** Error: ../controller.sv(91): (vlog-2730) Undefined variable: 'INST_JMP'.
-# End time: 14:17:23 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# ** Error: C:/ProgramFiles/QuartusPrime/20.1.1/modelsim_ase/win32aloem/vlog failed.
-# Error in macro ./run.do line 17
-# C:/ProgramFiles/QuartusPrime/20.1.1/modelsim_ase/win32aloem/vlog failed.
-#     while executing
-# "vlog -sv -work work +incdir+../ {../controller.sv}"
-do run.do
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:54 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
-# -- Compiling package definitions
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:17:55 on Apr 23,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:55 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
-# -- Compiling package isa
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:17:55 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:55 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
-# -- Compiling module Memory
-# 
-# Top level modules:
-# 	Memory
-# End time: 14:17:55 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:55 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
-# -- Compiling package activation_function_sv_unit
-# -- Importing package definitions
-# -- Compiling module ActivationFunction
-# 
-# Top level modules:
-# 	ActivationFunction
-# End time: 14:17:55 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:55 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
-# -- Compiling module Adder
-# 
-# Top level modules:
-# 	Adder
-# End time: 14:17:55 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:55 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
-# -- Compiling module AdressRegister
-# 
-# Top level modules:
-# 	AdressRegister
-# End time: 14:17:55 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:55 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# -- Compiling package controller_sv_unit
-# -- Importing package definitions
-# -- Importing package isa
-# -- Compiling module Controller
-# 
-# Top level modules:
-# 	Controller
-# End time: 14:17:55 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:55 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
-# -- Compiling package mac_unit_sv_unit
-# -- Importing package definitions
-# -- Compiling module MacUnit
-# 
-# Top level modules:
-# 	MacUnit
-# End time: 14:17:55 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:55 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
-# -- Compiling module Serializer
-# 
-# Top level modules:
-# 	Serializer
-# End time: 14:17:55 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:55 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
-# -- Compiling package neural_network_sv_unit
-# -- Importing package definitions
-# -- Compiling module NeuralNetwork
-# 
-# Top level modules:
-# 	NeuralNetwork
-# End time: 14:17:56 on Apr 23,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:17:56 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
-# -- Compiling package testbench_sv_unit
-# -- Importing package definitions
-# -- Compiling module testbench
-# 
-# Top level modules:
-# 	testbench
-# End time: 14:17:56 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 14:17:57 on Apr 23,2022, Elapsed time: 0:01:40
-# Errors: 1, Warnings: 3
-# vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 14:17:57 on Apr 23,2022
-# Loading sv_std.std
-# Loading work.definitions
-# Loading work.testbench_sv_unit
-# Loading work.testbench
-# Loading work.neural_network_sv_unit
-# Loading work.NeuralNetwork
-# Loading work.Memory
-# Loading work.Adder
-# Loading work.Serializer
-# Loading work.activation_function_sv_unit
-# Loading work.ActivationFunction
-# Loading work.isa
-# Loading work.controller_sv_unit
-# Loading work.Controller
-# Loading work.mac_unit_sv_unit
-# Loading work.MacUnit
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
-# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
-# 4
-# 12
-# 12
-# 12
-# unsigned
-# fx
-# fx_prod_full
-# act_a_fx
-# act_b_fx
-# fx_prod
-# 1
-# 0
-# 1
-# 0 ns
-# 200 ns
-do run.do
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:30:20 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
-# -- Compiling package definitions
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:30:20 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:30:20 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
-# -- Compiling package isa
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:30:20 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:30:20 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
-# -- Compiling module Memory
-# 
-# Top level modules:
-# 	Memory
-# End time: 14:30:20 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:30:20 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
-# -- Compiling package activation_function_sv_unit
-# -- Importing package definitions
-# -- Compiling module ActivationFunction
-# 
-# Top level modules:
-# 	ActivationFunction
-# End time: 14:30:20 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:30:20 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
-# -- Compiling module Adder
-# 
-# Top level modules:
-# 	Adder
-# End time: 14:30:20 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:30:20 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
-# -- Compiling module AdressRegister
-# 
-# Top level modules:
-# 	AdressRegister
-# End time: 14:30:20 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:30:20 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# -- Compiling package controller_sv_unit
-# -- Importing package definitions
-# -- Importing package isa
-# -- Compiling module Controller
-# 
-# Top level modules:
-# 	Controller
-# End time: 14:30:20 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:30:20 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
-# -- Compiling package mac_unit_sv_unit
-# -- Importing package definitions
-# -- Compiling module MacUnit
-# 
-# Top level modules:
-# 	MacUnit
-# End time: 14:30:20 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:30:20 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
-# -- Compiling module Serializer
-# 
-# Top level modules:
-# 	Serializer
-# End time: 14:30:20 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:30:21 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
-# -- Compiling package neural_network_sv_unit
-# -- Importing package definitions
-# -- Compiling module NeuralNetwork
-# 
-# Top level modules:
-# 	NeuralNetwork
-# End time: 14:30:21 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:30:21 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
-# -- Compiling package testbench_sv_unit
-# -- Importing package definitions
-# -- Compiling module testbench
-# 
-# Top level modules:
-# 	testbench
-# End time: 14:30:21 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 14:30:22 on Apr 23,2022, Elapsed time: 0:12:25
-# Errors: 0, Warnings: 3
-# vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 14:30:22 on Apr 23,2022
-# Loading sv_std.std
-# Loading work.definitions
-# Loading work.testbench_sv_unit
-# Loading work.testbench
-# Loading work.neural_network_sv_unit
-# Loading work.NeuralNetwork
-# Loading work.Memory
-# Loading work.Adder
-# Loading work.Serializer
-# Loading work.activation_function_sv_unit
-# Loading work.ActivationFunction
-# Loading work.isa
-# Loading work.controller_sv_unit
-# Loading work.Controller
-# Loading work.mac_unit_sv_unit
-# Loading work.MacUnit
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
-# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
-# 4
-# 12
-# 12
-# 12
-# unsigned
-# fx
-# fx_prod_full
-# act_a_fx
-# act_b_fx
-# fx_prod
-# 0
-# 0
-# 0
-# 0
-# 0 ns
-# 200 ns
-do run.do
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:32:56 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
-# -- Compiling package definitions
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:32:56 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:32:56 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
-# -- Compiling package isa
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:32:56 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:32:56 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
-# -- Compiling module Memory
-# 
-# Top level modules:
-# 	Memory
-# End time: 14:32:56 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:32:56 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
-# -- Compiling package activation_function_sv_unit
-# -- Importing package definitions
-# -- Compiling module ActivationFunction
-# 
-# Top level modules:
-# 	ActivationFunction
-# End time: 14:32:56 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:32:56 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
-# -- Compiling module Adder
-# 
-# Top level modules:
-# 	Adder
-# End time: 14:32:56 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:32:56 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
-# -- Compiling module AdressRegister
-# 
-# Top level modules:
-# 	AdressRegister
-# End time: 14:32:56 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:32:56 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# -- Compiling package controller_sv_unit
-# -- Importing package definitions
-# -- Importing package isa
-# -- Compiling module Controller
-# 
-# Top level modules:
-# 	Controller
-# End time: 14:32:56 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:32:56 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
-# -- Compiling package mac_unit_sv_unit
-# -- Importing package definitions
-# -- Compiling module MacUnit
-# 
-# Top level modules:
-# 	MacUnit
-# End time: 14:32:57 on Apr 23,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:32:57 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
-# -- Compiling module Serializer
-# 
-# Top level modules:
-# 	Serializer
-# End time: 14:32:57 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:32:57 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
-# -- Compiling package neural_network_sv_unit
-# -- Importing package definitions
-# -- Compiling module NeuralNetwork
-# 
-# Top level modules:
-# 	NeuralNetwork
-# End time: 14:32:57 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:32:57 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
-# -- Compiling package testbench_sv_unit
-# -- Importing package definitions
-# -- Compiling module testbench
-# 
-# Top level modules:
-# 	testbench
-# End time: 14:32:57 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 14:32:58 on Apr 23,2022, Elapsed time: 0:02:36
-# Errors: 0, Warnings: 3
-# vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 14:32:58 on Apr 23,2022
-# Loading sv_std.std
-# Loading work.definitions
-# Loading work.testbench_sv_unit
-# Loading work.testbench
-# Loading work.neural_network_sv_unit
-# Loading work.NeuralNetwork
-# Loading work.Memory
-# Loading work.Adder
-# Loading work.Serializer
-# Loading work.activation_function_sv_unit
-# Loading work.ActivationFunction
-# Loading work.isa
-# Loading work.controller_sv_unit
-# Loading work.Controller
-# Loading work.mac_unit_sv_unit
-# Loading work.MacUnit
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
-# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
-# 4
-# 12
-# 12
-# 12
-# unsigned
-# fx
-# fx_prod_full
-# act_a_fx
-# act_b_fx
-# fx_prod
-# 0
-# 0
-# 0
-# 0
-# 0 ns
-# 200 ns
-# WARNING: No extended dataflow license exists
-
-do run.do
-# Error 31: Unable to unlink file "C:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation/rtl_work/_lib.qdb".
-# Error 31: Unable to unlink file "C:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation/rtl_work/_lib1_0.qdb".
-# Error 31: Unable to unlink file "C:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation/rtl_work/_lib1_0.qpg".
-# Error 31: Unable to unlink file "C:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation/rtl_work/_lib1_0.qtl".
-# Error 133: Unable to remove directory "C:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation/rtl_work".
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:33:58 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
-# -- Compiling package definitions
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:33:59 on Apr 23,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:33:59 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
-# -- Compiling package isa
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:33:59 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:33:59 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
-# -- Compiling module Memory
-# 
-# Top level modules:
-# 	Memory
-# End time: 14:33:59 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:33:59 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
-# -- Compiling package activation_function_sv_unit
-# -- Importing package definitions
-# -- Compiling module ActivationFunction
-# 
-# Top level modules:
-# 	ActivationFunction
-# End time: 14:33:59 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:33:59 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
-# -- Compiling module Adder
-# 
-# Top level modules:
-# 	Adder
-# End time: 14:33:59 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:33:59 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
-# -- Compiling module AdressRegister
-# 
-# Top level modules:
-# 	AdressRegister
-# End time: 14:33:59 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:33:59 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# -- Compiling package controller_sv_unit
-# -- Importing package definitions
-# -- Importing package isa
-# -- Compiling module Controller
-# 
-# Top level modules:
-# 	Controller
-# End time: 14:33:59 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:33:59 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
-# -- Compiling package mac_unit_sv_unit
-# -- Importing package definitions
-# -- Compiling module MacUnit
-# 
-# Top level modules:
-# 	MacUnit
-# End time: 14:33:59 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:33:59 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
-# -- Compiling module Serializer
-# 
-# Top level modules:
-# 	Serializer
-# End time: 14:33:59 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:33:59 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
-# -- Compiling package neural_network_sv_unit
-# -- Importing package definitions
-# -- Compiling module NeuralNetwork
-# 
-# Top level modules:
-# 	NeuralNetwork
-# End time: 14:33:59 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:33:59 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
-# -- Compiling package testbench_sv_unit
-# -- Importing package definitions
-# -- Compiling module testbench
-# 
-# Top level modules:
-# 	testbench
-# End time: 14:34:00 on Apr 23,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# End time: 14:34:01 on Apr 23,2022, Elapsed time: 0:01:03
-# Errors: 0, Warnings: 3
-# vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 14:34:01 on Apr 23,2022
-# Loading sv_std.std
-# Loading work.definitions
-# Loading work.testbench_sv_unit
-# Loading work.testbench
-# Loading work.neural_network_sv_unit
-# Loading work.NeuralNetwork
-# Loading work.Memory
-# Loading work.Adder
-# Loading work.Serializer
-# Loading work.activation_function_sv_unit
-# Loading work.ActivationFunction
-# Loading work.isa
-# Loading work.controller_sv_unit
-# Loading work.Controller
-# Loading work.mac_unit_sv_unit
-# Loading work.MacUnit
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
-# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
-# 4
-# 12
-# 12
-# 12
-# unsigned
-# fx
-# fx_prod_full
-# act_a_fx
-# act_b_fx
-# fx_prod
-# 0
-# 0
-# 0
-# 0
-# 0 ns
-# 200 ns
-do run.do
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:34:27 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../definitions.sv 
-# -- Compiling package definitions
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:34:27 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:34:27 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../isa.sv 
-# -- Compiling package isa
-# 
-# Top level modules:
-# 	--none--
-# End time: 14:34:27 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:34:27 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../memory.sv 
-# -- Compiling module Memory
-# 
-# Top level modules:
-# 	Memory
-# End time: 14:34:27 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:34:27 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../activation_function.sv 
-# -- Compiling package activation_function_sv_unit
-# -- Importing package definitions
-# -- Compiling module ActivationFunction
-# 
-# Top level modules:
-# 	ActivationFunction
-# End time: 14:34:27 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:34:27 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../adder.sv 
-# -- Compiling module Adder
-# 
-# Top level modules:
-# 	Adder
-# End time: 14:34:27 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:34:27 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../address_register.sv 
-# -- Compiling module AdressRegister
-# 
-# Top level modules:
-# 	AdressRegister
-# End time: 14:34:28 on Apr 23,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:34:28 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../controller.sv 
-# -- Compiling package controller_sv_unit
-# -- Importing package definitions
-# -- Importing package isa
-# -- Compiling module Controller
-# 
-# Top level modules:
-# 	Controller
-# End time: 14:34:28 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:34:28 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../mac_unit.sv 
-# -- Compiling package mac_unit_sv_unit
-# -- Importing package definitions
-# -- Compiling module MacUnit
-# 
-# Top level modules:
-# 	MacUnit
-# End time: 14:34:28 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:34:28 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../serializer.sv 
-# -- Compiling module Serializer
-# 
-# Top level modules:
-# 	Serializer
-# End time: 14:34:28 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:34:28 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../" ../neural_network.sv 
-# -- Compiling package neural_network_sv_unit
-# -- Importing package definitions
-# -- Compiling module NeuralNetwork
-# 
-# Top level modules:
-# 	NeuralNetwork
-# End time: 14:34:28 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 14:34:28 on Apr 23,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+../testbenches" ../testbenches/testbench.sv 
-# -- Compiling package testbench_sv_unit
-# -- Importing package definitions
-# -- Compiling module testbench
-# 
-# Top level modules:
-# 	testbench
-# End time: 14:34:28 on Apr 23,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 14:34:29 on Apr 23,2022, Elapsed time: 0:00:28
-# Errors: 0, Warnings: 3
-# vsim -t 1ns -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 14:34:29 on Apr 23,2022
-# Loading sv_std.std
-# Loading work.definitions
-# Loading work.testbench_sv_unit
-# Loading work.testbench
-# Loading work.neural_network_sv_unit
-# Loading work.NeuralNetwork
-# Loading work.Memory
-# Loading work.Adder
-# Loading work.Serializer
-# Loading work.activation_function_sv_unit
-# Loading work.ActivationFunction
-# Loading work.isa
-# Loading work.controller_sv_unit
-# Loading work.Controller
-# Loading work.mac_unit_sv_unit
-# Loading work.MacUnit
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_mem'.  Expected 6, found 5.
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/inst_mem File: ../neural_network.sv Line: 144
-# ** Warning: (vsim-3722) ../neural_network.sv(144): [TFMPC] - Missing connection for port 'data_in'.
-# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'inst_write_addr'. The port definition is at: ../controller.sv(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testbench/nn/controller File: ../neural_network.sv Line: 154
-# 4
-# 12
-# 12
-# 12
-# unsigned
-# fx
-# fx_prod_full
-# act_a_fx
-# act_b_fx
-# fx_prod
-# 0
-# 0
-# 0
-# 0
-# 0 ns
-# 200 ns
-# WARNING: No extended dataflow license exists
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# End time: 16:31:19 on Apr 23,2022, Elapsed time: 1:56:50
-# Errors: 0, Warnings: 3

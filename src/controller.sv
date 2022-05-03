@@ -17,6 +17,7 @@ module Controller (
     output reg mac_acc_update,
 
     output reg serializer_update,
+    output reg serializer_shift,
 
     output reg act_input_select,
     output reg act_bypass,
@@ -54,8 +55,6 @@ module Controller (
     wire[$clog2(NU_COUNT)-1:0] mac_addr;
 
     reg looped_instruction;
-    assign looped_instruction = (instruction == prev_instruction);
-
     reg [REPEAT_LENGTH-1:0] repeat_counter, reg_repeat_counter;
 
     reg [MOV_LENGTH-1:0] mov_counter;
@@ -91,6 +90,11 @@ module Controller (
     assign jump_inst_packet = (instruction==INST_JUMP) ? inst_data : 'x;
     assign repeat_inst_packet = (instruction==INST_REPEAT) ? inst_data : 'x;
 
+    assign looped_instruction = (instruction == prev_instruction) | (instruction == INST_REPEAT);
+    assign repeat_counter = (instruction == prev_instruction) ? reg_repeat_counter : 1;
+    assign xy_write_enable = (mov_counter != 0);
+    assign serializer_shift = xy_write_enable;
+
     always_ff @(posedge clk)  begin
         prev_instruction <= instruction;
 
@@ -116,15 +120,11 @@ module Controller (
     end
 
     always_ff @(posedge clk) begin
-        if(~looped_instruction)
-            reg_repeat_counter <= 2;
-        else
+        if (instruction == prev_instruction)
             reg_repeat_counter <= reg_repeat_counter+1;
+        else
+            reg_repeat_counter <= 2;
     end
-
-    assign repeat_counter = looped_instruction ? reg_repeat_counter : 1;
-
-
 
     always_ff @(posedge clk, posedge reset)  begin
         if(reset) begin
@@ -148,7 +148,7 @@ module Controller (
 
         end
     end
-    assign xy_write_enable = (mov_counter != 0);
+    
 
 
     always_comb begin
@@ -314,7 +314,7 @@ module Controller (
                 repeat_update <= 1'b0;
             end
             INST_REPEAT: begin
-                mac_acc_loopback <= prev_mac_acc_loopback;
+                mac_acc_loopback <= 1'b1;
                 mac_acc_update <= prev_mac_acc_update;
                 mac_reg_enable <= prev_mac_reg_enable;
                 mac_x_select <= prev_mac_x_select;

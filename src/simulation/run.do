@@ -20,6 +20,7 @@ vlog -sv -work work +incdir+../ {../serializer.sv}
 vlog -sv -work work +incdir+../ {../neural_network.sv}
 
 vlog -sv -work work +incdir+../testbenches {../testbenches/testbench.sv}
+vlog -sv -work work +incdir+../testbenches {../testbenches/act_func_testbench.sv}
 
 vsim -t 1ns -L rtl_work -L work -voptargs="+acc" testbench
 
