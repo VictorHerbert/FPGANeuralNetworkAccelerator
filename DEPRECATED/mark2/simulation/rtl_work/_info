@@ -1,0 +1,507 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/victo/Desktop/Workspace/FPGANeuralAccelerator/FPGANeuralNetworkAccelerator/src/simulation
+vact_func_testbench
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 DXx4 work 11 definitions 0 22 :WcY@KH?^cTQ>R0nFgcCg3
+DXx4 work 26 act_func_testbench_sv_unit 0 22 ^]8>NU4h_X0QE?YZ1BIL?3
+Z3 !s110 1651682058
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 kAilIz8N@YODTU:R0P@Nc1
+IF[U47=Ahk3;aWmocWnc3n3
+!s105 act_func_testbench_sv_unit
+S1
+R0
+Z5 w1651277728
+Z6 8../testbenches/act_func_testbench.sv
+Z7 F../testbenches/act_func_testbench.sv
+!i122 11
+L0 3 41
+Z8 OV;L;2020.1;71
+31
+Z9 !s108 1651682058.000000
+!s107 ../testbenches/act_func_testbench.sv|
+Z10 !s90 -reportprogress|300|-sv|-work|work|+incdir+../testbenches|../testbenches/act_func_testbench.sv|
+!i113 1
+Z11 o-sv -work work
+Z12 !s92 -sv -work work +incdir+../testbenches
+Z13 tCvgOpt 0
+Xact_func_testbench_sv_unit
+R1
+R2
+R3
+V^]8>NU4h_X0QE?YZ1BIL?3
+r1
+!s85 0
+!i10b 1
+!s100 oHBF:dUHbAnbH3L:lHjU61
+I^]8>NU4h_X0QE?YZ1BIL?3
+!i103 1
+S1
+R0
+R5
+R6
+R7
+!i122 11
+Z14 L0 1 0
+R8
+31
+R9
+Z15 !s107 ../testbenches/act_func_testbench.sv|
+R10
+!i113 1
+R11
+R12
+R13
+Xactivation_function_sv_unit
+R1
+R2
+Z16 !s110 1651682057
+V@5l?Qhn4kX0Vnd4k7Q>NJ2
+r1
+!s85 0
+!i10b 1
+!s100 ;MKHGSSYd6kBhMWk?VoEF1
+I@5l?Qhn4kX0Vnd4k7Q>NJ2
+!i103 1
+S1
+R0
+Z17 w1651256228
+Z18 8../activation_function.sv
+Z19 F../activation_function.sv
+!i122 3
+R14
+R8
+31
+Z20 !s108 1651682057.000000
+Z21 !s107 ../activation_function.sv|
+Z22 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../activation_function.sv|
+!i113 1
+R11
+Z23 !s92 -sv -work work +incdir+../
+R13
+vActivationFunction
+R1
+R2
+DXx4 work 27 activation_function_sv_unit 0 22 @5l?Qhn4kX0Vnd4k7Q>NJ2
+R16
+R4
+r1
+!s85 0
+!i10b 1
+!s100 ]?3BhDoLQz6CTS2LLdYdA1
+I^W8;G:QM_7]Fl]?Q:[P0h0
+!s105 activation_function_sv_unit
+S1
+R0
+R17
+R18
+R19
+!i122 3
+L0 3 38
+R8
+31
+R20
+R21
+R22
+!i113 1
+R11
+R23
+R13
+n@activation@function
+vAdder
+R1
+R16
+!i10b 1
+!s100 ;5[48kQBnH2l2;`^P[b:N3
+Z24 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I^Ej==ZWaUm0ENPR7ODIoO3
+R4
+S1
+R0
+w1649993707
+8../adder.sv
+F../adder.sv
+!i122 4
+Z25 L0 1 20
+R8
+r1
+!s85 0
+31
+R20
+!s107 ../adder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+../|../adder.sv|
+!i113 1
+R11
+R23
+R13
+n@adder
+vAdressRegister
+R1
+R3
+!i10b 1
+!s100 KaYfcB0HcRX9Q@0cPf]o62
+R24
+I[ToeW408KgIFY;:U;z@?]3
+R4
+S1
+R0
+w1646636499
+8../address_register.sv
+F../address_register.sv
+!i122 5
+L0 1 17
+R8
+r1
+!s85 0
+31
+R9
+!s107 ../address_register.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+../|../address_register.sv|
+!i113 1
+R11
+R23
+R13
+n@adress@register
+vController
+R1
+R2
+Z26 DXx4 work 3 isa 0 22 ?zIk>d[m1^dW9^6O6iPPO3
+DXx4 work 18 controller_sv_unit 0 22 E[a4o>H??3Xb:QHDVPImH2
+R3
+R4
+r1
+!s85 0
+!i10b 1
+!s100 zhazzie]fOE<<Jbb6^X8U1
+IV_lPQ93`Eh:IGWH[^LJCW1
+!s105 controller_sv_unit
+S1
+R0
+Z27 w1651510670
+Z28 8../controller.sv
+Z29 F../controller.sv
+!i122 6
+L0 4 364
+R8
+31
+R9
+Z30 !s107 ../controller.sv|
+Z31 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../controller.sv|
+!i113 1
+R11
+R23
+R13
+n@controller
+Xcontroller_sv_unit
+R1
+R2
+R26
+R3
+VE[a4o>H??3Xb:QHDVPImH2
+r1
+!s85 0
+!i10b 1
+!s100 l=kaQBG9`K?a17cDCIWFR1
+IE[a4o>H??3Xb:QHDVPImH2
+!i103 1
+S1
+R0
+R27
+R28
+R29
+!i122 6
+R14
+R8
+31
+R9
+R30
+R31
+!i113 1
+R11
+R23
+R13
+Xdefinitions
+R1
+R16
+!i10b 1
+!s100 6XVBz_NnJ;2oRX`Amj^^80
+R24
+I:WcY@KH?^cTQ>R0nFgcCg3
+V:WcY@KH?^cTQ>R0nFgcCg3
+S1
+R0
+w1651635210
+8../definitions.sv
+F../definitions.sv
+!i122 0
+R14
+R8
+r1
+!s85 0
+31
+R20
+!s107 ../definitions.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+../|../definitions.sv|
+!i113 1
+R11
+R23
+R13
+Xisa
+R1
+R16
+!i10b 1
+!s100 ZGk75l@66f8n:lY?zJ4Ne0
+R24
+I?zIk>d[m1^dW9^6O6iPPO3
+V?zIk>d[m1^dW9^6O6iPPO3
+S1
+R0
+w1650733683
+8../isa.sv
+F../isa.sv
+!i122 1
+R14
+R8
+r1
+!s85 0
+31
+R20
+!s107 ../isa.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+../|../isa.sv|
+!i113 1
+R11
+R23
+R13
+Xmac_unit_sv_unit
+R1
+R2
+R3
+V4W?2[TSYVec0zPQhcNL3D2
+r1
+!s85 0
+!i10b 1
+!s100 Z;DH_jkcKSi2;;Z7Zhn:i1
+I4W?2[TSYVec0zPQhcNL3D2
+!i103 1
+S1
+R0
+Z32 w1650360426
+Z33 8../mac_unit.sv
+Z34 F../mac_unit.sv
+!i122 7
+R14
+R8
+31
+R9
+Z35 !s107 ../mac_unit.sv|
+Z36 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../mac_unit.sv|
+!i113 1
+R11
+R23
+R13
+vMacUnit
+R1
+R2
+DXx4 work 16 mac_unit_sv_unit 0 22 4W?2[TSYVec0zPQhcNL3D2
+R3
+R4
+r1
+!s85 0
+!i10b 1
+!s100 zeQ1K8NQBo>ea=cA8W5>D3
+Im^NgJURh7?P3nHjd6Ql2B1
+!s105 mac_unit_sv_unit
+S1
+R0
+R32
+R33
+R34
+!i122 7
+L0 3 80
+R8
+31
+R9
+R35
+R36
+!i113 1
+R11
+R23
+R13
+n@mac@unit
+vMemory
+R1
+R16
+!i10b 1
+!s100 HTVmoFG1MI>]TJHH8k9>B2
+R24
+IE056e4knHEU`jENa:?lF<0
+R4
+S1
+R0
+w1646873823
+8../memory.sv
+F../memory.sv
+!i122 2
+L0 1 19
+R8
+r1
+!s85 0
+31
+R20
+!s107 ../memory.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+../|../memory.sv|
+!i113 1
+R11
+R23
+R13
+n@memory
+Xneural_network_sv_unit
+R1
+R2
+R3
+VTHOL6K[<<`XdSDVoQDmiQ1
+r1
+!s85 0
+!i10b 1
+!s100 `FG[2gzYmnm=;a_B=UIY80
+ITHOL6K[<<`XdSDVoQDmiQ1
+!i103 1
+S1
+R0
+Z37 w1651457928
+Z38 8../neural_network.sv
+Z39 F../neural_network.sv
+!i122 9
+R14
+R8
+31
+R9
+Z40 !s107 ../neural_network.sv|
+Z41 !s90 -reportprogress|300|-sv|-work|work|+incdir+../|../neural_network.sv|
+!i113 1
+R11
+R23
+R13
+vNeuralNetwork
+R1
+R2
+DXx4 work 22 neural_network_sv_unit 0 22 THOL6K[<<`XdSDVoQDmiQ1
+R3
+R4
+r1
+!s85 0
+!i10b 1
+!s100 c9z^Zo3500YdW^2cBd0h:0
+I8E;ICD@IkMIjm6AR_ZDWT0
+!s105 neural_network_sv_unit
+S1
+R0
+R37
+R38
+R39
+!i122 9
+L0 3 188
+R8
+31
+R9
+R40
+R41
+!i113 1
+R11
+R23
+R13
+n@neural@network
+vSerializer
+R1
+R3
+!i10b 1
+!s100 XS?oZ4:AcgQPM[XaTNnH12
+R24
+IDJoYcW@4AcC87TOUhI:dL2
+R4
+S1
+R0
+w1651458011
+8../serializer.sv
+F../serializer.sv
+!i122 8
+R25
+R8
+r1
+!s85 0
+31
+R9
+!s107 ../serializer.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+../|../serializer.sv|
+!i113 1
+R11
+R23
+R13
+n@serializer
+vtestbench
+R1
+R2
+DXx4 work 17 testbench_sv_unit 0 22 fmkQJ;LeG5Xd[IKTh<0@U3
+R3
+R4
+r1
+!s85 0
+!i10b 1
+!s100 6U[[XVYo1NZ=[WdgDb7kb3
+I:6Y:Abl8J:k3ZDH6TN:XL3
+!s105 testbench_sv_unit
+S1
+R0
+Z42 w1650521279
+Z43 8../testbenches/testbench.sv
+Z44 F../testbenches/testbench.sv
+!i122 10
+L0 6 57
+R8
+31
+R9
+Z45 !s107 ../testbenches/testbench.sv|
+Z46 !s90 -reportprogress|300|-sv|-work|work|+incdir+../testbenches|../testbenches/testbench.sv|
+!i113 1
+R11
+R12
+R13
+Xtestbench_sv_unit
+R1
+R2
+R3
+VfmkQJ;LeG5Xd[IKTh<0@U3
+r1
+!s85 0
+!i10b 1
+!s100 GlF93Y@NUW1mP1no`[e9L3
+IfmkQJ;LeG5Xd[IKTh<0@U3
+!i103 1
+S1
+R0
+R42
+R43
+R44
+!i122 10
+L0 4 0
+R8
+31
+R9
+R45
+R46
+!i113 1
+R11
+R12
+R13
