@@ -1,5 +1,6 @@
 import numpy as np
 
+
 from .neural_processor.layer import Layer
 from .neural_processor.activation_function import sigmoid, tanh
 from .neural_processor.neural_processor import NeuralProcessor

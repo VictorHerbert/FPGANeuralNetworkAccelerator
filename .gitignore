@@ -1,1 +1,4 @@
 __pycache__/
+
+src/simulation/*
+!src/simulation/*.do
