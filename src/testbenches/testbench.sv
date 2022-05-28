@@ -23,13 +23,19 @@ module testbench;
         nn.mac_gen[0].mac_unit.prod_full
     };
 
-    wire [NU_COUNT-1:0][Q_INT-1:-Q_FRAC] mac_reg = {
-        nn.mac_gen[3].mac_unit.mac_reg,
-        nn.mac_gen[2].mac_unit.mac_reg,
-        nn.mac_gen[1].mac_unit.mac_reg,
-        nn.mac_gen[0].mac_unit.mac_reg
+    wire [NU_COUNT-1:0][2*Q_INT-1:-2*Q_FRAC] loopback_sum = {
+        nn.mac_gen[3].mac_unit.loopback_sum,
+        nn.mac_gen[2].mac_unit.loopback_sum,
+        nn.mac_gen[1].mac_unit.loopback_sum,
+        nn.mac_gen[0].mac_unit.loopback_sum
     };
 
+    wire [NU_COUNT-1:0][2*Q_INT-1:-2*Q_FRAC] sum = {
+        nn.mac_gen[3].mac_unit.sum,
+        nn.mac_gen[2].mac_unit.sum,
+        nn.mac_gen[1].mac_unit.sum,
+        nn.mac_gen[0].mac_unit.sum
+    };
 
     wire [NU_COUNT-1:0] sum_pos_overflow = {
         nn.mac_gen[3].mac_unit.sum_pos_overflow,

@@ -13,6 +13,13 @@
             "justMyCode": true
         },
         {
+            "name": "Python: Module",
+            "type": "python",
+            "request": "launch",
+            "module": "software",
+            "justMyCode": true
+        },
+        {
             "name": "g++.exe - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",

@@ -9,7 +9,6 @@ vlog -sv -work work src/definitions.sv
 vlog -sv -work work src/testbenches/testbench.sv
 vlog -sv -work work src/memory.sv
 vlog -sv -work work src/activation_function.sv
-vlog -sv -work work src/adder.sv
 vlog -sv -work work src/address_register.sv
 vlog -sv -work work src/controller.sv
 vlog -sv -work work src/mac_unit.sv
