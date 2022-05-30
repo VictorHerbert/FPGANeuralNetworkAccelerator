@@ -37,7 +37,7 @@ class NeuralNetwork:
                     dE_dY = layer.backward_propagation(dE_dY, learning_rate)
 
             error /= len(x_train)
-            if verbose == True:
+            if (verbose == True) & (epoch_index%50 == 0):
                 print(f'Epoch {epoch_index}  error={error}')
 
             error_list.append(error)

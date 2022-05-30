@@ -1,19 +1,18 @@
 import numpy as np
 from itertools import pairwise
 
-from .activation_function import ActivationFunction
+from software.neural_processor.layer import Layer
+from software.neural_network.neural_network import NeuralNetwork
+from software.activation_function import ActivationFunction, linear, step, relu
 
 
 class NeuralProcessor:
 
     builtin_activation_functions = {
-        'id' : ActivationFunction(mask = 1 << 2, fx = lambda x: x), 
-        'step' : ActivationFunction(mask = 2 << 2, fx = lambda x: 1 if x >= 0 else 0),
-        'relu' : ActivationFunction(mask = 3 << 2, fx = lambda x: x if x >= 0 else 0)
-    }    
+        linear, step, relu
+    }
 
     def __init__(self,
-        layers : int,
         nu_count : int,
         xy_mem_len : int,
         w_mem_len : int,
@@ -24,15 +23,30 @@ class NeuralProcessor:
         act_func_a_q : int,
         act_func_b_q : int,
 
-        activation_functions : int = None
+        layers : int = None,
+        neural_network : NeuralNetwork = None
     ) -> None:
-        self.layers = layers
-        self.activation_functions = activation_functions
 
+        if (layers is None) & (neural_network is None):
+            raise ValueError('Layers or NeuralNetwork model must be provided')
+
+        self.layers = layers
+
+        if neural_network:
+            self.layers = [Layer(
+                layer.x_size,
+                layer.y_size,
+                layer.func
+            ) for layer in neural_network.layers]
+            
         for l_prev, l_next in pairwise(self.layers):                        
             if l_prev.y_size != l_next.x_size:
                 raise ValueError('Layers input and output between consecutive layers must be matched')
         
+        self.activation_functions = {
+            layer.func for layer in self.layers
+            if not layer.func in NeuralProcessor.builtin_activation_functions}
+
         if len(self.activation_functions) > 2**act_func_mask_len:
             raise ValueError(f'There should be at most {2**act_func_mask_len} activation functions')
 
@@ -45,20 +59,11 @@ class NeuralProcessor:
         self.act_func_a_q = act_func_a_q
         self.act_func_b_q = act_func_b_q
 
-        for func in ['id', 'step', 'relu']:
-            if func in self.activation_functions:
-                raise ValueError(f'Activaction function "{func}" already defined in hardware')
-
-        for i, func in enumerate(self.activation_functions.values()):
+        for i, func in enumerate(self.activation_functions):
             func.mask = i
 
-        for layer in layers:
-            layer.nu_count = self.nu_count      
-            
-            layer.func_mask = NeuralProcessor.builtin_activation_functions[layer.func_name].mask \
-                if layer.func_name in NeuralProcessor.builtin_activation_functions \
-                else self.activation_functions[layer.func_name].mask
-          
+        for layer in self.layers:
+            layer.nu_count = self.nu_count            
 
         self.allocate()
 

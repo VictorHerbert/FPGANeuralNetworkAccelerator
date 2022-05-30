@@ -1,6 +1,8 @@
 import numpy as np
 from itertools import chain
 
+from software.neural_network.neural_network import NeuralNetwork
+
 from .fixed_point import to_fx
 from .neural_processor import NeuralProcessor
 
@@ -21,13 +23,17 @@ class MemoryInterface:
     XY_ZERO_ADDR = 0
     XY_ONE_ADDR = 1
 
-    def __init__(self, processor: NeuralProcessor) -> None:
+    def __init__(self, processor: NeuralProcessor, neural_network: NeuralNetwork = None) -> None:
         self.processor = processor
         self.xy_mem = {}
         self.w_mem = [{} for _ in range(processor.nu_count)]
 
         self.xy_mem[MemoryInterface.XY_ZERO_ADDR] = 0
         self.xy_mem[MemoryInterface.XY_ONE_ADDR] = to_fx(1, processor.q)
+
+        if neural_network:
+            for i, _ in enumerate(neural_network.layers):
+                self.w_write(neural_network.layers[i].W, processor.layers[i].W[0])
     
     def save_xy_mem(self, filename : str) -> None:
         dict_to_mem(self.xy_mem, filename)
@@ -38,7 +44,7 @@ class MemoryInterface:
 
     def save_act_mem(self, filename: str) -> list[str]:
         func_mem = []
-        for func in self.processor.activation_functions.values():
+        for func in self.processor.activation_functions:
             func_mem += func.interpolate(self.processor.q, self.processor.act_func_a_q, self.processor.act_func_b_q, self.processor.act_func_depth)
 
         list_to_mem(func_mem, filename)
@@ -54,15 +60,3 @@ class MemoryInterface:
         for i in range(array.shape[0]):
             for j in range(array.shape[1]):
                 self.w_mem[i%self.processor.nu_count][j+offset+(i//self.processor.nu_count)*array.shape[1]] = to_fx(array[i,j], self.processor.q)
-
-    def get_w_mem(self) -> None:
-        for layer in self.layers:
-            if layer.w_np is None:
-                raise ValueError('Layer weights not given')
-
-            if layer.w_np.shape != (layer.y_size, layer.x_size):
-                raise ValueError('Layer shape with wrong size')
-
-            self.w_write(layer.w_np, layer.W[0])
-
-        return self.w_mem

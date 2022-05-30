@@ -21,10 +21,9 @@ sigmoid = lambda x: 1/(1+np.exp(-x))
 d_sigmoid = lambda x: sigmoid(x)*(1-sigmoid(x))
 
 nn =  Network(layers = [
-    Layer(4, sigmoid, d_sigmoid),
-    Layer(6, sigmoid, d_sigmoid),
-    Layer(6, identity, d_identity),
-    Layer(3, identity, d_identity)
+    Layer(4, 6,  sigmoid, d_sigmoid),
+    Layer(6, 6, sigmoid, d_sigmoid),
+    Layer(6, 3, identity, d_identity)
 ])
 
 nn.compile()
@@ -36,7 +35,6 @@ for lr in [0.1,0.01]:
 
 plt.show()
 
-# %%
 pd.DataFrame(nn.predict(x).T)
 
 

@@ -1,16 +1,16 @@
 from math import ceil
 
-from .neural_processor import NeuralProcessor
-from .memory_interface import MemoryInterface
+from ..activation_function import linear
 
 class Layer:
 
-    def __init__(self, x_size, y_size, func_name = 'id', has_bias = False) -> None:
+    XY_ONE_ADDR = 1
+
+    def __init__(self, x_size, y_size, func = linear, has_bias = False) -> None:
         self.x_size = x_size
         self.y_size = y_size
 
-        self.func_name = func_name
-
+        self.func = func
         self.has_bias = has_bias
 
 
@@ -51,10 +51,10 @@ class Layer:
             instructions.append(f'REPEAT {self.x_size-1}')
 
             if self.has_bias:
-                instructions.append(f'MATMUL {MemoryInterface.XY_ONE_ADDR},{w_offset+self.x_size}')
+                instructions.append(f'MATMUL {XY_ONE_ADDR},{w_offset+self.x_size}')
 
             # TODO identity func
-            instructions.append(f'ACCMOV {y_offset},{l},{1 if self.func_mask is None else self.func_mask}')
+            instructions.append(f'ACCMOV {y_offset},{l},{1 if self.func.mask is None else self.func.mask}')
             instructions.append(f'NOP')
             instructions.append(f'NOP')
 

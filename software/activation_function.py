@@ -1,12 +1,13 @@
 from typing import Callable, Tuple
 import numpy as np
 
-from .fixed_point import to_fx_signed
+from .neural_processor.fixed_point import to_fx_signed
 
 class ActivationFunction:
 
-    def __init__(self, fx: Callable = None, mask: int = None) -> None:
+    def __init__(self, fx: Callable = None, dfx: Callable = None, mask: int = None) -> None:
         self.fx = fx
+        self.dfx = dfx
         self.mask = mask
 
     def interpolate(self, q : tuple, a_q : tuple, b_q : tuple, depth: int):
@@ -31,5 +32,27 @@ class ActivationFunction:
 
         return v
 
-sigmoid = ActivationFunction(fx=lambda x: 1/(1+np.exp(-x)))
-tanh = ActivationFunction(fx=lambda x: 2/(1+np.exp(-2*x))-1)
+
+linear  = ActivationFunction(
+    mask = 1 << 2,
+    fx = lambda x: x,
+    dfx = lambda x: 1)
+
+step = ActivationFunction(
+    mask = 2 << 2,
+    fx = lambda x: 1 if x >= 0 else 0,
+    dfx = lambda x: 0)
+
+relu = ActivationFunction(
+    mask = 3 << 2,
+    fx = lambda x: x * (x >= 0),
+    dfx = lambda x: 1 * (x >= 0))
+
+sigmoid = ActivationFunction(
+    fx = lambda x: 1/(1+np.exp(-x)),
+    dfx = lambda x: 1/(1+np.exp(-x))*(1-1/(1+np.exp(-x))))
+
+tanh = ActivationFunction(
+    fx = lambda x: 2/(1+np.exp(-2*x))-1,
+    dfx = lambda x: 1 - np.power(2/(1+np.exp(-2*x))-1,2))
+
