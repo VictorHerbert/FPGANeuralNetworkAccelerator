@@ -33,7 +33,7 @@ if { $SHOW_CONTROL == 1 } {
     add wave nn/xy_write_addr
 
     add wave nn/w_write_enable
-    add wave nn/w_addr
+    add wave nn/w_read_addr
 
     add wave nn/controller/repeat_counter
     add wave nn/controller/accmov_length
@@ -52,6 +52,7 @@ if { $SHOW_INST_FULL == 1 } {
     add wave -color "Yellow" nn/controller/matmul_inst_packet
     add wave -color "Yellow" nn/controller/accmov_inst_packet
     add wave -color "Yellow" nn/controller/jump_inst_packet
+    add wave -color "Yellow" nn/controller/breq_inst_packet
     add wave -color "Yellow" nn/controller/repeat_inst_packet
 }
 

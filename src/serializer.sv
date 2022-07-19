@@ -14,7 +14,7 @@ module Serializer #(parameter INPUT_SIZE, parameter Q_SIZE)(
         else if (serializer_shift)
             data <= {{Q_SIZE{1'bx}}, data[INPUT_SIZE-2:1]};
         else
-            data <= 'x;
+            data <= 'dx;
     end
 
 endmodule

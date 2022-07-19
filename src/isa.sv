@@ -7,7 +7,8 @@ package isa;
         INST_ACCMOV = 4'd3,
         INST_FLUSHBUFFER = 4'd4,
         
-        INST_JUMP = 4'd14
+        INST_JUMP = 4'd14,
+        INST_BREQ = 4'd15
     } InstructionType;
 
     typedef struct packed {
@@ -42,12 +43,17 @@ package isa;
         logic [13:0] unused;
     } JmpInstPacket;
 
-    
-
+    typedef struct packed {
+        InstructionType mnemonic;
+        logic [13:0] inst_addr;
+        logic [3:0] r1;
+        logic [3:0] r2;
+        logic [5:0] unused;
+    } BreqInstPacket;
 
     typedef struct packed {
         InstructionType mnemonic;
-        logic [27:0] length;
+        logic [27:0] unused;
     } FlushbufferInstPacket;
 
 

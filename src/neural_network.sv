@@ -4,23 +4,26 @@ module NeuralNetwork(
     input clk, reset,
 
     input write_enable,
-    input read_enable,
     output busy,
 
-    input [MM_LENGTH-1:0] addr,
-    input [MM_SIZE-1:0] write_data,
-    output [MM_SIZE-1:0] read_data
+    input [MM_DEPTH-1:0] read_addr,
+    output [MM_SIZE-1:0] read_data,
+    input [MM_DEPTH-1:0] write_addr,
+    input [MM_SIZE-1:0] write_data
 );
+
+    wire xy_write_select;
 
     wire buffer_read_enable;
     wire buffer_write_enable;
     wire buffer_empty;
     wire buffer_full;
+
+    wire [BUFFER_LENGTH-1:0] buffer_addr_out;
     wire [Q_SIZE-1:0] buffer_data_out;
 
     wire mac_acc_loopback;
     wire mac_acc_update;
-
     wire serializer_update;
     wire serializer_shift;
 
@@ -29,12 +32,13 @@ module NeuralNetwork(
     wire inst_write_enable;
     wire act_write_enable;
 
-    wire [XY_MEM_DEPTH-1:0] xy_read_addr;
-    wire [XY_MEM_DEPTH-1:0] xy_write_addr;
+    wire [XY_MEM_DEPTH:0] xy_read_addr;
+    wire [XY_MEM_DEPTH:0] xy_write_addr;
     wire [Q_SIZE-1:0] xy_read_data;
     wire [Q_SIZE-1:0] xy_write_data;
     
-    wire [W_MEM_DEPTH-1:0] w_addr;
+    
+    wire [W_MEM_DEPTH-1:0] w_read_addr;
     wire [NU_COUNT-1:0][Q_SIZE-1:0] w_read_data;
     wire [NU_COUNT-1:0][Q_SIZE-1:0] w_write_data;
 
@@ -57,19 +61,19 @@ module NeuralNetwork(
     wire [Q_INT-1:-Q_FRAC] act_read_data;
     wire [ACT_MASK_SIZE-1:0] act_mask;
 
-
     // ----------------------------------------
     // ------- Datapath Components  -----------
     // ----------------------------------------
 
     Memory #(
-        .DEPTH(XY_MEM_DEPTH), .BIT_SIZE(Q_SIZE))
+        .DEPTH(XY_MEM_DEPTH),
+        .BIT_SIZE(Q_SIZE))
     xy_mem (
         .clk(clk),
         .write_enable(xy_write_enable),
         .read_addr(xy_read_addr),
-        .write_addr(xy_write_addr),
-        .data_in(xy_write_data),
+        .write_addr(xy_write_select ? buffer_addr_out : xy_write_addr),
+        .data_in(xy_write_select ? buffer_data_out : act_read_data),
         .data_out(xy_read_data)
     );
 
@@ -85,9 +89,9 @@ module NeuralNetwork(
         w_mem (
             .clk(clk),
             .write_enable(w_write_enable[i]),
-            .read_addr(w_addr),
-            .write_addr(w_addr),
-            .data_in(w_write_data),
+            .read_addr(w_read_addr),
+            .write_addr(buffer_addr_out),
+            .data_in(buffer_data_out),
             .data_out(w_read_data[i])
         );
 
@@ -128,8 +132,40 @@ module NeuralNetwork(
         .mask(act_mask),
 
         .write_enable(act_write_enable),
-        .write_addr(act_addr),
-        .write_data(act_write_data)
+        .write_addr(buffer_addr_out),
+        .write_data(buffer_data_out)
+    );
+
+    // ---------------------------------------
+    // ------- IO Components  -----------
+    // ---------------------------------------
+
+
+    Fifo #(
+        .SIZE(BUFFER_LENGTH+Q_SIZE),
+        .DEPTH(BUFFER_DEPTH)
+    )
+    buffer(
+        .clk(clk),
+        .read_update(buffer_read_enable),
+        .write_enable(write_enable),
+        .empty(buffer_empty),
+        .full(busy),
+
+        .data_in({write_addr[MM_SIZE-1:0], write_data[Q_SIZE-1:0]}),
+        .data_out({buffer_addr_out, buffer_data_out})
+    );
+
+    Memory #(
+        .DEPTH(OUTPUT_MEM_DEPTH),
+        .BIT_SIZE(Q_SIZE))
+    output_mem(
+        .clk(clk),
+        .write_enable(xy_write_enable & xy_write_addr[XY_MEM_DEPTH]),
+        .read_addr(read_addr[OUTPUT_MEM_DEPTH-1:0]),
+        .write_addr(xy_write_addr[OUTPUT_MEM_DEPTH-1:0]),
+        .data_in(act_read_data),
+        .data_out(read_data)
     );
 
     // ---------------------------------------
@@ -142,25 +178,9 @@ module NeuralNetwork(
         .clk(clk),
         .write_enable(inst_write_enable),
         .read_addr(inst_read_addr),
-        .write_addr(inst_read_addr),
-        .data_in(inst_write_data),
+        .write_addr(buffer_addr_out),
+        .data_in(buffer_data_out),
         .data_out(inst_read_data)
-    );
-  
-    Fifo #(
-        .SIZE(XY_MEM_DEPTH+Q_SIZE),
-        .DEPTH(MM_BUFFER_DEPTH)
-    )
-    buffer(
-        .clk(clk),
-        .read_enable(buffer_read_enable),
-        .write_enable(write_enable),
-        .empty(buffer_empty),
-        .full(busy),
-
-        .data_in(write_data),
-        .data_out(buffer_data_out)
-
     );
 
 
@@ -168,20 +188,13 @@ module NeuralNetwork(
         .clk(clk),
         .reset(reset),
 
-        .mm_write_enable(write_enable),
-        .mm_read_enable(read_enable),
-        .mm_addr(addr),
-        .mm_read_data(read_data),
-        .mm_write_data(write_data),
-
-        .buffer_read_enable(buffer_read_enable),
         .buffer_empty(buffer_empty),
-        .buffer_data_out(buffer_data_out),
+        .buffer_addr(buffer_addr_out),
+        .buffer_read_enable(buffer_read_enable),
 
-        .inst_read_data(inst_read_data),
-        .inst_write_data(inst_write_data),
-        .inst_read_addr(inst_read_addr),
         .inst_write_enable(inst_write_enable),
+        .inst_read_addr(inst_read_addr),
+        .inst_read_data(inst_read_data),
 
         .mac_acc_loopback(mac_acc_loopback),
         .mac_acc_update(mac_acc_update),
@@ -190,21 +203,15 @@ module NeuralNetwork(
         .serializer_shift(serializer_shift),
         
         .act_mask(act_mask),        
-        .act_addr(act_addr),
         .act_write_enable(act_write_enable),
-        .act_write_data(act_write_data),
-        .act_read_data(act_read_data),
 
         .xy_write_enable(xy_write_enable),
-        .xy_read_addr(xy_read_addr),        
+        .xy_write_select(xy_write_select),
+        .xy_read_addr(xy_read_addr),      
         .xy_write_addr(xy_write_addr),
-        .xy_read_data(xy_read_data),
-        .xy_write_data(xy_write_data),
 
         .w_write_enable(w_write_enable),
-        .w_addr(w_addr),
-        .w_read_data(w_read_data),
-        .w_write_data(w_write_data)
+        .w_read_addr(w_read_addr)
     );
 
 endmodule

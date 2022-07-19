@@ -13,10 +13,10 @@ module ActivationFunction (
 );
 
     typedef enum logic [3:0] {
-        FUNC_LUT = 0,
-        FUNC_ID = 1,
-        FUNC_STEP = 2,
-        FUNC_RELU = 3
+        FUNC_LUT = 4'd0,
+        FUNC_ID = 4'd1,
+        FUNC_STEP = 4'd2,
+        FUNC_RELU = 4'd3
     } FunctionType;
 
     FunctionType function_type;
