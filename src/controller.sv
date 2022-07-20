@@ -23,13 +23,15 @@ module Controller (
 
     output reg mm_xy_write_enable,
     output reg xy_write_enable,
-    output xy_write_select,
+    output reg xy_write_select,
     output reg [XY_MEM_DEPTH:0] xy_read_addr,
     output reg [XY_MEM_DEPTH:0] xy_write_addr,
 
     output reg [NU_COUNT-1:0] w_write_enable,
     output reg [W_MEM_DEPTH-1:0] w_read_addr
 );
+
+    reg cpu_xy_write_enable;
 
     GenericInstPacket generic_inst_packet;
     MatmulInstPacket matmul_inst_packet;
@@ -120,21 +122,45 @@ module Controller (
         prev_w_read_addr <= w_read_addr;
     end
 
-    assign inst_write_enable = buffer_addr[MEM_DEPTH];
-    assign act_write_enable = buffer_addr[MEM_DEPTH+1];
-    assign mm_xy_write_enable = buffer_addr[MEM_DEPTH+2]; // check for use
+    assign inst_write_enable = ~buffer_addr[MEM_DEPTH+4]&buffer_addr[MEM_DEPTH];
+    assign act_write_enable = ~buffer_addr[MEM_DEPTH+4]&buffer_addr[MEM_DEPTH+1];
+    assign mm_xy_write_enable = ~buffer_addr[MEM_DEPTH+4]&buffer_addr[MEM_DEPTH+2]; // check for use
     assign w_write_enable = {4{buffer_addr[MEM_DEPTH+4]}}&buffer_addr[MEM_DEPTH+3:MEM_DEPTH];
+
+    reg update_buffer, update_buffer_reg;
+
+    always_ff @(posedge clk, posedge reset) begin
+        if(reset)
+            update_buffer_reg <= 1'b1;
+        else begin
+            if(buffer_read_enable)
+                update_buffer_reg <= 1'b0;
+            else if(inst_write_enable|act_write_enable|xy_write_select|w_write_enable)
+                update_buffer_reg <= 1'b1;
+        end
+    end
+
+    //TODO
+
+    assign update_buffer =
+        inst_write_enable|act_write_enable|xy_write_select|w_write_enable|update_buffer_reg;
+
+    assign xy_write_select = mm_xy_write_enable&(~cpu_xy_write_enable);
+    assign xy_write_enable = cpu_xy_write_enable|xy_write_select;
+
+    assign buffer_read_enable = ~buffer_empty&update_buffer;
+    //assign buffer_read_enable = ~buffer_empty;
 
     always_comb begin
         mac_acc_loopback = 'dx;
         mac_acc_update = 'dx;
         serializer_update = 'd0;
-        xy_write_enable = (instruction==INST_ACCMOV)|(accmov_counter != 'd0);
+        cpu_xy_write_enable = (instruction==INST_ACCMOV)|(accmov_counter != 'd0);
         xy_read_addr = 'dx;
-        xy_write_addr = xy_write_addr_reg;
+        xy_write_addr = xy_write_select ? buffer_addr : xy_write_addr_reg;
 
         w_read_addr = 'dx;       
-        serializer_shift <= xy_write_enable;
+        serializer_shift <= cpu_xy_write_enable;
         accmov_length = accmov_length_reg;
         act_mask = act_mask_reg;
 
@@ -170,7 +196,7 @@ module Controller (
                     inst_read_addr + 'd1 : inst_read_addr;
             end
             INST_FLUSHBUFFER: begin
-                inst_read_addr_next = buffer_empty ? inst_read_addr + 'd1 : inst_read_addr;
+                inst_read_addr_next = buffer_empty ? (inst_read_addr + 'd1) : inst_read_addr;
             end
             default: begin
             end

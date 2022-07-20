@@ -42,7 +42,7 @@ module MacUnit (
             2'b01:
                 mac <= {1'b1, {Q_SIZE-1{1'b0}}};
             default:
-                mac = sum;
+                mac <= sum;
         endcase
     end
 
@@ -53,7 +53,7 @@ module MacUnit (
             2'b01:
                 prod <= {1'b1, {Q_SIZE-1{1'b0}}};
             default:
-                prod = prod_full[Q_INT-1:-Q_FRAC];
+                prod <= prod_full[Q_INT-1:-Q_FRAC];
         endcase
     end
 

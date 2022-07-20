@@ -9,7 +9,6 @@ module Memory #(parameter DEPTH, parameter BIT_SIZE)(
 
 	reg [BIT_SIZE-1:0] data [2**DEPTH-1:0];
 
-
     // TODO include in pipeline
     assign  data_out = data[read_addr]; // Async read
 

@@ -31,10 +31,10 @@ package isa;
 
     typedef struct packed {
         InstructionType mnemonic;
-        logic [11:0] y_addr;
+        logic [12:0] y_addr;
         logic [4:0] length;
         logic [4:0] act_mask;
-        logic [5:0] unused;
+        logic [4:0] unused;
     } AccmovInstPacket;
 
     typedef struct packed {

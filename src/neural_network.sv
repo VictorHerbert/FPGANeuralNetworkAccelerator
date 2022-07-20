@@ -146,15 +146,17 @@ module NeuralNetwork(
         .DEPTH(BUFFER_DEPTH)
     )
     buffer(
-        .clk(clk),
+        .clk(clk), .reset(reset),
         .read_update(buffer_read_enable),
         .write_enable(write_enable),
         .empty(buffer_empty),
         .full(busy),
 
-        .data_in({write_addr[MM_SIZE-1:0], write_data[Q_SIZE-1:0]}),
+        .data_in({write_addr[MM_DEPTH-1:0], write_data[Q_SIZE-1:0]}),
         .data_out({buffer_addr_out, buffer_data_out})
     );
+
+    assign read_data[MM_SIZE-1:Q_SIZE] = 'd0;
 
     Memory #(
         .DEPTH(OUTPUT_MEM_DEPTH),
@@ -165,7 +167,7 @@ module NeuralNetwork(
         .read_addr(read_addr[OUTPUT_MEM_DEPTH-1:0]),
         .write_addr(xy_write_addr[OUTPUT_MEM_DEPTH-1:0]),
         .data_in(act_read_data),
-        .data_out(read_data)
+        .data_out(read_data[Q_SIZE-1:0])
     );
 
     // ---------------------------------------

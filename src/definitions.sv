@@ -13,7 +13,7 @@ package definitions;
     localparam MEM_DEPTH = 12;
     localparam BUFFER_LENGTH = 5 + MEM_DEPTH;
 
-    localparam MM_DEPTH = 32;
+    localparam MM_DEPTH = 17;
     localparam INST_MEM_DEPTH = 12;
 
     localparam XY_MEM_DEPTH = 12;

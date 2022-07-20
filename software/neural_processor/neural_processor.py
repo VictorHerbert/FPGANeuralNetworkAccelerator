@@ -8,6 +8,8 @@ from software.activation_function import ActivationFunction, linear, step, relu
 
 class NeuralProcessor:
 
+    XY_OUTPUT_OFFSET_ADDR = 2**12
+
     builtin_activation_functions = {
         linear, step, relu
     }
@@ -72,40 +74,15 @@ class NeuralProcessor:
 
         for l_prev, l_next in pairwise(self.layers):                        
             xy_offset, w_offset = l_next.allocate(xy_offset, w_offset, prev_layer=l_prev)
+
+        self.layers[-1].Y = NeuralProcessor.XY_OUTPUT_OFFSET_ADDR
     
 
     def predict(self):
-        return '\n'.join(
+        s = ''
+        s += '\n'.join(
             ('\n'.join(layer.forward_propagate()) for layer in self.layers))
-
-    def fit(self,
-        x_train : np.array,
-        y_train : np.array,
-        epochs : int = 100,
-        learning_rate : float = 0.1,
-        verbose : bool = False
-    ):
-        error_list = []
-        for epoch_index in range(epochs):
-            error = 0
-            for i in range(x_train.shape[1]):
-                x = x_train[:,i].reshape((x_train.shape[0],1))
-                y = y_train[:,i].reshape((y_train.shape[0],1))
-
-                y_pred = self.predict(x)
-                error += self.loss(y_pred, y)[0]
-
-                dE_dY = self.d_loss(y_pred, y)
-                for layer in reversed(self.layers[:-1]):
-                    dE_dY = layer.backward_propagation(dE_dY, learning_rate)
-
-            error /= len(x_train)
-            if verbose == True:
-                print(f'Epoch {epoch_index}  error={error}')
-
-            error_list.append(error)
-        return error_list
-
+        return s
 
     def evaluate(self, x, y):
         return sum(self.loss(self.predict(x),y))/len(y)

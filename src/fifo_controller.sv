@@ -20,8 +20,8 @@ module FifoController #(parameter DEPTH)(
 
     always_ff @(posedge clk, posedge reset) begin
         if(reset) begin
-            _write_addr = 'd1;
-            _read_addr = 'd0;
+            _write_addr <= 'd1;
+            _read_addr <= 'd0;
         end
         else begin
             if(write_enable & ~full) begin

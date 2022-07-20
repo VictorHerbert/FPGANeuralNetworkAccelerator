@@ -22,6 +22,31 @@ set SHOW_INST_FULL 1
 add wave clk
 add wave reset
 
+add wave -divider "Interface"
+
+add wave write_enable
+add wave busy
+
+add wave read_addr
+add wave -radix fx read_data
+add wave write_addr
+add wave -radix fx write_data
+
+add wave -divider "FIFO"
+add wave nn/buffer_empty
+add wave nn/buffer_read_enable
+add wave nn/controller/buffer_addr
+add wave nn/controller/inst_write_enable
+add wave nn/controller/act_write_enable
+add wave nn/controller/mm_xy_write_enable
+add wave nn/controller/w_write_enable
+add wave nn/controller/update_buffer
+add wave nn/controller/update_buffer_reg
+add wave nn/buffer/write_addr
+add wave nn/buffer/read_addr
+add wave nn/buffer_addr_out
+add wave -radix fx nn/buffer_data_out
+
 if { $SHOW_CONTROL == 1 } {
     add wave -divider "Control Signals"
     add wave nn/mac_acc_update
@@ -29,6 +54,7 @@ if { $SHOW_CONTROL == 1 } {
     add wave nn/serializer_update
 
     add wave nn/xy_read_addr
+    add wave nn/xy_write_select
     add wave nn/xy_write_enable
     add wave nn/xy_write_addr
 
@@ -47,6 +73,7 @@ if { $SHOW_CONTROL_REPEAT == 1 } {
 
 add wave -divider "Instructions"
 add wave -color "Yellow" nn/controller/inst_read_addr
+add wave -color "Yellow" nn/controller/inst_read_addr_next
 add wave -color "Yellow" nn/controller/instruction
 if { $SHOW_INST_FULL == 1 } {
     add wave -color "Yellow" nn/controller/matmul_inst_packet
@@ -63,10 +90,6 @@ add wave -radix fx nn/prod
 add wave -radix fx_prod_full nn/prod_full
 add wave -radix fx nn/loopback_sum
 add wave -radix fx nn/sum
-add wave -radix binary sum_pos_overflow
-add wave -radix binary sum_neg_overflow
-add wave -radix binary prod_pos_overflow
-add wave -radix binary prod_neg_overflow
 add wave -radix fx nn/mac
 add wave -radix fx nn/acc
 
