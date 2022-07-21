@@ -13,6 +13,8 @@ vlog -sv -work work src/address_register.sv
 vlog -sv -work work src/controller.sv
 vlog -sv -work work src/mac_unit.sv
 vlog -sv -work work src/serializer.sv
+vlog -sv -work work src/fifo.sv
+vlog -sv -work work src/fifo_controller.sv
 vlog -sv -work work src/neural_network.sv
 
 vsim -t 1ns -L rtl_work -L work -voptargs="+acc" testbench

@@ -36,12 +36,12 @@ binary = compile('NOP\n'*4 + 'FLUSH\n' + nproc.predict() + '\nNOP'*4)
 if binary:
     list_to_mem(binary, 'src/memories/inst.mem')
 
-x = np.array([1,.25,.125,.488], ndmin=2).T
+x = np.array([.125,1,0,.488], ndmin=2).T
 
 mi = MemoryInterface(processor=nproc, neural_network=nn)
-#mi.xy_input_write(x)
+mi.xy_input_write(x)
 
-#mi.save_xy_mem('src/memories/xy.mem')
+mi.save_xy_mem('src/memories/xy.mem')
 mi.save_w_mem([f'src/memories/w{i}.mem' for i in range(4)])
 mi.save_act_mem('src/memories/act_func.mem')
 

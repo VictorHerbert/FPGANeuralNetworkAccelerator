@@ -22,7 +22,7 @@ module Fifo #(parameter SIZE, parameter DEPTH)(
     );
 
 
-    Memory #(.DEPTH(DEPTH), .BIT_SIZE(SIZE))
+    Memory #(.DEPTH(DEPTH), .BIT_SIZE(SIZE), .ZEROS(1'd1))
     fifo_mem (
         .clk(clk),
         .write_enable(write_enable),

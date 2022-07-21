@@ -18,7 +18,6 @@ module MacUnit (
     output reg signed [2*Q_INT-1:-2*Q_FRAC] prod_full,
     output signed [Q_INT-1:-Q_FRAC] loopback_sum
 );
-
     wire sum_pos_overflow, sum_neg_overflow;
     wire prod_pos_overflow, prod_neg_overflow;
 

@@ -30,9 +30,6 @@ module Controller (
     output reg [NU_COUNT-1:0] w_write_enable,
     output reg [W_MEM_DEPTH-1:0] w_read_addr
 );
-
-    reg cpu_xy_write_enable;
-
     GenericInstPacket generic_inst_packet;
     MatmulInstPacket matmul_inst_packet;
     AccmovInstPacket accmov_inst_packet;
@@ -47,7 +44,9 @@ module Controller (
 
     reg accmov_enable;
     reg repeat_enable;
+    reg cpu_xy_write_enable;
 
+    reg unsigned [INST_MEM_DEPTH-1:0]  inst_read_addr_prev;
     reg unsigned [INST_MEM_DEPTH-1:0]  inst_read_addr_next;
     reg [REPEAT_LENGTH-1:0] repeat_counter, repeat_counter_reg;
     reg [NU_COUNT-1:0] accmov_counter, accmov_length, accmov_length_reg;
@@ -69,9 +68,14 @@ module Controller (
     assign repeat_inst_packet = (instruction==INST_REPEAT) ? inst_read_data : 'dx;
     assign flushbuffer_inst_packet = (instruction==INST_FLUSHBUFFER) ? inst_read_data : 'dx;
 
-    always_ff @(posedge clk, posedge reset)  begin
+    /*always_ff @(posedge clk, posedge reset)  begin
         if(reset)   inst_read_addr <= 'd0;
         else        inst_read_addr <= inst_read_addr_next;
+    end*/
+
+    always_ff @(posedge clk, posedge reset)  begin
+        if(reset)   inst_read_addr_prev <= 'd0;
+        else        inst_read_addr_prev <= inst_read_addr;
     end
 
     always_ff @(posedge clk, posedge reset) begin
@@ -140,8 +144,6 @@ module Controller (
         end
     end
 
-    //TODO
-
     assign update_buffer =
         inst_write_enable|act_write_enable|xy_write_select|w_write_enable|update_buffer_reg;
 
@@ -149,7 +151,6 @@ module Controller (
     assign xy_write_enable = cpu_xy_write_enable|xy_write_select;
 
     assign buffer_read_enable = ~buffer_empty&update_buffer;
-    //assign buffer_read_enable = ~buffer_empty;
 
     always_comb begin
         mac_acc_loopback = 'dx;
@@ -164,7 +165,8 @@ module Controller (
         accmov_length = accmov_length_reg;
         act_mask = act_mask_reg;
 
-        inst_read_addr_next = inst_read_addr+'d1;
+        //inst_read_addr_next = inst_read_addr+'d1;
+        inst_read_addr = inst_read_addr_prev+'d1;
 
         casez (instruction)
             INST_MATMUL:  begin
@@ -183,7 +185,8 @@ module Controller (
                 act_mask = accmov_inst_packet.act_mask;
             end
             INST_JUMP: begin
-                inst_read_addr_next = jump_inst_packet.inst_addr;
+                //inst_read_addr_next = jump_inst_packet.inst_addr;
+                inst_read_addr = jump_inst_packet.inst_addr;
             end
             INST_REPEAT: begin
                 mac_acc_loopback = 1'b1;
@@ -192,11 +195,15 @@ module Controller (
                 xy_read_addr = prev_xy_read_addr+'d1;
                 w_read_addr = prev_w_read_addr+'d1;
 
-                inst_read_addr_next = (repeat_counter == repeat_inst_packet.length) ?
-                    inst_read_addr + 'd1 : inst_read_addr;
+                //inst_read_addr_next = (repeat_counter == repeat_inst_packet.length) ?
+                //    inst_read_addr + 'd1 : inst_read_addr;
+
+                inst_read_addr = (repeat_counter == repeat_inst_packet.length) ?
+                    inst_read_addr_prev + 'd1 : inst_read_addr_prev;
             end
             INST_FLUSHBUFFER: begin
-                inst_read_addr_next = buffer_empty ? (inst_read_addr + 'd1) : inst_read_addr;
+                //inst_read_addr_next = buffer_empty ? (inst_read_addr + 'd1) : inst_read_addr;
+                inst_read_addr = buffer_empty ? (inst_read_addr_prev + 'd1) : inst_read_addr_prev;
             end
             default: begin
             end

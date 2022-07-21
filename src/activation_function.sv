@@ -27,23 +27,31 @@ module ActivationFunction (
     wire signed [Q_INT+ACT_A_Q_INT-1:-(Q_FRAC+ACT_A_Q_FRAC)] b_shifted;
     wire signed [Q_INT-1:-Q_FRAC] interp;
 
+    reg signed [Q_INT-1:-Q_FRAC] x_reg;
+
     assign function_type = FunctionType'(mask[ACT_MASK_SIZE-1:ACT_MASK_SIZE-2]);
    
     assign b_shifted = {{Q_INT+ACT_A_Q_INT-ACT_B_Q_INT-1{1'b0}}, b_coef, {(Q_FRAC+ACT_A_Q_FRAC)-ACT_B_Q_FRAC{1'b0}}};
     // TODO check for overflow
-    assign full_product = a_coef*x+b_shifted;
+    assign full_product = a_coef*x_reg+b_shifted;
     assign interp = full_product[Q_INT-1:-Q_FRAC];
 
     
 
+    always_ff @(posedge clk) begin
+        x_reg <= x;
+    end
+    
     always_comb begin
         case(function_type)
-            FUNC_ID:    fx <= x;
-            FUNC_STEP:  fx <= ~x[Q_INT-1];
-            FUNC_RELU:  fx <= {Q_SIZE-1{~x[Q_INT-1]}}&x;
+            FUNC_ID:    fx <= x_reg;
+            FUNC_STEP:  fx <= ~x_reg[Q_INT-1];
+            FUNC_RELU:  fx <= {Q_SIZE-1{~x_reg[Q_INT-1]}}&x_reg;
             FUNC_LUT:   fx <= interp;
         endcase
     end
+
+    // TODO dont use mas in write
 
     Memory #(
         .DEPTH(ACT_MASK_SIZE+ACT_LUT_DEPTH), .BIT_SIZE(ACT_LUT_SIZE))
@@ -51,7 +59,7 @@ module ActivationFunction (
         .clk(clk),
         .write_enable(write_enable),
         .read_addr({mask, x[Q_INT-1:Q_INT-ACT_LUT_DEPTH]}),
-        .write_addr({mask, write_addr}),
+        .write_addr(write_addr),
 
         .data_in(write_data),
         .data_out({a_coef, b_coef})

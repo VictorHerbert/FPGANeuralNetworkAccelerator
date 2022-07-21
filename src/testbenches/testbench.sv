@@ -54,17 +54,9 @@ module testbench;
 
     initial begin
         await_ticks(1);
-        /*write_packet(17'h1F000, 16'd400);
-        write_packet(17'h1F001, 16'd200);
-        write_packet(17'h1F002, 16'd1096);
-        write_packet(17'h1F003, 16'd4096);
-        write_packet(17'h1F004, 16'd4096);
-        write_packet(17'h1F005, 16'd4096);
-        write_packet(17'h1F006, 16'd4096);*/
 
-
-        write_packet(17'h4002, 16'd4096);
-        write_packet(17'h4003, 16'd1024);
+        /*write_packet(17'h4002, 16'd512);
+        write_packet(17'h4003, 16'd512);
         write_packet(17'h4004, 16'd512);
         write_packet(17'h4005, 16'd2000);
 
@@ -76,7 +68,7 @@ module testbench;
         write_packet(17'h4008, 16'd0512);
         write_packet(17'h4006, 16'd0120);
         write_packet(17'h4007, 16'd0200);
-        write_packet(17'h4008, 16'd0512);
+        write_packet(17'h4008, 16'd0512);*/
     end
    
     initial begin

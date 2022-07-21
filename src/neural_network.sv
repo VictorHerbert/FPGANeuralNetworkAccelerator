@@ -7,7 +7,7 @@ module NeuralNetwork(
     output busy,
 
     input [MM_DEPTH-1:0] read_addr,
-    output [MM_SIZE-1:0] read_data,
+    output [Q_SIZE-1:0] read_data,
     input [MM_DEPTH-1:0] write_addr,
     input [MM_SIZE-1:0] write_data
 );
@@ -61,19 +61,58 @@ module NeuralNetwork(
     wire [Q_INT-1:-Q_FRAC] act_read_data;
     wire [ACT_MASK_SIZE-1:0] act_mask;
 
+
+    reg mac_acc_loopback_reg;
+    reg mac_acc_update_reg;
+    reg [1:0] serializer_update_reg;
+    reg [1:0] serializer_shift_reg;
+    reg [1:0][ACT_MASK_SIZE-1:0] act_mask_reg;
+
+    reg [2:0][XY_MEM_DEPTH:0] xy_write_addr_reg;
+    reg [2:0] xy_write_enable_reg;
+    reg [2:0] xy_write_select_reg;
+
+    always_ff @(posedge clk) begin
+        mac_acc_loopback_reg <= mac_acc_loopback;
+        mac_acc_update_reg <= mac_acc_update;
+
+        serializer_update_reg[0] <= serializer_update;
+        serializer_update_reg[1] <= serializer_update_reg[0];
+        
+        serializer_shift_reg[0] <= serializer_shift;
+        serializer_shift_reg[1] <= serializer_shift_reg[0];
+
+        act_mask_reg[0] <= act_mask;
+        act_mask_reg[1] <= act_mask_reg[0];
+
+        xy_write_addr_reg[0] <= xy_write_addr;
+        xy_write_addr_reg[1] <= xy_write_addr_reg[0];
+        xy_write_addr_reg[2] <= xy_write_addr_reg[1];
+
+        xy_write_enable_reg[0] <= xy_write_enable;
+        xy_write_enable_reg[1] <= xy_write_enable_reg[0];
+        xy_write_enable_reg[2] <= xy_write_enable_reg[1];
+
+        xy_write_select_reg[0] <= xy_write_select;
+        xy_write_select_reg[1] <= xy_write_select_reg[0];
+        xy_write_select_reg[2] <= xy_write_select_reg[1];
+    end
+
     // ----------------------------------------
     // ------- Datapath Components  -----------
     // ----------------------------------------
 
+
+    // TODO pipeline buffer
     Memory #(
         .DEPTH(XY_MEM_DEPTH),
         .BIT_SIZE(Q_SIZE))
     xy_mem (
         .clk(clk),
-        .write_enable(xy_write_enable),
+        .write_enable(xy_write_enable_reg[1]),
         .read_addr(xy_read_addr),
-        .write_addr(xy_write_select ? buffer_addr_out : xy_write_addr),
-        .data_in(xy_write_select ? buffer_data_out : act_read_data),
+        .write_addr(xy_write_select_reg[1] ? buffer_addr_out : xy_write_addr_reg[1]),
+        .data_in(xy_write_select_reg[1] ? buffer_data_out : act_read_data),
         .data_out(xy_read_data)
     );
 
@@ -97,8 +136,8 @@ module NeuralNetwork(
 
         MacUnit mac_unit(
             .clk(clk),
-            .mac_acc_loopback(mac_acc_loopback),
-            .mac_acc_update(mac_acc_update),
+            .mac_acc_loopback(mac_acc_loopback_reg),
+            .mac_acc_update(mac_acc_update_reg),
             .x(xy_read_data),
             .w(w_read_data[i]),
             .prod(prod[i]),
@@ -117,19 +156,18 @@ module NeuralNetwork(
         .INPUT_SIZE(NU_COUNT), .Q_SIZE(Q_SIZE))
     serializer (
         .clk(clk),
-        .serializer_update(serializer_update),
-        .serializer_shift(serializer_shift),
+        .serializer_update(serializer_update_reg[0]),
+        .serializer_shift(serializer_shift_reg[0]),
         .data_in(acc),
         .serial_out(serializer_out)
     );
 
   
-
     ActivationFunction activation_function (
         .clk(clk),
         .x(serializer_out),
         .fx(act_read_data),
-        .mask(act_mask),
+        .mask(act_mask_reg[0]),
 
         .write_enable(act_write_enable),
         .write_addr(buffer_addr_out),
@@ -156,16 +194,16 @@ module NeuralNetwork(
         .data_out({buffer_addr_out, buffer_data_out})
     );
 
-    assign read_data[MM_SIZE-1:Q_SIZE] = 'd0;
+    //assign read_data[MM_SIZE-1:Q_SIZE] = 'd0;
 
     Memory #(
         .DEPTH(OUTPUT_MEM_DEPTH),
         .BIT_SIZE(Q_SIZE))
     output_mem(
         .clk(clk),
-        .write_enable(xy_write_enable & xy_write_addr[XY_MEM_DEPTH]),
+        .write_enable(xy_write_enable_reg[1] & xy_write_addr_reg[1][XY_MEM_DEPTH]),
         .read_addr(read_addr[OUTPUT_MEM_DEPTH-1:0]),
-        .write_addr(xy_write_addr[OUTPUT_MEM_DEPTH-1:0]),
+        .write_addr(xy_write_addr_reg[1][OUTPUT_MEM_DEPTH-1:0]),
         .data_in(act_read_data),
         .data_out(read_data[Q_SIZE-1:0])
     );

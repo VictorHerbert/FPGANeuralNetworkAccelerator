@@ -14,10 +14,11 @@ radix define act_b_fx -fixed -fraction $ACT_B_Q_FRAC -precision 3 -base decimal 
 
 
 
-set SHOW_CONTROL 1
+set SHOW_CONTROL 0
 set SHOW_CONTROL_MOVE 0
 set SHOW_CONTROL_REPEAT 0
 set SHOW_INST_FULL 1
+set SHOW_INST_FIFO 0
 
 add wave clk
 add wave reset
@@ -32,20 +33,22 @@ add wave -radix fx read_data
 add wave write_addr
 add wave -radix fx write_data
 
-add wave -divider "FIFO"
-add wave nn/buffer_empty
-add wave nn/buffer_read_enable
-add wave nn/controller/buffer_addr
-add wave nn/controller/inst_write_enable
-add wave nn/controller/act_write_enable
-add wave nn/controller/mm_xy_write_enable
-add wave nn/controller/w_write_enable
-add wave nn/controller/update_buffer
-add wave nn/controller/update_buffer_reg
-add wave nn/buffer/write_addr
-add wave nn/buffer/read_addr
-add wave nn/buffer_addr_out
-add wave -radix fx nn/buffer_data_out
+if { $SHOW_CONTROL == 1 } {
+    add wave -divider "FIFO"
+    add wave nn/buffer_empty
+    add wave nn/buffer_read_enable
+    add wave nn/controller/buffer_addr
+    add wave nn/controller/inst_write_enable
+    add wave nn/controller/act_write_enable
+    add wave nn/controller/mm_xy_write_enable
+    add wave nn/controller/w_write_enable
+    add wave nn/controller/update_buffer
+    add wave nn/controller/update_buffer_reg
+    add wave nn/buffer/write_addr
+    add wave nn/buffer/read_addr
+    add wave nn/buffer_addr_out
+    add wave -radix fx nn/buffer_data_out
+}
 
 if { $SHOW_CONTROL == 1 } {
     add wave -divider "Control Signals"
@@ -56,6 +59,7 @@ if { $SHOW_CONTROL == 1 } {
     add wave nn/xy_read_addr
     add wave nn/xy_write_select
     add wave nn/xy_write_enable
+    add wave nn/controller/cpu_xy_write_enable
     add wave nn/xy_write_addr
 
     add wave nn/w_write_enable
@@ -73,7 +77,9 @@ if { $SHOW_CONTROL_REPEAT == 1 } {
 
 add wave -divider "Instructions"
 add wave -color "Yellow" nn/controller/inst_read_addr
-add wave -color "Yellow" nn/controller/inst_read_addr_next
+
+add wave -divider "> PIPELINE"
+add wave -color "Yellow" nn/controller/inst_read_addr_prev
 add wave -color "Yellow" nn/controller/instruction
 if { $SHOW_INST_FULL == 1 } {
     add wave -color "Yellow" nn/controller/matmul_inst_packet
@@ -83,6 +89,7 @@ if { $SHOW_INST_FULL == 1 } {
     add wave -color "Yellow" nn/controller/repeat_inst_packet
 }
 
+add wave -divider ">> PIPELINE"
 add wave -divider "Mac Units"
 add wave -radix fx nn/xy_read_data
 add wave -radix fx nn/w_read_data
@@ -101,6 +108,7 @@ add wave -divider "Activation Function"
 add wave nn/activation_function/mask
 add wave nn/activation_function/function_type
 add wave -radix fx nn/activation_function/x
+add wave -divider ">>> PIPELINE"
 add wave -radix act_a_fx nn/activation_function/a_coef
 add wave -radix act_b_fx nn/activation_function/b_coef
 add wave -radix fx nn/activation_function/fx

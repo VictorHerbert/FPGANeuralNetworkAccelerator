@@ -1,4 +1,4 @@
-module Memory #(parameter DEPTH, parameter BIT_SIZE)(
+module Memory #(parameter DEPTH, parameter BIT_SIZE, parameter ZEROS = 1'd0)(
     input clk, write_enable,
     input [DEPTH-1:0] read_addr,
     input [DEPTH-1:0] write_addr,
@@ -10,13 +10,20 @@ module Memory #(parameter DEPTH, parameter BIT_SIZE)(
 	reg [BIT_SIZE-1:0] data [2**DEPTH-1:0];
 
     // TODO include in pipeline
-    assign  data_out = data[read_addr]; // Async read
+    //assign  data_out = data[read_addr]; // Async read
 
     always @ (posedge clk) begin
         if (write_enable)
             data[write_addr] <= data_in;
 
-        //data_out <= data[read_addr]; // Sync read
+        data_out <= data[read_addr]; // Sync read
     end
+
+    
+    initial begin
+        if(ZEROS)
+            for(int i = 0; i < 2**DEPTH; i++) data[i] <= 'd0;
+    end
+    
 
 endmodule
