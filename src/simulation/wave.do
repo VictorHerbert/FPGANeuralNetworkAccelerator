@@ -98,6 +98,7 @@ add wave -radix fx_prod_full nn/prod_full
 add wave -radix fx nn/loopback_sum
 add wave -radix fx nn/sum
 add wave -radix fx nn/mac
+add wave -divider ">>> PIPELINE"
 add wave -radix fx nn/acc
 
 add wave -divider "Serializer"
@@ -108,7 +109,7 @@ add wave -divider "Activation Function"
 add wave nn/activation_function/mask
 add wave nn/activation_function/function_type
 add wave -radix fx nn/activation_function/x
-add wave -divider ">>> PIPELINE"
+add wave -divider ">>>> PIPELINE"
 add wave -radix act_a_fx nn/activation_function/a_coef
 add wave -radix act_b_fx nn/activation_function/b_coef
 add wave -radix fx nn/activation_function/fx
