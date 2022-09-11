@@ -1,7 +1,4 @@
 //format=mti addressradix=d dataradix=d version=1.0 wordsperline=1
 0: 0
 1: 4096
-2: 512
-3: 4096
-4: 0
-5: 1999
+2: 4000

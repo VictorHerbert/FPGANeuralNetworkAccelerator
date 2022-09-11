@@ -9,7 +9,7 @@ class Layer:
 
     def allocate(self) -> None:
         self.W = np.random.rand(self.y_size, self.x_size) - 0.5
-        #self.W = np.full([self.y_size, self.x_size], .3)
+        #self.W = np.full([self.y_size, self.x_size], .1)
 
     def forward_propagate(self, X):
         self.X = X

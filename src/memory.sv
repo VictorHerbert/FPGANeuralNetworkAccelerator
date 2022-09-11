@@ -9,14 +9,20 @@ module Memory #(parameter DEPTH, parameter BIT_SIZE, parameter ZEROS = 1'd0)(
 
 	reg [BIT_SIZE-1:0] data [2**DEPTH-1:0];
 
+    reg [DEPTH-1:0] read_addr_reg;
+
+    
+
     // TODO include in pipeline
-    //assign  data_out = data[read_addr]; // Async read
+    assign  data_out = data[read_addr_reg]; // Async read
 
     always @ (posedge clk) begin
         if (write_enable)
             data[write_addr] <= data_in;
 
-        data_out <= data[read_addr]; // Sync read
+        //data_out <= data[read_addr]; // Sync read
+
+        read_addr_reg <= read_addr;
     end
 
     

@@ -1,35 +1,27 @@
 module FifoController #(parameter DEPTH)(
     input clk, reset, 
     input write_enable, read_enable,
-    output[DEPTH-1:0] write_addr, 
-    output[DEPTH-1:0] read_addr,
+    output reg [DEPTH-1:0] write_addr, 
+    output reg [DEPTH-1:0] read_addr,
     output empty,
     output full
 );
+    wire[DEPTH-1:0] read_addr_next = read_addr + 1'd1;
+    wire[DEPTH-1:0] write_addr_next = write_addr + 1'd1;
 
-    reg[DEPTH-1:0] _write_addr;
-    reg[DEPTH-1:0] _read_addr;
-    assign write_addr = _write_addr;
-    assign read_addr = _read_addr;
-
-    wire[DEPTH-1:0] _read_addr_1 = _read_addr+'d1;
-    wire[DEPTH-1:0] _write_addr_1 = _write_addr+'d1;
-
-    assign empty = (_read_addr_1 == _write_addr);
-    assign full = (_write_addr_1 == _read_addr);
+    assign empty = (read_addr_next == write_addr);
+    assign full = (write_addr_next == read_addr);
 
     always_ff @(posedge clk, posedge reset) begin
         if(reset) begin
-            _write_addr <= 'd1;
-            _read_addr <= 'd0;
+            write_addr <= 'd1;
+            read_addr <= 'd0;
         end
         else begin
-            if(write_enable & ~full) begin
-                _write_addr <= _write_addr_1;
-            end
-            if(read_enable & ~empty) begin
-                _read_addr <= _read_addr_1;
-            end
+            if(write_enable & ~full)
+                write_addr <= write_addr_next;
+            if(read_enable & ~empty)
+                read_addr <= read_addr_next;
         end
     end
 

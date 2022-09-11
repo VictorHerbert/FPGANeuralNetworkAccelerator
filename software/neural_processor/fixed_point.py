@@ -10,3 +10,9 @@ def to_fx_signed(x, q : tuple[int]):
         return int(round(x*2**q_frac))
     else:
         return int(round(x*2**q_frac+2**(q_frac+q_int)))
+
+def fx_to_float(i, q):
+    q_int, q_frac = q
+    if(i > 2**(q_frac+q_int-1)):
+        i -= 2**(q_frac+q_int)
+    return i/2**q_frac

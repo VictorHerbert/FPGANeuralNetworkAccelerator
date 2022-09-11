@@ -13,7 +13,7 @@ vlog -sv -work work +incdir+../ {../isa.sv}
 vlog -sv -work work +incdir+../ {../memory.sv}
 vlog -sv -work work +incdir+../ {../activation_function.sv}
 vlog -sv -work work +incdir+../ {../address_register.sv}
-vlog -sv -work work +incdir+../ {../controller.sv}
+vlog -sv -work work +incdir+../ {../controller_fsm.sv}
 vlog -sv -work work +incdir+../ {../mac_unit.sv}
 vlog -sv -work work +incdir+../ {../serializer.sv}
 vlog -sv -work work +incdir+../ {../fifo.sv}

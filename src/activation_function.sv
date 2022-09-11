@@ -8,7 +8,7 @@ module ActivationFunction (
     output reg signed [Q_INT-1:-Q_FRAC] fx,
 
     input write_enable,
-    input [ACT_LUT_DEPTH-1:0] write_addr,
+    input [ACT_MASK_SIZE+ACT_LUT_DEPTH-1:0] write_addr,
     input [ACT_LUT_SIZE-1:0] write_data    
 );
 
@@ -19,7 +19,7 @@ module ActivationFunction (
         FUNC_RELU = 4'd3
     } FunctionType;
 
-    FunctionType function_type;
+    FunctionType function_type, function_type_reg;
     
     wire signed [ACT_A_Q_INT-1:-ACT_A_Q_FRAC] a_coef;
     wire signed [ACT_B_Q_INT-1:-ACT_B_Q_FRAC] b_coef;
@@ -40,10 +40,11 @@ module ActivationFunction (
 
     always_ff @(posedge clk) begin
         x_reg <= x;
+        function_type_reg <= function_type;
     end
     
     always_comb begin
-        case(function_type)
+        case(function_type_reg)
             FUNC_ID:    fx <= x_reg;
             FUNC_STEP:  fx <= ~x_reg[Q_INT-1];
             FUNC_RELU:  fx <= {Q_SIZE-1{~x_reg[Q_INT-1]}}&x_reg;

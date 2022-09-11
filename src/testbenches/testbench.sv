@@ -10,13 +10,13 @@ module testbench;
     logic clk = 1, reset = 0;
 
     initial repeat(300) #CLK_HALF_PERIOD clk = ~clk;
-    initial begin reset = 1; #(CLK_HALF_PERIOD) reset = 0; end
+    initial begin reset = 1; #(3*CLK_PERIOD) reset = 0; end
 
     logic write_enable;
     logic busy;
 
     logic [MM_DEPTH-1:0] read_addr;
-    logic [MM_SIZE-1:0] read_data;
+    logic [Q_SIZE-1:0] read_data;
     logic [MM_DEPTH-1:0] write_addr;
     logic [MM_SIZE-1:0] write_data;
 

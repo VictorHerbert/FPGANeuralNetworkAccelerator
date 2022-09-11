@@ -21,8 +21,7 @@ module MacUnit (
     wire sum_pos_overflow, sum_neg_overflow;
     wire prod_pos_overflow, prod_neg_overflow;
 
-    assign prod_full = x*w;
-
+    assign prod_full = x == 0 ? 0 : x*w;
 
     assign sum_pos_overflow = ({prod[Q_INT-1], loopback_sum[Q_INT-1], sum[Q_INT-1]} == 3'b001);
     assign sum_neg_overflow = ({prod[Q_INT-1], loopback_sum[Q_INT-1], sum[Q_INT-1]} == 3'b110);
@@ -31,7 +30,8 @@ module MacUnit (
     assign prod_neg_overflow = prod_full[2*Q_INT-1] & ~(&prod_full[2*Q_INT-2:Q_INT-1]);
 
 
-    assign loopback_sum = ({Q_SIZE{mac_acc_loopback}}&acc);
+    //assign loopback_sum = ({Q_SIZE{mac_acc_loopback}}&acc);
+    assign loopback_sum = mac_acc_loopback ? acc : 0;
     assign sum = prod + loopback_sum;
 
     always_comb begin

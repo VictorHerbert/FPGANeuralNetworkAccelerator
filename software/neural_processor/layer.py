@@ -12,6 +12,7 @@ class Layer:
 
         self.func = func
         self.has_bias = has_bias
+        self.is_output = False
 
 
     def allocate(self, xy_offset, w_offset, prev_layer = None) -> None:
@@ -51,7 +52,7 @@ class Layer:
             instructions.append(f'REPEAT {self.x_size-1}')
 
             if self.has_bias:
-                instructions.append(f'MATMUL {XY_ONE_ADDR},{w_offset+self.x_size}')
+                instructions.append(f'MATMUL {Layer.XY_ONE_ADDR},{w_offset+self.x_size}')
 
             # TODO identity func
             instructions.append(f'ACCMOV {y_offset},{l},{1 if self.func.mask is None else self.func.mask}')

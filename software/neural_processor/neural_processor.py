@@ -8,7 +8,7 @@ from software.activation_function import ActivationFunction, linear, step, relu
 
 class NeuralProcessor:
 
-    XY_OUTPUT_OFFSET_ADDR = 2**12
+    XY_OUTPUT_OFFSET_ADDR = 2**11
 
     builtin_activation_functions = {
         linear, step, relu
@@ -68,6 +68,8 @@ class NeuralProcessor:
             layer.nu_count = self.nu_count            
 
         self.allocate()
+
+        self.layers[-1].is_output = True
 
     def allocate(self) -> None:   
         xy_offset, w_offset = self.layers[0].allocate(2, 0)

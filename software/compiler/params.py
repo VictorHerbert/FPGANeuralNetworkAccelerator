@@ -23,7 +23,7 @@ def format_accmov(*args):
     return (3 << 28)|(args[0] << 15)|((args[1]-1) << 10)|(args[2] << 5)
     
 def format_jmp(*args):
-    check_limits([14], *args)
+    check_limits([12], *args)
     return (14 << 28)|(args[0] << 14)
 
 def format_flush(*args):

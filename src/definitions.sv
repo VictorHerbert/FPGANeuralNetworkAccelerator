@@ -6,7 +6,7 @@ package definitions;
     localparam Q_SIZE = Q_INT + Q_FRAC;
 
     localparam MM_SIZE = 32;
-    localparam INST_MEM_SIZE = 32;
+    localparam INST_MEM_SIZE = 64;
     localparam MOV_LENGTH = 5;
     localparam REPEAT_LENGTH = 28;
 
@@ -14,13 +14,12 @@ package definitions;
     localparam BUFFER_LENGTH = 5 + MEM_DEPTH;
 
     localparam MM_DEPTH = 17;
-    localparam INST_MEM_DEPTH = 12;
+    localparam INST_MEM_DEPTH = 6;
 
     localparam XY_MEM_DEPTH = 12;
     localparam W_MEM_DEPTH = 12;
     localparam BUFFER_DEPTH = 4;
     localparam OUTPUT_MEM_DEPTH = 6;
-    
     
     
     localparam ACT_MASK_SIZE = 4;

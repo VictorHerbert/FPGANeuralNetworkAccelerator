@@ -20,12 +20,16 @@ def dict_to_mem(d, filename):
             
 class MemoryInterface:
 
+    INST_HALT = 2
+    INST_JUMP = 3
+
     XY_ZERO_ADDR = 0
     XY_ONE_ADDR = 1
 
     def __init__(self, processor: NeuralProcessor, neural_network: NeuralNetwork = None) -> None:
         self.processor = processor
         self.xy_mem = {}
+        self.output_mem = {}
         self.w_mem = [{} for _ in range(processor.nu_count)]
 
         self.xy_mem[MemoryInterface.XY_ZERO_ADDR] = 0
@@ -35,6 +39,11 @@ class MemoryInterface:
             for i, _ in enumerate(neural_network.layers):
                 self.w_write(neural_network.layers[i].W, processor.layers[i].W[0])
     
+    def save_inst_mem(self, filename: str) -> None:
+        layer_inst = [(0<<63)|(l.X<<52)|(l.W[0]<<40)|((1 if l.is_output else 0)<<39)|(l.Y<<28)|((l.x_size)<<16)|((l.y_size)<<4)|(l.func.mask) for l in self.processor.layers]
+        layer_inst += [1<<63|MemoryInterface.INST_HALT<<60]
+        list_to_mem(layer_inst, filename)
+
     def save_xy_mem(self, filename : str) -> None:
         dict_to_mem(self.xy_mem, filename)
     
@@ -49,12 +58,14 @@ class MemoryInterface:
 
         list_to_mem(func_mem, filename)
 
-    def xy_input_write(self, array : np.array):
-        self.xy_write(array, self.processor.layers[0].X)
-
     def xy_write(self, array : np.array, offset : int):
         for i in range(array.shape[0]):
             self.xy_mem[offset+i] = to_fx(array[i,0], self.processor.q)
+
+    
+    def output_write(self, array : np.array, offset : int):
+        for i in range(array.shape[0]):
+            self.output_mem[offset+i] = to_fx(array[i,0], self.processor.q)
 
     def w_write(self, array: np.array, offset : int):
         for i in range(array.shape[0]):

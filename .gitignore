@@ -5,5 +5,3 @@ src/simulation/*
 !src/simulation/*.do
 
 modelsim.ini
-
-tfold/
