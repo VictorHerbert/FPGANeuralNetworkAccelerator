@@ -37,28 +37,3 @@ class Layer:
         xy_offset += self.y_size
 
         return xy_offset, w_offset
-
-
-
-    def forward_propagate(self):
-        y_offset = self.Y
-        length = [self.nu_count]*(self.y_size//self.nu_count) + [self.y_size%self.nu_count]
-
-        instructions = []
-        
-        for w_offset, l in zip(self.W, length):
-            b_offset = 0
-            instructions.append(f'MATMUL {self.X},{w_offset}')
-            instructions.append(f'REPEAT {self.x_size-1}')
-
-            if self.has_bias:
-                instructions.append(f'MATMUL {Layer.XY_ONE_ADDR},{w_offset+self.x_size}')
-
-            # TODO identity func
-            instructions.append(f'ACCMOV {y_offset},{l},{1 if self.func.mask is None else self.func.mask}')
-            instructions.append(f'NOP')
-            instructions.append(f'NOP')
-
-            y_offset += self.nu_count
-
-        return instructions

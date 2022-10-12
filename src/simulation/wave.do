@@ -1,5 +1,3 @@
-transcript off
-
 config wave -signalnamewidth 1
 
 set NU_COUNT [examine -unsigned definitions.NU_COUNT]
@@ -15,8 +13,7 @@ radix define act_a_fx -fixed -fraction $ACT_A_Q_FRAC -precision 3 -base decimal 
 radix define act_b_fx -fixed -fraction $ACT_B_Q_FRAC -precision 3 -base decimal -signed
 
 
-
-set SHOW_CONTROL 1
+set SHOW_CONTROL 0
 set SHOW_CONTROL_MOVE 0
 set SHOW_CONTROL_REPEAT 0
 set SHOW_INST_FULL 0
@@ -32,23 +29,18 @@ add wave busy
 
 add wave read_addr
 add wave -radix fx read_data
-add wave write_addr
+add wave -hex write_addr
 add wave -radix fx write_data
 
-if { $SHOW_FIFO == 1 } {
-    add wave -divider "FIFO"
-    add wave nn/buffer_empty
-    add wave nn/buffer_read_enable
-    add wave nn/controller/buffer_addr
-    add wave nn/controller/inst_write_enable
-    add wave nn/controller/act_write_enable
-    add wave nn/controller/mm_xy_write_enable
-    add wave nn/controller/w_write_enable
-    add wave nn/buffer/write_addr
-    add wave nn/buffer/read_addr
-    add wave nn/buffer_addr_out
-    add wave -radix fx nn/buffer_data_out
-}
+add wave nn/act_write_enable
+add wave -binary nn/w_write_enable
+add wave -binary nn/status_write_enable
+
+
+add wave nn/xy_write_enable_internal
+add wave nn/xy_write_enable_external
+add wave nn/xy_write_enable
+
 
 if { $SHOW_CONTROL == 1 } {
     add wave -divider "Control Signals"
@@ -59,7 +51,8 @@ if { $SHOW_CONTROL == 1 } {
     add wave nn/xy_read_addr
     add wave nn/xy_write_select[0]
     
-    add wave nn/xy_write_enable[0]
+    add wave nn/xy_write_enable
+    add wave nn/xy_write_enable_controller[0]
     add wave nn/xy_write_addr[0]
     add wave nn/controller/xy_write_addr_updated
 
@@ -73,6 +66,7 @@ if { $SHOW_CONTROL == 1 } {
     add wave nn/controller/batch_count
 
     add wave nn/controller/act_mask
+    add wave nn/activation_function/write_enable
 }
 
 if { $SHOW_CONTROL_REPEAT == 1 } {
@@ -81,14 +75,12 @@ if { $SHOW_CONTROL_REPEAT == 1 } {
 }
 
 add wave -divider "Instructions"
-add wave -color "Yellow" nn/controller/inst_read_addr
+add wave -color "Dark Orchid" nn/controller/status
 
 add wave -divider "> PIPELINE"
 add wave -color "Yellow" nn/controller/inst_read_addr_prev
-
 add wave -color "Yellow" nn/controller/layer_state
 add wave -color "Yellow" nn/controller/layer
-add wave -color "Yellow" nn/controller/instruction
 
 add wave -divider ">> PIPELINE"
 add wave -divider "Mac Units"
@@ -136,4 +128,3 @@ run -all
 wave zoom range 0ns 200ns
 
 mem save -o ../memories/output.mem -f mti -data decimal -addr decimal -wordsperline 1 /testbench/nn/output_mem/data
-exit

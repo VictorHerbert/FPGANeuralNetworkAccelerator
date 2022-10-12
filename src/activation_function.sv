@@ -2,14 +2,14 @@ import definitions::*;
 
 module ActivationFunction (
     input clk,
-
-    input signed [Q_INT-1:-Q_FRAC] x,
-    input[ACT_MASK_SIZE-1:0] mask,
-    output reg signed [Q_INT-1:-Q_FRAC] fx,
-
     input write_enable,
+
+    input signed        [Q_INT-1:-Q_FRAC]   x,
+    input               [ACT_MASK_SIZE-1:0] mask,
+    output reg signed   [Q_INT-1:-Q_FRAC]   fx,
+    
     input [ACT_MASK_SIZE+ACT_LUT_DEPTH-1:0] write_addr,
-    input [ACT_LUT_SIZE-1:0] write_data    
+    input [ACT_LUT_SIZE-1:0]                write_data    
 );
 
     typedef enum logic [3:0] {
@@ -52,10 +52,7 @@ module ActivationFunction (
         endcase
     end
 
-    // TODO dont use mas in write
-
-    Memory #(
-        .DEPTH(ACT_MASK_SIZE+ACT_LUT_DEPTH), .BIT_SIZE(ACT_LUT_SIZE))
+    Memory #(.DEPTH(ACT_MASK_SIZE+ACT_LUT_DEPTH), .WIDTH(ACT_LUT_SIZE))
     lookup_table (
         .clk(clk),
         .write_enable(write_enable),

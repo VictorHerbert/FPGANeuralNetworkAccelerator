@@ -1,26 +1,22 @@
-module Memory #(parameter DEPTH, parameter BIT_SIZE, parameter ZEROS = 1'd0)(
+module Memory #(parameter DEPTH, parameter WIDTH, parameter ZEROS = 1'd0)(
     input clk, write_enable,
-    input [DEPTH-1:0] read_addr,
-    input [DEPTH-1:0] write_addr,
+    
+    input       [DEPTH-1:0] read_addr,
+    input       [DEPTH-1:0] write_addr,
 
-    input       [BIT_SIZE-1:0] data_in,
-    output reg  [BIT_SIZE-1:0] data_out
+    input       [WIDTH-1:0] data_in,
+    output reg  [WIDTH-1:0] data_out
 );
 
-	reg [BIT_SIZE-1:0] data [2**DEPTH-1:0];
-
+	reg [WIDTH-1:0] data [2**DEPTH-1:0];
     reg [DEPTH-1:0] read_addr_reg;
 
-    
 
-    // TODO include in pipeline
-    assign  data_out = data[read_addr_reg]; // Async read
+    assign  data_out = data[read_addr_reg];
 
     always @ (posedge clk) begin
         if (write_enable)
             data[write_addr] <= data_in;
-
-        //data_out <= data[read_addr]; // Sync read
 
         read_addr_reg <= read_addr;
     end

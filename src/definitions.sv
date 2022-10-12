@@ -11,9 +11,9 @@ package definitions;
     localparam REPEAT_LENGTH = 28;
 
     localparam MEM_DEPTH = 12;
-    localparam BUFFER_LENGTH = 5 + MEM_DEPTH;
+    localparam STATUS_DEPTH = 12;
 
-    localparam MM_DEPTH = 17;
+    localparam MM_DEPTH = 16;
     localparam INST_MEM_DEPTH = 6;
 
     localparam XY_MEM_DEPTH = 12;

@@ -25,10 +25,10 @@ from termcolor import colored
 EPS = .1
 IT_COUNT = 1000
 
-for it_number in range(IT_COUNT):
+def test():
     
-    print(colored(f'Test number {it_number}', color='blue', attrs=['bold']))
     v = random.choices(range(1,7),[4,1,1,1,1,1], k=random.randint(2,5))
+    #v = [3,2,4]
     print('input:', v)
 
     nn = NeuralNetwork(layers = [NNLayer(x, y, random.choice([linear, sigmoid, tanh, relu])) for x,y in pairwise(v)])
@@ -61,7 +61,8 @@ for it_number in range(IT_COUNT):
     mi.output_write(y, nproc.layers[-1].Y%2**11)
 
 
-    os.system('cd src/simulation && vsim -c -do run.do > null')
+    os.system('cd src/simulation && vsim -c -do run_auto.do > null')
+    #os.system('cd src/simulation && vsim -c -do run_auto.do')
 
     s = open('src/memories/output.mem', 'r').read()
         
@@ -76,6 +77,10 @@ for it_number in range(IT_COUNT):
     print('verdict:', colored('PASSED', color='green') if mse < EPS else colored('FAILED', color='red'))
     print()
 
-    assert mse < EPS, f'Test {it_number} failed'
+    return mse
 
-        
+
+
+for it_number in range(IT_COUNT):
+    print(colored(f'Test number {it_number}', color='blue', attrs=['bold']))
+    assert test() < EPS, f'Test {it_number} failed'

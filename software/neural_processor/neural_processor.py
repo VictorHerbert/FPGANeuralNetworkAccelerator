@@ -8,7 +8,7 @@ from software.activation_function import ActivationFunction, linear, step, relu
 
 class NeuralProcessor:
 
-    XY_OUTPUT_OFFSET_ADDR = 2**11
+    #XY_OUTPUT_OFFSET_ADDR = 2**11
 
     builtin_activation_functions = {
         linear, step, relu
@@ -77,7 +77,7 @@ class NeuralProcessor:
         for l_prev, l_next in pairwise(self.layers):                        
             xy_offset, w_offset = l_next.allocate(xy_offset, w_offset, prev_layer=l_prev)
 
-        self.layers[-1].Y = NeuralProcessor.XY_OUTPUT_OFFSET_ADDR
+        #self.layers[-1].Y = NeuralProcessor.XY_OUTPUT_OFFSET_ADDR
     
 
     def predict(self):

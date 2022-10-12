@@ -1,5 +1,4 @@
 `timescale 1 ns / 1 ps
-//`include "../definitions.sv"
 
 import definitions::*;
 
@@ -12,7 +11,7 @@ module testbench;
     initial repeat(300) #CLK_HALF_PERIOD clk = ~clk;
     initial begin reset = 1; #(3*CLK_PERIOD) reset = 0; end
 
-    logic write_enable;
+    logic write_enable = 0;
     logic busy;
 
     logic [MM_DEPTH-1:0] read_addr;
@@ -53,29 +52,28 @@ module testbench;
     );
 
     initial begin
-        await_ticks(1);
+        await_ticks(2);
+        write_packet(16'h0002, 16'h1000);
+        write_packet(16'h0003, 16'h1000);
+        write_packet(16'h0004, 16'h1000);
 
-        /*write_packet(17'h4002, 16'd512);
-        write_packet(17'h4003, 16'd512);
-        write_packet(17'h4004, 16'd512);
-        write_packet(17'h4005, 16'd2000);
-
-        write_packet(17'h4006, 16'd0120);
-        write_packet(17'h4007, 16'd0200);
-        write_packet(17'h4008, 16'd0512);
-        write_packet(17'h4006, 16'd0120);
-        write_packet(17'h4007, 16'd0200);
-        write_packet(17'h4008, 16'd0512);
-        write_packet(17'h4006, 16'd0120);
-        write_packet(17'h4007, 16'd0200);
-        write_packet(17'h4008, 16'd0512);*/
+        await_ticks(2);
+        write_packet(16'hC005, 16'd0003);
     end
    
     initial begin
-        await_ticks(60);
-        read_packet(32'h0);
-        read_packet(32'h1);
-        read_packet(32'h2);
+        await_ticks(50);
+        read_packet(32'h5);
+        await_ticks(1);
+        $display(read_data);
+
+        read_packet(32'h6);
+        await_ticks(1);
+        $display(read_data);
+
+        read_packet(32'h7);
+        await_ticks(1);
+        $display(read_data);
     end
 
 

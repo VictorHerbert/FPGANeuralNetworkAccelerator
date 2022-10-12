@@ -11,13 +11,12 @@ module MacUnit (
     output reg signed [Q_INT-1:-Q_FRAC] prod,
     output reg signed [Q_INT-1:-Q_FRAC] acc,
     output reg signed [Q_INT-1:-Q_FRAC] mac,
-
-    // in IO for simulation only
-    // TODO use a bigger vector to store sum
-    output reg signed [Q_INT-1:-Q_FRAC] sum,
+       
     output reg signed [2*Q_INT-1:-2*Q_FRAC] prod_full,
     output signed [Q_INT-1:-Q_FRAC] loopback_sum
 );
+    // TODO use a bigger vector to store sum
+    reg signed [Q_INT-1:-Q_FRAC] sum;
     wire sum_pos_overflow, sum_neg_overflow;
     wire prod_pos_overflow, prod_neg_overflow;
 
