@@ -1,5 +1,5 @@
+from typing import List
 import numpy as np
-from itertools import pairwise
 
 mse = lambda y, yl: sum((yl-y)**2)/len(y)
 d_mse = lambda y, yl: (2/len(y))*(y-yl)
@@ -15,13 +15,20 @@ class NeuralNetwork:
         for layer in self.layers:
             layer.allocate()
 
-    def predict(self, x):
+    def predict(self, x : np.array) -> np.array:
         for layer in self.layers:
             x = layer.forward_propagate(x)
 
         return x
 
-    def fit(self, x_train, y_train, epochs = 100, learning_rate = 0.1, verbose = False):
+    def fit(self,
+        x_train: np.array,
+        y_train: np.array,
+        epochs: int = 100,
+        learning_rate: float = 0.1,
+        verbose: bool = False
+    ) -> List:
+
         error_list = []
         for epoch_index in range(epochs):
             error = 0
@@ -43,7 +50,5 @@ class NeuralNetwork:
             error_list.append(error)
         return error_list
 
-        
-
-    def evaluate(self, x, y):
+    def evaluate(self, x : np.array, y : np.array) -> float:
         return sum(self.loss(self.predict(x),y))/len(y)

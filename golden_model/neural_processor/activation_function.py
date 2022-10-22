@@ -1,7 +1,7 @@
-from typing import Callable, Tuple
+from typing import Callable, List, Tuple
 import numpy as np
 
-from .neural_processor.fixed_point import to_fx_signed
+from .fixed_point import to_fx_signed
 
 class ActivationFunction:
 
@@ -10,7 +10,7 @@ class ActivationFunction:
         self.dfx = dfx
         self.mask = mask
 
-    def interpolate(self, q : tuple, a_q : tuple, b_q : tuple, depth: int):
+    def interpolate(self, q : tuple, a_q : tuple, b_q : tuple, depth: int) -> List:
         a_len = a_q[1] + a_q[0]
         b_len = b_q[1] + b_q[0]
 

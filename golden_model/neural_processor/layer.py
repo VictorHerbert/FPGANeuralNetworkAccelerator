@@ -1,6 +1,7 @@
+from __future__ import annotations
 from math import ceil
 
-from ..activation_function import linear
+from .activation_function import linear
 
 class Layer:
 
@@ -15,7 +16,7 @@ class Layer:
         self.is_output = False
 
 
-    def allocate(self, xy_offset, w_offset, prev_layer = None) -> None:
+    def allocate(self, xy_offset: int, w_offset: int, prev_layer: Layer = None) -> None:
         if prev_layer is None:
             self.X = xy_offset
             xy_offset += self.x_size

@@ -1,15 +1,17 @@
+`default_nettype none
+
 import definitions::*;
 
 module ActivationFunction (
-    input clk,
-    input write_enable,
+    input wire clk,
+    input wire write_enable,
 
-    input signed        [Q_INT-1:-Q_FRAC]   x,
-    input               [ACT_MASK_SIZE-1:0] mask,
+    input wire signed   [Q_INT-1:-Q_FRAC]   x,
+    input wire          [ACT_MASK_SIZE-1:0] mask,
     output reg signed   [Q_INT-1:-Q_FRAC]   fx,
     
-    input [ACT_MASK_SIZE+ACT_LUT_DEPTH-1:0] write_addr,
-    input [ACT_LUT_SIZE-1:0]                write_data    
+    input wire [ACT_MASK_SIZE+ACT_LUT_DEPTH:0] write_addr,
+    input wire [MM_WIDTH-1:0]                write_data    
 );
 
     typedef enum logic [3:0] {
@@ -31,13 +33,11 @@ module ActivationFunction (
 
     assign function_type = FunctionType'(mask[ACT_MASK_SIZE-1:ACT_MASK_SIZE-2]);
    
-    assign b_shifted = {{Q_INT+ACT_A_Q_INT-ACT_B_Q_INT-1{1'b0}}, b_coef, {(Q_FRAC+ACT_A_Q_FRAC)-ACT_B_Q_FRAC{1'b0}}};
-    // TODO check for overflow
+    assign b_shifted = {{Q_INT+ACT_A_Q_INT-ACT_B_Q_INT-1{1'b0}}, b_coef, {(Q_FRAC+ACT_A_Q_FRAC)-ACT_B_Q_FRAC{1'b0}}};   
     assign full_product = a_coef*x_reg+b_shifted;
     assign interp = full_product[Q_INT-1:-Q_FRAC];
 
     
-
     always_ff @(posedge clk) begin
         x_reg <= x;
         function_type_reg <= function_type;
@@ -47,12 +47,13 @@ module ActivationFunction (
         case(function_type_reg)
             FUNC_ID:    fx <= x_reg;
             FUNC_STEP:  fx <= ~x_reg[Q_INT-1];
-            FUNC_RELU:  fx <= {Q_SIZE-1{~x_reg[Q_INT-1]}}&x_reg;
+            FUNC_RELU:  fx <= {Q_DEPTH-1{~x_reg[Q_INT-1]}}&x_reg;
             FUNC_LUT:   fx <= interp;
         endcase
     end
 
-    Memory #(.DEPTH(ACT_MASK_SIZE+ACT_LUT_DEPTH), .WIDTH(ACT_LUT_SIZE))
+
+    MemoryBank #(.DEPTH(ACT_MASK_SIZE+ACT_LUT_DEPTH), .WIDTH(ACT_LUT_SIZE), .BANKS(ACT_LUT_MEM))
     lookup_table (
         .clk(clk),
         .write_enable(write_enable),
@@ -62,5 +63,6 @@ module ActivationFunction (
         .data_in(write_data),
         .data_out({a_coef, b_coef})
     );
+
 
 endmodule

@@ -1,4 +1,4 @@
-module Memory #(parameter DEPTH, parameter WIDTH, parameter ZEROS = 1'd0)(
+module Memory #(parameter DEPTH, parameter WIDTH)(
     input clk, write_enable,
     
     input       [DEPTH-1:0] read_addr,
@@ -19,12 +19,6 @@ module Memory #(parameter DEPTH, parameter WIDTH, parameter ZEROS = 1'd0)(
             data[write_addr] <= data_in;
 
         read_addr_reg <= read_addr;
-    end
-
-    
-    initial begin
-        if(ZEROS)
-            for(int i = 0; i < 2**DEPTH; i++) data[i] <= 'd0;
     end
     
 

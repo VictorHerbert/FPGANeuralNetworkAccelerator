@@ -1,14 +1,15 @@
+`default_nettype none
+
 import definitions::*;
-import isa::*;
 
 module ControllerFSM (
-    input clk, reset,
+    input wire clk, reset,
 
     input Status status,
+    output reg available,
 
-    output reg                                  inst_write_enable,
     output reg [INST_MEM_DEPTH-1:0]             inst_read_addr,
-    input  reg [INST_MEM_SIZE-1:0]              inst_read_data,
+    input  wire[INST_MEM_WIDTH-1:0]             inst_read_data,
 
     output reg                                  mac_acc_loopback,
     output reg                                  mac_acc_update,
@@ -23,32 +24,30 @@ module ControllerFSM (
     output reg [XY_MEM_DEPTH-1:0]               xy_read_addr,
     output reg [XY_MEM_DEPTH-1:0]               xy_write_addr,
 
-    output reg [NU_COUNT-1:0]                   w_write_enable,
     output reg [W_MEM_DEPTH-1:0]                w_read_addr
 );
     typedef enum reg[2:0] {RESET, START, ACC, WAIT} LayerState;
     LayerState layer_state, layer_state_next;
     Layer layer;
 
+    reg available_reg;
     reg unsigned [INST_MEM_DEPTH-1:0]  inst_read_addr_prev;
     logic end_of_batch, last_batch, xy_write_addr_updated;
     reg [7:0] batch_count;
     reg [7:0] batch_length;
     reg [7:0] batch_remainder;
     reg [$clog2(NU_COUNT)+1:0] xy_write_counter;
+    reg [ACT_MASK_SIZE-1:0] act_mask_prev;
 
-    assign layer = inst_read_data;
-    assign instruction = inst_read_data;
+    assign layer = inst_read_data;   
 
     assign serializer_shift = 1'b1;
     assign batch_length = layer.y_length/NU_COUNT;
     assign batch_remainder = layer.y_length%NU_COUNT;
     assign end_of_batch = (xy_read_addr == layer.x_offset+layer.x_length-1);
     assign last_batch = (batch_count == 1);
-
     assign xy_write_enable = xy_write_counter != 0;
 
-    reg [ACT_MASK_SIZE-1:0] act_mask_prev;
 
     always_comb begin
         inst_read_addr = inst_read_addr_prev;
@@ -57,10 +56,8 @@ module ControllerFSM (
         mac_acc_loopback = 1'bx;
 
 
-    
         case(layer_state)
             RESET: begin
-                //TODO fix start addr
                 inst_read_addr = 0;
             end
             START: begin
@@ -79,9 +76,11 @@ module ControllerFSM (
                 inst_read_addr = (xy_write_counter <= 1)&last_batch ? inst_read_addr_prev + 1 : inst_read_addr_prev;
             end
         endcase
-   
-
     end
+
+    assign available = available_reg;
+
+    
 
     always_ff @(posedge clk, posedge reset)  begin
         if(reset) begin
@@ -89,6 +88,7 @@ module ControllerFSM (
             xy_write_counter <= 0;
             xy_write_addr_updated <= 0;
             layer_state <= RESET;
+            available_reg <= 0;
         end
         else begin
             inst_read_addr_prev <= inst_read_addr;
@@ -105,8 +105,11 @@ module ControllerFSM (
             case(layer_state)
                 RESET: begin
                     layer_state <= status.run ? START : RESET;
+                    available_reg <= 1;
                 end
                 START: begin
+                    available_reg <= 0;
+
                     xy_read_addr <= layer.x_offset;
                     w_read_addr <= layer.w_offset;
                     batch_count <= batch_length + (batch_remainder != 0);

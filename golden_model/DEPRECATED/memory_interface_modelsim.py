@@ -1,3 +1,7 @@
+'''
+mi.output_write(y, nproc.layers[-1].Y%2**11)
+'''
+
 import numpy as np
 from itertools import chain
 
@@ -20,6 +24,11 @@ def dict_to_mem(d, filename):
             
 class MemoryInterface:
 
+    XY_OFFSET = 100
+    W_OFFSET = [200, 300, 400, 500]
+    INST_OFFSET = 600
+    ACT_OFFSET = 700
+
     XY_ZERO_ADDR = 0
     XY_ONE_ADDR = 1
 
@@ -35,6 +44,11 @@ class MemoryInterface:
         if neural_network:
             for i, _ in enumerate(neural_network.layers):
                 self.w_write(neural_network.layers[i].W, processor.layers[i].W[0])
+    
+    def memory_map(self) -> None:
+        layer_inst = [(0<<63)|(l.X<<52)|(l.W[0]<<40)|((1 if l.is_output else 0)<<39)|(l.Y<<28)|((l.x_size)<<16)|((l.y_size)<<4)|(l.func.mask) for l in self.processor.layers]
+        layer_inst[-1] |= (1<<63)
+
     
     def save_inst_mem(self, filename: str) -> None:        
         layer_inst = [(0<<63)|(l.X<<52)|(l.W[0]<<40)|((1 if l.is_output else 0)<<39)|(l.Y<<28)|((l.x_size)<<16)|((l.y_size)<<4)|(l.func.mask) for l in self.processor.layers]

@@ -4,4 +4,4 @@ __pycache__/
 src/simulation/*
 !src/simulation/*.do
 
-modelsim.ini
+src/testbench/vectors/*

@@ -1,14 +1,12 @@
 import numpy as np
 from itertools import pairwise
 
-from software.neural_processor.layer import Layer
-from software.neural_network.neural_network import NeuralNetwork
-from software.activation_function import ActivationFunction, linear, step, relu
+from ..neural_processor.layer import Layer
+from ..neural_network.neural_network import NeuralNetwork
+from .activation_function import ActivationFunction, linear, step, relu
 
 
 class NeuralProcessor:
-
-    #XY_OUTPUT_OFFSET_ADDR = 2**11
 
     builtin_activation_functions = {
         linear, step, relu
@@ -72,7 +70,7 @@ class NeuralProcessor:
         self.layers[-1].is_output = True
 
     def allocate(self) -> None:   
-        xy_offset, w_offset = self.layers[0].allocate(2, 0)
+        xy_offset, w_offset = self.layers[0].allocate(0, 0)
 
         for l_prev, l_next in pairwise(self.layers):                        
             xy_offset, w_offset = l_next.allocate(xy_offset, w_offset, prev_layer=l_prev)

@@ -15,7 +15,6 @@ module MacUnit (
     output reg signed [2*Q_INT-1:-2*Q_FRAC] prod_full,
     output signed [Q_INT-1:-Q_FRAC] loopback_sum
 );
-    // TODO use a bigger vector to store sum
     reg signed [Q_INT-1:-Q_FRAC] sum;
     wire sum_pos_overflow, sum_neg_overflow;
     wire prod_pos_overflow, prod_neg_overflow;
@@ -29,16 +28,16 @@ module MacUnit (
     assign prod_neg_overflow = prod_full[2*Q_INT-1] & ~(&prod_full[2*Q_INT-2:Q_INT-1]);
 
 
-    //assign loopback_sum = ({Q_SIZE{mac_acc_loopback}}&acc);
+    //assign loopback_sum = ({Q_DEPTH{mac_acc_loopback}}&acc);
     assign loopback_sum = mac_acc_loopback ? acc : 0;
     assign sum = prod + loopback_sum;
 
     always_comb begin
         case ({sum_pos_overflow, sum_neg_overflow})
             2'b10:
-                mac <= {1'b0, {Q_SIZE-1{1'b1}}};
+                mac <= {1'b0, {Q_DEPTH-1{1'b1}}};
             2'b01:
-                mac <= {1'b1, {Q_SIZE-1{1'b0}}};
+                mac <= {1'b1, {Q_DEPTH-1{1'b0}}};
             default:
                 mac <= sum;
         endcase
@@ -47,9 +46,9 @@ module MacUnit (
     always_comb begin
         case ({prod_pos_overflow, prod_neg_overflow})
             2'b10:
-                prod <= {1'b0, {Q_SIZE-1{1'b1}}};
+                prod <= {1'b0, {Q_DEPTH-1{1'b1}}};
             2'b01:
-                prod <= {1'b1, {Q_SIZE-1{1'b0}}};
+                prod <= {1'b1, {Q_DEPTH-1{1'b0}}};
             default:
                 prod <= prod_full[Q_INT-1:-Q_FRAC];
         endcase
